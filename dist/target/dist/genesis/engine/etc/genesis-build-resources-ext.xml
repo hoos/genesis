@@ -1,0 +1,98 @@
+
+<project name="genesis-build-resources-ext">
+
+  <!-- Define the solaris pkginfo macro -->
+    <macrodef name="pkginfo">
+        <attribute name="workdir" />
+        <attribute name="name" />
+        <attribute name="longname" />
+        <attribute name="version" />
+        <attribute name="architecture" />
+        <attribute name="classes" default="none" />
+        <attribute name="category" default="application" />
+        <attribute name="vendor"/>
+        <attribute name="pstamp"/>
+        <attribute name="email"/>
+        <attribute name="basedir" />
+        <sequential>
+      <!-- Make the packaging directory -->
+            <mkdir dir="@{workdir}" />
+      <!-- Write out the pkginfo file -->
+            <echo file="@{workdir}/pkginfo" append="false" message="PKG=@{name}${line.separator}" />
+            <echo file="@{workdir}/pkginfo" append="true"  message="NAME=@{longname}${line.separator}" />
+            <echo file="@{workdir}/pkginfo" append="true"  message="VERSION=@{version}${line.separator}" />
+            <echo file="@{workdir}/pkginfo" append="true"  message="ARCH=@{architecture}${line.separator}" />
+            <echo file="@{workdir}/pkginfo" append="true"  message="CLASSES=@{classes}${line.separator}" />
+            <echo file="@{workdir}/pkginfo" append="true"  message="CATEGORY=@{category}${line.separator}" />
+            <echo file="@{workdir}/pkginfo" append="true"  message="VENDOR=@{vendor}${line.separator}" />
+            <echo file="@{workdir}/pkginfo" append="true"  message="PSTAMP=@{pstamp}${line.separator}" />
+            <echo file="@{workdir}/pkginfo" append="true"  message="EMAIL=@{email}${line.separator}" />
+            <echo file="@{workdir}/pkginfo" append="true"  message="BASEDIR=@{basedir}${line.separator}" />
+        </sequential>
+    </macrodef>
+
+  <!-- Define the solaris pkgproto macro -->
+    <macrodef name="pkgproto">
+        <attribute name="srcdir" />
+        <attribute name="workdir" />
+        <attribute name="pkginstallbase" default="/"/>
+        <sequential>
+      <!-- Make the packaging directory -->
+            <mkdir dir="@{workdir}" />
+  
+      <!-- Build the base package prototype -->
+            <exec dir="@{srcdir}" executable="pkgproto" output="@{workdir}/prototype.base">
+                <arg line="@{srcdir}=@{pkginstallbase}" />
+            </exec>
+
+      <!-- 
+       Since the ownership of the files with be genesis:genesis we
+       will need to correct these. Each application build will may also
+       need to make it's own changes. 
+       -->
+            <exec dir="@{workdir}" executable="sed" input="@{workdir}/prototype.base" output="@{workdir}/prototype.root">
+                <arg value="s/\/ 0755 genesis genesis/\/ 0755 root root/g" />
+            </exec>
+            <exec dir="@{workdir}" executable="sed" input="@{workdir}/prototype.root" output="@{workdir}/prototype.home">
+                <arg value="s/\/home 0755 genesis genesis/\/home 0755 root root/g" />
+            </exec>
+
+       <!-- Append the special package files to the prototype -->
+            <echo file="@{workdir}/prototype.home" append="true" message="i pkginfo${line.separator}" />
+            <echo file="@{workdir}/prototype.home" append="true" message="i preinstall${line.separator}" />
+            <echo file="@{workdir}/prototype.home" append="true" message="i checkinstall${line.separator}" />
+            <echo file="@{workdir}/prototype.home" append="true" message="i postinstall${line.separator}" />
+        </sequential>
+    </macrodef>
+
+  <!-- Define the solaris pkgproto macro -->
+    <macrodef name="pkgmk">
+        <attribute name="workdir" />
+        <attribute name="pkgname" />
+        <attribute name="name" />
+        <sequential>
+            <exec dir="@{workdir}" executable="pkgmk">
+                <arg line="-o " />
+            </exec>
+            <exec executable="pkgtrans">
+                <arg line="-s /var/spool/pkg @{workdir}/@{pkgname}.pkg @{name}" />
+            </exec>
+      <!-- Clean up -->
+            <delete dir="/var/spool/pkg/@{name}" />
+        </sequential>
+    </macrodef>
+
+  <!-- Define the tar macro -->
+    <macrodef name="build-tar">
+        <attribute name="name" />
+        <attribute name="srcdir" />
+        <attribute name="workdir" />
+        <sequential>
+      <!-- Make the packaging directory -->
+            <mkdir dir="@{workdir}" />
+      
+      <!-- Tar up the file -->
+            <tar destfile="@{workdir}/@{name}.tar.gz" basedir="@{srcdir}" compression="gzip" />
+        </sequential>
+    </macrodef>
+</project>

@@ -1,0 +1,165 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.uk.genesis</groupId>
+        <artifactId>genesis</artifactId>
+        <version>0.0.34-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.uk.genesis</groupId>
+    <artifactId>genesis-dist</artifactId>
+    <packaging>pom</packaging>
+    <name>Genesis Distribution</name>
+    <description>Distribution Packages for Genesis</description>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>genesis-core-ant-tasks</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>genesis-core-ant-tasks</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+            <classifier>ant-bin</classifier>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>genesis-schemas</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>prepare-files</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                <!-- Copy in the ant distribution files 
+                <copy todir="${project.build.directory}/dist/engine/apache-ant-1.7.0">
+                  <fileset dir="src/main/apps/apache-ant-1.7.0"/>
+                </copy -->
+
+                <!--Copy in the root sample files -->
+                                <copy todir="${project.build.directory}/dist/genesis">
+                                    <fileset dir="src/main/root-files"/>
+                                </copy>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>prepare-test-files</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                <!-- Copy in the root test files -->
+                <!--mkdir dir="${project.build.directory}/dist/genesis"/-->
+                                <copy todir="${project.build.directory}/dist/genesis">
+                                    <fileset dir="src/test/root-files"/>
+                                </copy>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>validate-samples</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo message="Testing Buildfiles" />
+                                <echo message="Exec dir=${project.build.directory}/dist" />
+                
+                <!-- Windows style operating systems -->
+                                <exec dir="${project.build.directory}/../../dist/src/main/apps/apache-ant-1.7.0/bin/" 
+                      executable="cmd.exe" failonerror="true" osfamily="winnt">
+                                    <arg line="/c ant.bat -f ${project.build.directory}/dist/genesis/build.xml validate-all -v
+                             -Denterprise=MyEnterprise -Dservice=MyService -Denvironment=MyEnvironment
+                             -Ddatacentre=MyDatacentre -Drack=MyRack -Dapplication=MyApplication -Dserver=MyServer" />
+                                </exec>
+                
+                <!-- Unix style operating systems -->
+                                <exec dir="${project.build.directory}/../../dist/src/main/apps/apache-ant-1.7.0/bin/"
+                      executable="sh" failonerror="true" osfamily="unix">
+                                    <arg line="ant -f ${project.build.directory}/dist/genesis/build.xml validate-all -v -Denterprise=MyEnterprise
+                             -Dservice=MyService -Denvironment=MyEnvironment -Ddatacentre=MyDatacentre -Drack=MyRack
+                             -Dapplication=MyApplication -Dserver=MyServer" />
+                                </exec>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>extract-schemas</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/dist/genesis/engine/schemas</outputDirectory>
+                            <includeTypes>zip</includeTypes>
+                            <includeArtifactIds>genesis-schemas</includeArtifactIds>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>extract-ant-bin</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/dist/genesis/engine/etc</outputDirectory>
+                            <includeTypes>zip</includeTypes>
+                            <includeArtifactIds>genesis-core-ant-tasks</includeArtifactIds>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>dist</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/assembly/assembly-dist.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

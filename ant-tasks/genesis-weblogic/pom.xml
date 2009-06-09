@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.uk.genesis</groupId>
+            <artifactId>genesis</artifactId>
+            <version>0.0.34-SNAPSHOT</version>
+        </parent>
+
+        <modelVersion>4.0.0</modelVersion>
+
+        <groupId>com.uk.genesis</groupId>
+        <artifactId>genesis-weblogic-ant-tasks</artifactId>
+        <packaging>jar</packaging>
+        <name>Genesis WebLogic Ant Tasks</name>
+        <description>Genesis Tasks for WebLogic Server</description>
+        <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>genesis-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+          <groupId>com.bea.weblogic</groupId>
+          <artifactId>weblogic</artifactId>
+          <version>10.3</version>
+        </dependency>
+
+        </dependencies>
+
+        <build>
+            <plugins>      
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>ant-bin</id>
+                            <phase>package</phase>
+                            <goals>
+                              <goal>single</goal>
+                            </goals>
+                            <configuration>
+                                <descriptors>
+                                    <descriptor>src/main/assembly/assembly-bin.xml</descriptor>
+                                </descriptors>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+</project>

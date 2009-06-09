@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://genesis.uk.com/schemas/1.0/genesis-root"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:genesis="http://genesis.uk.com/schemas/1.0/genesis-root">
+    <xs:element name="Common">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

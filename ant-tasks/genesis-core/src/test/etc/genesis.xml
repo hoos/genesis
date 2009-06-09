@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genesis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xmlns="http://genesis.uk.com/schemas/1.0/genesis-root" 
+                xmlns:model="http://genesis.uk.com/schemas/1.0/genesis-xml-model"
+                xsi:schemaLocation="http://genesis.uk.com/schemas/1.0/genesis-root
+                system/schemas/genesis.xsd http://genesis.uk.com/schemas/1.0/genesis-xml-model system/schemas/genesis-xml-model.xsd">
+
+  <!-- The model that is being used by this Genesis instance -->
+  <model reader="com.uk.genesis.model.XmlModelReader">
+    <!-- Declare the location of the global properties -->
+    <model:global filename="config/common.xml" />
+  
+    <!-- Declare the model using Genesis XML Model extensions namespace -->
+    <model:object name="Enterprise" path="config/${name}" filename="enterprise.xml" schema="engine/schemas/enterprise.xsd">
+      <model:object name="Datacentre" path="physical/${name}" filename="datacentre.xml">
+        <model:object name="Rack" path="${name}" filename="rack.xml">
+         <model:object name="Node" path="${name}" filename="node.xml" />
+        </model:object>
+      </model:object>
+      
+      <model:object name="Service" path="logical/${name}" filename="service.xml">
+        <model:object name="Environment" path="${name}" filename="environment.xml">
+          <model:object name="Application" path="${name}" filename="application.xml" />
+        </model:object>
+      </model:object>
+    </model:object>
+  </model>
+  
+  <archetypes>
+
+    <archetype name="MyApplication-00" buildfile="archetypes/MyApplication-00/build-MyApplication-00.xml">
+      <operation name="build" target="build-MyApplication-00" />
+      <operation name="package" target="package-MyApplication-00" />
+      <requires type="/Enterprise" qnameproperty="enterprise_id" nameproperty="enterprise_name" />
+      <requires type="/Enterprise/Datacentre" qnameproperty="datacentre_id" nameproperty="datacentre_name" />
+      <requires type="/Enterprise/Datacentre/Rack" qnameproperty="rack_id" nameproperty="rack_name" />
+      <requires type="/Enterprise/Datacentre/Rack/Node" qnameproperty="node_id" nameproperty="node_name" />
+      <requires type="/Enterprise/Service" qnameproperty="service_id" nameproperty="service_name" />
+      <requires type="/Enterprise/Service/Environment" qnameproperty="environment_id" nameproperty="environment_name" />
+      <requires type="/Enterprise/Service/Environment/Application" qnameproperty="application_id" nameproperty="application_name" />
+    </archetype>
+
+  </archetypes>
+
+</genesis>

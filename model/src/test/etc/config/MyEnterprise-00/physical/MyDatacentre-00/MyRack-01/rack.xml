@@ -1,0 +1,10 @@
+<Rack>
+  <Name>MyRack-01</Name>
+
+  <InvalidRow name="rowA">
+    <Height>10</Height>
+  </InvalidRow>
+  <Row name="rowB"> 
+    <Height>20</Height>
+  </Row>
+</Rack>

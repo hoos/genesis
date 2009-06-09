@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genesis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xmlns="http://genesis.uk.com/schemas/1.0/genesis-root" 
+                xmlns:xmodel="http://genesis.uk.com/schemas/1.0/genesis-xml-model"
+                xsi:schemaLocation="http://genesis.uk.com/schemas/1.0/genesis-root system/genesis.xsd http://genesis.uk.com/schemas/1.0/genesis-xml-model system/genesis-xml-model.xsd">
+  <!-- The model that is being used by this Genesis instance -->
+  <model reader="com.uk.genesis.model.XmlModelReader">
+    <!-- Declare the location of the global properties -->
+    <xmodel:global filename="config/common.xml" />
+  
+    <!-- Declare the model using Genesis XML extensions namespace -->
+    <xmodel:object name="Enterprise" path="config/${name}" schema="schemas/enterprise.xsd" filename="enterprise.xml">
+      <xmodel:object name="Datacentre" path="physical/${name}" schema="schemas/datacentre.xsd" filename="datacentre.xml">
+        <xmodel:object name="Rack" path="${name}" schema="schemas/rack.xsd" filename="rack.xml">
+          <xmodel:object name="Server" schema="schemas/server.xsd" filename="server-${name}.xml" />
+          <xmodel:object name="Firewall" schema="schemas/firewall.xsd" filename="firewall-${name}.xml" />
+          <xmodel:object name="Hub" schema="schemas/hub.xsd" filename="hub-${name}.xml" />
+        </xmodel:object>
+      </xmodel:object>
+
+      <xmodel:object name="Service" path="logical/${name}" schema="schemas/service.xsd" filename="programme.xml">
+        <xmodel:object name="Environment" path="${name}" schema="schemas/environment.xsd" filename="environment.xml">
+          <xmodel:object name="Application" path="${name}" schema="schemas/application.xsd" filename="application.xml" />
+        </xmodel:object>
+      </xmodel:object>
+    </xmodel:object>
+  </model>
+</genesis>

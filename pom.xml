@@ -1,0 +1,258 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.uk.genesis</groupId>
+    <artifactId>genesis</artifactId>
+    <packaging>pom</packaging>
+    <name>Genesis</name>
+    <description>Provisioning and Deployment System</description>
+
+    <!--
+     __________________________________
+
+     The version number here is the version for all of the child modules as well.
+     This does not need to get updated, as this will be handled by the release plugin.
+     __________________________________
+    -->
+    <version>0.0.34-SNAPSHOT</version>
+    <modules>
+        <module>model</module>
+        <module>ant-tasks/genesis-core</module>
+        <!--module>genesis-weblogic</module-->
+        <module>schemas</module>
+        <module>dist</module>
+    </modules>
+    <scm>
+        <connection>scm:svn:svn://dv304/genesis-dev/trunk</connection>
+    </scm>
+
+    <!-- Centrally defined versions of some important multi modules -->
+    <properties>
+    </properties>
+
+    <!--
+     __________________________________
+
+     The dependency management section defines the versions of the 3rd party libs
+     that will be introduced into all child modules of this project.
+
+     This is different to the section that follows it - the dependencies sections
+     actively brings libs in a global fashion - this is reduce the verbosity
+     of child POMs without compromising on flexibility, as these libs will be used
+     in all child projects.
+     __________________________________
+
+     -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>3.8.2</version>
+            </dependency>
+            <dependency>
+                <groupId>jdom</groupId>
+                <artifactId>jdom</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>xerces</groupId>
+                <artifactId>xercesImpl</artifactId>
+                <version>2.6.0</version>
+            </dependency>
+            <dependency>
+                <groupId>xml-apis</groupId>
+                <artifactId>xml-apis</artifactId>
+                <version>1.0.b2</version>
+            </dependency>
+            <dependency>
+                <groupId>jaxen</groupId>
+                <artifactId>jaxen</artifactId>
+                <version>1.0-FCS</version>
+            </dependency>
+            <dependency>
+                <groupId>saxpath</groupId>
+                <artifactId>saxpath</artifactId>
+                <version>1.0-FCS</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.ant</groupId>
+                <artifactId>ant</artifactId>
+                <version>1.7.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--
+     __________________________________
+
+     READ THE NOTE PRECEDING THE DEPENDENCY MANAGEMENT SECTION BEFORE CHANGING ANYHING HERE
+     __________________________________
+
+     -->
+    <dependencies>
+    </dependencies>
+    <distributionManagement>
+        <repository>
+            <id>artifactory</id>
+            <url>dav:http://10.105.2.238:8082/artifactory/libs-releases</url>
+        </repository>
+    </distributionManagement>
+    <reporting />
+    <build>
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+        <!-- Core Plugins -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>2.1.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.0.2</version>
+                    <configuration>
+                        <source>1.5</source>
+                        <target>1.5</target>
+                        <compilerArgument>-g</compilerArgument>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.3</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>2.0-beta-5</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.3</version>
+                    <configuration>
+                        <forkMode>once</forkMode>
+                    </configuration>
+                </plugin>
+		<plugin>
+        	    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-report-plugin</artifactId>
+                    <version>2.4.2</version>
+		    <configuration>
+                      <linkXref>false</linkXref>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-verifier-plugin</artifactId>
+                    <version>1.0-beta-1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+
+        <!-- Packaging Types -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.0.2</version>
+                </plugin>
+
+        <!-- Reporting -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clover-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <phase>pre-site</phase>
+                            <goals>
+                                <goal>instrument</goal>
+                                <goal>aggregate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+	          <plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-pmd-plugin</artifactId>
+		    <version>2.3</version>
+		    <configuration>
+		      <linkXref>false</linkXref>
+                      <targetJdk>1.5</targetJdk>
+                      <sourceEncoding>utf-8</sourceEncoding>
+		    </configuration>
+	          </plugin>
+
+        <!-- Tools -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>1.1</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.ant</groupId>
+                            <artifactId>ant</artifactId>
+                            <version>1.7.0</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.2-beta-1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.0-beta-7</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>aspectj-maven-plugin</artifactId>
+                    <version>1.0-beta-4-voca</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.voca.maven.plugins</groupId>
+                    <artifactId>maven-site-assembler-plugin</artifactId>
+                    <version>0.1</version>
+                </plugin>
+
+        <!-- IDEs -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-eclipse-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

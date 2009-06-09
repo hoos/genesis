@@ -1,0 +1,14 @@
+
+<assembly>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <outputDirectory>/</outputDirectory>
+            <directory>src/main/resources</directory>
+        </fileSet>
+    </fileSets>
+</assembly>
+

@@ -1,0 +1,144 @@
+#!/bin/sh
+#
+# genesis       A simple wrapper for ant.
+#
+# description:  Genesis is an environment provisioning tool capable  \  
+#               of configuring the entire enterprise stack.
+#
+#set -x
+# Source environment varibles.
+. contrib/set_env
+
+if [ $# = 0 ]; then
+	cat $CONTRIB/help.msg
+        echo -e "\n$USAGE"
+        exit 1
+elif [ $# != 8 ]; then
+	echo -e "
+================================================================================
+
+CHECKING COMMAND LINE ARGUMENTS
+
+ERROR: INCORRECT NUMBER OF ARGUMENTS!
+
+Error: ./genesis "$@"
+
+"$USAGE"
+
+================================================================================\n"
+        exit 1
+else
+	echo -e "
+================================================================================
+
+			       WELCOME TO GENESIS
+
+================================================================================
+
+"$GENESIS_VERSION"
+
+Release: Light
+License: GPL Version 3
+Website: http://www.genesis.uk.com
+Contact: info@genesis.uk.com
+
+================================================================================\n"
+$CONTRIB/check_env
+echo -e "
+CHECKING TARGETS\n"
+
+GEN_TARGS=($ENT_TARGET $SER_TARGET $ENV_TARGET $DAT_TARGET $RAC_TARGET $NOD_TARGET $APP_TARGET $APP_BUILD)
+
+OPTS="$@"
+	# Strip arguments from command line options and leave targets
+        for TARGS in $OPTS;do
+                TARG=`echo $TARGS | sed -e 's/\([=].*\)//g' -e 's/.*\([:]\)/:/g'`
+                echo -e "$TARG" >> TARGETS
+        done
+
+declare -a CMD_TARGS[]
+
+exec 9<TARGETS
+let COUNT=0
+
+while read LINE <&9; do
+	CMD_TARGS[$COUNT]=$LINE
+    	((COUNT++))
+done
+
+rm -rf TARGETS
+
+exec 9>&-
+
+if [[ "${CMD_TARGS[@]}" != "${GEN_TARGS[@]}" ]] ; then
+        echo -e "FAILURE: TARGET ERROR"
+	RETVAL="1"
+else
+        echo -e "SUCCESS: ALL TARGETS OK\n"
+	echo -e "${CMD_TARGS[@]}"	
+	RETVAL="0"
+fi
+
+			if [ "$RETVAL" != 0 ]; then
+                                echo -e "
+================================================================================
+
+ERROR REPORT:
+
+SYNTAX ERROR - INCORRECT TARGET GIVEN!
+
+Error: "${CMD_TARGS[@]}"
+
+Usage: "${GEN_TARGS[@]}"
+
+================================================================================"
+			else
+echo -e "
+================================================================================"
+echo -e "
+CHECKING ARGUMENTS\n"
+        OPTS="$@"
+		for ARGS in $OPTS;
+		# Strip "Strip the command line options to leave the arguments only.
+		do ARG=`echo $ARGS | sed -e 's/\(.*[=]\)//'g -e s'/\([:].*\)//g'`
+			# Check the argument points to a target direcory in the .config/
+			if [ -n = `find $CONFIG -depth -name $ARG` ] ; then
+				echo -e "FAILURE: ARGUMENT ERROR - "$ARG""
+                                	RETVAL="1"
+			else
+				echo -e "SUCCESS: ARGUMENT OK - "$ARG""
+					RETVAL="0"
+
+			fi
+		done
+
+                	if [ "$RETVAL" != 0 ]; then
+                        	echo -e "
+================================================================================
+
+ERROR REPORT:
+
+SYNTAX ERROR - ARGUMENT DOES NOT EXIST IN THE "$CONFIG" DIRECTORY TREE!
+
+================================================================================"
+                	else
+                       	echo -e "
+================================================================================"
+
+CMD="ant $@"
+$CMD
+echo -e "
+================================================================================
+
+GENESIS CONFIGURATION HIERARCHY\n"
+TREE=`which tree`
+	if [ -n $TREE ] ;then
+		"$TREE" "$BUILD"
+	else
+		ls -R "$BUILD"
+	fi
+			echo -e "
+================================================================================"
+                	fi
+fi
+fi

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Enterprise xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://genesis.uk.com/schemas/1.0/genesis-root"
+            xsi:schemaLocation="http://genesis.uk.com/schemas/1.0/genesis-root engine/schemas/enterprise.xsd">
+
+  <Name>MyEnterprise</Name>
+  <Address>
+    <StreetName>MyStreet</StreetName>
+    <AdditionalStreetName>MyAdditionalStreet</AdditionalStreetName>
+    <PostCode>WD5 6DE</PostCode>
+    <Country>United Kingdom</Country>
+  </Address>
+
+</Enterprise>

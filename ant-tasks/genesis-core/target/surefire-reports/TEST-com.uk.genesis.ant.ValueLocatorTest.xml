@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.106" errors="0" skipped="0" tests="3" name="com.uk.genesis.ant.ValueLocatorTest">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/opt/jdk1.6.0_06-i586/jre/lib/i386"/>
+    <property name="java.vm.version" value="10.0-b22"/>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.vendor.url" value="http://java.sun.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/genesis/sandbox/projects/genesis/dev/genesis-1.0.0.0/ant-tasks/genesis-core"/>
+    <property name="java.runtime.version" value="1.6.0_06-b02"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="basedir" value="/home/genesis/sandbox/projects/genesis/dev/genesis-1.0.0.0/ant-tasks/genesis-core"/>
+    <property name="java.endorsed.dirs" value="/opt/jdk1.6.0_06-i586/jre/lib/endorsed"/>
+    <property name="os.arch" value="i386"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/opt/jdk1.6.0_06-i586/jre/lib/i386/client:/opt/jdk1.6.0_06-i586/jre/lib/i386:/opt/jdk1.6.0_06-i586/jre/../lib/i386:/usr/java/packages/lib/i386:/lib:/usr/lib"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
+    <property name="os.version" value="2.6.27.5-41.fc9.x86_64"/>
+    <property name="user.home" value="/home/genesis"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="user.name" value="genesis"/>
+    <property name="java.class.path" value="/home/genesis/.m2/repository/org/apache/maven/surefire/surefire-booter/2.3/surefire-booter-2.3.jar:/home/genesis/.m2/repository/org/apache/maven/surefire/surefire-api/2.3/surefire-api-2.3.jar:/home/genesis/.m2/repository/org/codehaus/plexus/plexus-utils/1.1/plexus-utils-1.1.jar:/home/genesis/.m2/repository/commons-lang/commons-lang/2.1/commons-lang-2.1.jar:/home/genesis/.m2/repository/org/codehaus/plexus/plexus-archiver/1.0-alpha-7/plexus-archiver-1.0-alpha-7.jar:/home/genesis/.m2/repository/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.jar:/home/genesis/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/home/genesis/.m2/repository/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="java.home" value="/opt/jdk1.6.0_06-i586/jre"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.language" value="en"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="1.6.0_06"/>
+    <property name="java.ext.dirs" value="/opt/jdk1.6.0_06-i586/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.boot.class.path" value="/opt/jdk1.6.0_06-i586/jre/lib/resources.jar:/opt/jdk1.6.0_06-i586/jre/lib/rt.jar:/opt/jdk1.6.0_06-i586/jre/lib/sunrsasign.jar:/opt/jdk1.6.0_06-i586/jre/lib/jsse.jar:/opt/jdk1.6.0_06-i586/jre/lib/jce.jar:/opt/jdk1.6.0_06-i586/jre/lib/charsets.jar:/opt/jdk1.6.0_06-i586/jre/classes"/>
+    <property name="java.vendor" value="Sun Microsystems Inc."/>
+    <property name="localRepository" value="/home/genesis/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="0.002" name="testValidatesTypeIsSet"/>
+  <testcase time="0" name="testValidatesPropertyIsSet"/>
+  <testcase time="0.098" name="testValidatesType"/>
+</testsuite>
