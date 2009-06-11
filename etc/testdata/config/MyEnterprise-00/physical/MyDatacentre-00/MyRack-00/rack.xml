@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Rack>
+  <Name>MyRack-00</Name>
+
+  <Row name="rowA">
+    <Height>10</Height>
+  </Row>
+  <Row name="rowB"> 
+    <Height>20</Height>
+  </Row>
+</Rack>

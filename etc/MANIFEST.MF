@@ -1,0 +1,4 @@
+Manifest-Version: 1.2
+
+Name: com/uk/genesis
+Sealed: true

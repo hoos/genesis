@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# Check Environment Varibles.
+#
+# This script checks and reports on environment varibles required by Genesis.
+
+# Source environment varibles.
+. contrib/set_env
+
+# Check the JAVA_HOME varible and Java version.
+
+echo -e "================================================================================"
+check_java() {
+if [ -n "$JAVA_HOME" ]; then
+echo -e "
+CHECKING JAVA ENVIRONMENT
+
+JAVA_HOME = $JAVA_HOME\n
+Java version:"
+java -fullversion
+echo -e "\nSupported Java version: 
+java full version \"1.6.*\"
+\nVerify that your version of Java matches the supported version.\n"
+else
+echo -e "FAILED - No JAVA_HOME varible was found\n"
+fi
+echo -e "\n================================================================================"
+}
+check_java
+
+# Check the ANT_HOME varible and Ant version.
+
+check_ant() {
+if [ -n "$ANT_HOME" ]; then
+echo -e "
+CHECKING ANT ENVIRONMENT
+
+ANT_HOME = $ANT_HOME\n
+Ant version:"
+ant -version
+echo -e "\nSupported Ant version: 
+Apache Ant version 1.7.0 compiled on December 13 2006
+\nVerify that your version of Ant matches the supported version.\n"
+else
+echo -e "FAILED - No ANT_HOME varible was found\n"
+fi
+echo -e "================================================================================"
+}
+check_ant

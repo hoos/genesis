@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<!-- 
+  Ant build file for Genesis.                                            
+  Auther Hussein H Badakhchani.                                         
+-->
+
+<project name="genesis" default="test" basedir=".">
+
+  <description>
+    Genesis is an automated IT infrastructure provisioning application.
+  </description>
+
+
+  <!--
+    Project directories.
+  -->
+  <property name="build.dir" location="${basedir}/build"/>
+  <property name="dist.dir" location="${basedir}/dist"/>
+  <property name="etc.dir" location="${basedir}/etc"/>
+  <property name="lib.dir" location="${basedir}/lib"/>
+  <property name="src.dir" location="${basedir}/src"/>
+  <property name="build.classes.dir" location="${build.dir}/classes"/>
+  <property name="test.reports.dir" location="${build.dir}/reports"/>
+  <property name="genesis.dir" location="${dist.dir}/genesis"/>
+  <property name="engine.dir" location="${genesis.dir}/engine"/>
+  <property name="distribution.dir" location="${etc.dir}/distribution"/>
+
+  <!--
+    Javac compiler options.
+  -->
+  <property name="optimize" value="true"/>
+  <property name="debug" value="false"/>
+  <property name="deprecation" value="true"/>
+
+  <!-- 
+   All libraries are located in the project library directory ${lib.dir}
+  -->
+  <path id="classpath">
+    <fileset dir="${lib.dir}">
+      <include name="**/*.jar"/>
+    </fileset>
+  </path>
+
+  <!-- 
+   Create a time stamp for the build.
+   -->
+  <target name="init">
+    <tstamp/>
+  </target>
+
+  <!-- 
+   Compile the java source code.
+   -->
+  <target name="comp" depends="clean" 
+          description="  - (comp)iles the source code">
+    <mkdir dir="${build.classes.dir}"/>
+    <javac srcdir="${src.dir}" destdir="${build.classes.dir}"
+           optimize="${optimize}" debug="${debug}"  deprecation="${deprecation}"
+           bootclasspath="${bootclasspath}" classpathref="classpath"/>
+  </target>
+
+  <!-- 
+   Create a distribution of Genesis.
+   -->
+  <target name="dist" depends="comp">
+    <mkdir dir="${dist.dir}"/>
+    <mkdir dir="${genesis.dir}"/>
+    <copy todir="${genesis.dir}">
+      <fileset dir="${distribution.dir}"/>
+    </copy>
+    <chmod file="${genesis.dir}/genesis" perm="ugo+rx"/>
+    <jar basedir="${build.classes.dir}"
+         jarfile="${engine.dir}/lib/${ant.project.name}.jar"
+         manifest="${etc.dir}/MANIFEST.MF"
+         excludes="**/*Test.class">
+    </jar>
+    <jar basedir="${build.classes.dir}"
+         jarfile="${engine.dir}/lib/${ant.project.name}-test.jar"
+         manifest="${etc.dir}/MANIFEST.MF"
+         includes="**/*Test.class">
+    </jar>
+  </target>
+
+  <!-- 
+   Test the java source code.
+   -->
+  <target name="test" depends="dist" 
+          description="  - (test)s the genesis distribution">
+      <mkdir dir="${test.reports.dir}"/>
+      <junit printsummary="yes" haltonfailure="yes">
+        <classpath>
+          <pathelement location="${engine.dir}/lib/${ant.project.name}.jar"/>
+          <pathelement location="${engine.dir}/lib/${ant.project.name}-test.jar"/>
+        </classpath>
+        <formatter type="xml"/>
+        <batchtest fork="yes" todir="${test.reports.dir}">
+          <fileset dir="${build.classes.dir}">
+            <include name="**/*Test*.class"/>
+            <exclude name="**/TripleDes*.class"/>
+          </fileset>
+        </batchtest>
+      </junit>
+  </target>
+
+  <!--
+   Clean build       
+   -->
+  <target name="clean" description="  - (clean)s the build">
+    <echo message="${ant.project.name}"/>
+    <delete dir="${build.dir}"/>
+    <delete dir="${dist.dir}"/>
+  </target>
+
+</project>

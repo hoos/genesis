@@ -1,0 +1,15 @@
+<Rack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://genesis.uk.com/schemas/1.0/genesis-root"
+      xsi:schemaLocation="http://genesis.uk.com/schemas/1.0/genesis-root engine/schemas/rack.xsd">
+  <Name>MyRack</Name>
+  <Dimensions>
+    <DimensionX units="mm">1000</DimensionX>
+    <DimensionY units="mm">1000</DimensionY>
+    <DimensionZ units="mm">1000</DimensionZ>
+  </Dimensions>
+  <UnitCapacity>42</UnitCapacity>
+  <GridLocation>
+    <XCoordinate>0</XCoordinate>
+    <YCoordinate>0</YCoordinate>
+  </GridLocation>
+</Rack>

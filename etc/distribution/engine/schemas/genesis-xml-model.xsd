@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://genesis.uk.com/schemas/1.0/genesis-xml-model"
+  elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:xml-model="http://genesis.uk.com/schemas/1.0/genesis-xml-model" 
+  xmlns:genesis="http://genesis.uk.com/schemas/1.0/genesis-root" >
+
+  <!-- Import the root schema -->
+    <xs:import namespace="http://genesis.uk.com/schemas/1.0/genesis-root" schemaLocation="genesis.xsd" />
+        
+  <!-- Declare an xml-model variant of the model element that allows for a schema -->
+    <xs:element name="object" substitutionGroup="genesis:object">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="genesis:ObjectType">
+          <!-- The path to the directory containing these objects, relative to the parent. If ommitted, it is 
+                 assumed they lived in the same directory as the parent -->
+                    <xs:attribute name="path" type="xs:string" use="optional" />
+          
+          <!-- The path to the schema used to validate the object. If the schema is ommitted, 
+                  then the object is assumed to not need validation -->
+                    <xs:attribute name="schema" type="xs:string" use="optional" />
+    
+          <!-- The name of the fle that describes the object. If the filename is ommitted, then 
+                  the object is assumed to be a container only -->
+                    <xs:attribute name="filename" type="xs:string" use="optional" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

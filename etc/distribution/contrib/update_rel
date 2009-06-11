@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# Update Release Version
+#
+# This script updates the release version number on pom contrib and jar files.
+#
+
+# Genesis version number.
+VERSION='0.0.34'
+SNAPSHOT='-SNAPSHOT'
+RELEASE="$VERSION$SNAPSHOT"
+MESSAGE="Updated version to release"
+
+# Genesis source root directory.
+SRC_ROOT="/home/genesis/sandbox/projects/genesis/src/genesis/trunk"
+
+# Genesis library directory.
+LIB_DIR="$SRC_ROOT/dist/src/main/root-files/engine/lib"
+
+# Files to be updated.
+cd $SRC_ROOT
+DOC_FILES=`find . -depth -name README.TXT`
+for DOC_FILE in $DOC_FILES; do
+        sed -i "s/VERSION: [0-9]\.[0-9]\.[0-9][0-9]/VERSION: $VERSION/g" $DOC_FILE
+done
+cd -
+
+CONTRIB_FILES="set_env help.msg"
+for CONTRIB_FILE in $CONTRIB_FILES; do
+        sed -i "s/VERSION: [0-9]\.[0-9]\.[0-9][0-9]/VERSION: $VERSION/g" $CONTRIB_FILE
+done
+
+POM_FILES=`find $SRC_ROOT -depth -name pom.xml`
+for POM_FILE in $POM_FILES; do
+	sed -i "s/[0-9]\.[0-9]\.[0-9][0-9]\-SNAPSHOT/$RELEASE/g" $POM_FILE
+done
+
+JAR_FILES=`ls "$LIB_DIR"`
+for JAR_FILE in $JAR_FILES; do
+	NEW_JAR_FILE=`echo $JAR_FILE | sed -e  "s/[0-9]\.[0-9]\.[0-9][0-9]\-SNAPSHOT/$RELEASE/g"`
+	cp $LIB_DIR/$JAR_FILE $LIB_DIR/$NEW_JAR_FILE
+	svn del  $LIB_DIR/$JAR_FILE
+	svn add  $LIB_DIR/$NEW_JAR_FILE
+done
+
+cd $SRC_ROOT
+svn ci -m "$MESSAGE $VERSION"
+svn up
+

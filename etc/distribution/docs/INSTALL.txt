@@ -1,0 +1,156 @@
+================================================================================
+Genesis Getting Started Guide
+
+================================================================================
+
+Contents
+--------
+
+   1. Overview
+   2. System Requirements
+   3. Installing Java
+   4. Installing Ant
+   5. Environment Setup
+   6. Installing Genesis
+
+--------
+
+1. Overview
+-----------
+
+The following instructions describe the steps involved in getting the genesis
+application installed and operational. We used a server running Fedora 8 for
+this installation but in practice any GNU/Linux distribution is suitable.
+Genesis will also run under windows but thisguide does not describe that
+installation. If you already have Java and Ant installed you may skip to
+section 4. Environment Setup.
+
+2. System Requirements
+----------------------
+
+Genesis requires a Java 1.6 runtime environment and Apache Ant 1.7.0. You
+can download them from the links listed below.
+
+Java Development Kit - http://java.sun.com/javase/downloads/index.jsp
+Apache Ant - http://ant.apache.org/bindownload.cgi
+Genesis - https://sourceforge.net/project/showfiles.php?group_id=193849
+
+3. Installing Java
+------------------
+
+Sun offers of choice of Java runtime packages for download. In this example
+we downloaded the jre-6u6-linux-i586.bin file to our /tmp directory. After
+you have downloaded the file you should move it to a reasonable location
+and extract it. We moved the package to the /opt folder, made it executable
+and extracted it there. You should do this as the root user.
+
+# Become root user
+[user]$ su -
+
+# Move the package from /tmp to /opt
+[root]# mv /tmp/ jdk-6u6-linux-i586.bin /opt
+
+# Make the package executable
+[root]# chmod +x /opt/ jdk-6u6-linux-i586.bin
+
+# Extract the package
+cd /opt
+[root]# ./ jdk-6u6-linux-i586.bin
+
+# Create a symbolic link to the jdk
+[root]# ln -s /opt/jdk1.6.0_06/ jdk
+
+3. Installing Ant
+
+The Apache Foundation provide a number of archive formats for Ant. In this
+example we used apache-ant-1.7.0-bin.tar.gz. After we had downloaded it we movedthe archive to the /opt folder from /tmp and extracted it there. You should do this as the root user.
+
+# Become root user
+[user]$ su -
+
+# Move the package from /tmp to /opt
+[root]# mv /tmp/apache-ant-1.7.0-bin.tar.gz /opt
+
+# Extract the package
+[root]# tar zxvf /opt/apache-ant-1.7.0-bin.tar.gz
+
+# Create a symbolic link to the jre
+[root]# ln -s /opt/apache-ant-1.7.0 apache-ant
+
+4. Environment Setup
+--------------------
+
+Before installing genesis we need to set up our enviroment to make sure Genesis
+has everything it needs. This entails setting up a genesis user and making sure
+the environment varibles for JAVA_HOME and ANT_HOME are setup correctly and
+exported.
+
+# Become root user
+[user]# su -
+
+# Add the genesis user and group
+[root]# useradd -u 1001 genesis
+
+# Assing a secure passord to this user
+[root]# passwd genesis
+
+# Become the genesis user
+[root]# su - genesis
+
+Edit the genesis users .bash_profile and add r=the JAVA_HOME and ANT_HOME 
+environment varibles. see the example .bash_profile below:
+
+################################################################################
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+JAVA_HOME=/opt/jdk
+ANT_HOME=/opt/apache-ant
+
+PATH=$PATH:$HOME/bin/:$JAVA_HOME/bin:$ANT_HOME
+
+export PATH JAVA_HOME ANT_HOME
+
+###############################################################################
+
+# Confirm the environment varibles are correct:
+[genesis]$ source .bash_profile
+[genesis]$ echo $JAVA_HOME
+/opt/jre
+[genesis]$ echo $ANT_HOME
+/opt/apache-ant
+
+# Confirm Java and Ant versions
+[genesis]$ java -fullversion
+java full version "1.6.0_06-b02"
+[genesis]$ ant -version
+Apache Ant version 1.7.0 compiled on December 13 2006
+5. Genesis Installation
+
+Once we have installed Java, Ant and our environment has been configured we are
+ready to install Genesis. We need to download it and extract it to a suitable
+directory.
+
+# Become genesis user
+[user]$ su - genesis
+
+# Make a dist directory in the genesis users home
+[genesis]$ mkdir dist
+
+# Move the package from /tmp to /home/genesis/dist
+[genesis]$ mv /tmp/genesis-{version}.tar.gz /home/genesis/dist
+
+# Extract the package
+[genesis]$ tar zxvf /home/genesis/dist/genesis-{version}.tar.gz
+
+# Change directory to the genesis distribution
+[genesis]$ cd /home/genesis/dist/genesis
+
+# Execute the genesis and follow the instructions
+[genesis]$./genesis
