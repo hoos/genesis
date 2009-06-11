@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<genesis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-                xmlns="http://genesis.uk.com/schemas/1.0/genesis-root" 
-                xmlns:xmodel="http://genesis.uk.com/schemas/1.0/genesis-xml-model"
-                xsi:schemaLocation="http://genesis.uk.com/schemas/1.0/genesis-root system/genesis.xsd http://genesis.uk.com/schemas/1.0/genesis-xml-model system/genesis-xml-model.xsd">
-  <!-- The model that is being used by this Genesis instance -->
-  <model reader="com.uk.genesis.model.XmlModelReader">
-  </model>
-</genesis>
