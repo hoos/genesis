@@ -7,7 +7,8 @@
 #
 #set -x
 # Source environment varibles.
-. contrib/set_env
+
+. ./contrib/set_env
 
 if [ $# = 0 ]; then
 	cat $CONTRIB/help.msg
@@ -125,7 +126,7 @@ SYNTAX ERROR - ARGUMENT DOES NOT EXIST IN THE "$CONFIG" DIRECTORY TREE!
                        	echo -e "
 ================================================================================"
 
-CMD="ant $@"
+CMD="$GENESIS_HOME/apache-ant-1.7.1/bin/ant $@"
 $CMD
 echo -e "
 ================================================================================

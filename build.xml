@@ -88,8 +88,13 @@
   <target name="dist" depends="comp">
     <copy todir="${genesis.dir}">
       <fileset dir="${distribution.dir}"/>
+      <fileset dir="${thirdparty.dir}"/>
     </copy>
     <chmod file="${genesis.dir}/genesis" perm="ugo+rx"/>
+    <chmod dir="${genesis.dir}/apache-ant-1.7.1/bin" 
+           includes="*" perm="ug+rx"/>
+    <chmod dir="${genesis.dir}/contrib" 
+           includes="*env" perm="ug+rx"/>
     <jar basedir="${build.classes.dir}"
          jarfile="${engine.dir}/lib/${ant.project.name}.jar"
          manifest="${etc.dir}/MANIFEST.MF"

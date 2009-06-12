@@ -37,7 +37,7 @@ CHECKING ANT ENVIRONMENT
 
 ANT_HOME = $ANT_HOME\n
 Ant version:"
-ant -version
+$ANT_HOME/bin/ant -version
 echo -e "\nSupported Ant version: 
 Apache Ant version 1.7.0 compiled on December 13 2006
 \nVerify that your version of Ant matches the supported version.\n"

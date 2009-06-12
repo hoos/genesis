@@ -15,6 +15,7 @@ CONFIG="$GENESIS_HOME/config"
 CONTRIB="$GENESIS_HOME/contrib"
 DOCS="$GENESIS_HOME/docs"
 ENGINE="$GENESIS_HOME/engine"
+ANT_HOME=$GENESIS_HOME/apache-ant-1.7.1
 
 # Configuration hierarchy. 
 LOGICAL="logical"
@@ -30,3 +31,4 @@ RAC_TARGET="-Drack"
 NOD_TARGET="-Dnode"
 APP_TARGET="-Dapplication"
 APP_BUILD=":build"
+
