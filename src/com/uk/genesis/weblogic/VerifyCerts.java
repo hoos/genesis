@@ -28,7 +28,7 @@
 */
 
 
-package com.uk.genesis.internal.ant;
+package com.uk.genesis.weblogic;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;

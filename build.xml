@@ -31,7 +31,7 @@
   -->
   <property name="optimize" value="true"/>
   <property name="debug" value="false"/>
-  <property name="deprecation" value="true"/>
+  <property name="deprecation" value="on"/>
 
   <!-- 
    All libraries are located in the project library directory ${lib.dir}
@@ -57,7 +57,9 @@
     <mkdir dir="${build.classes.dir}"/>
     <javac srcdir="${src.dir}" destdir="${build.classes.dir}"
            optimize="${optimize}" debug="${debug}"  deprecation="${deprecation}"
-           bootclasspath="${bootclasspath}" classpathref="classpath"/>
+           bootclasspath="${bootclasspath}" classpathref="classpath">
+      <exclude name="**/weblogic/*"/>
+    </javac>
   </target>
 
   <!-- 
@@ -66,6 +68,7 @@
   <target name="dist" depends="comp">
     <mkdir dir="${dist.dir}"/>
     <mkdir dir="${genesis.dir}"/>
+    <mkdir dir="${engine.dir}/lib"/>
     <copy todir="${genesis.dir}">
       <fileset dir="${distribution.dir}"/>
     </copy>
@@ -92,6 +95,7 @@
         <classpath>
           <pathelement location="${engine.dir}/lib/${ant.project.name}.jar"/>
           <pathelement location="${engine.dir}/lib/${ant.project.name}-test.jar"/>
+          <pathelement location="${lib.dir}/junit-4.6.jar"/>
         </classpath>
         <formatter type="xml"/>
         <batchtest fork="yes" todir="${test.reports.dir}">
