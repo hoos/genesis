@@ -20,6 +20,7 @@
   <property name="etc.dir" location="${basedir}/etc"/>
   <property name="lib.dir" location="${basedir}/lib"/>
   <property name="src.dir" location="${basedir}/src"/>
+  <property name="thirdparty.dir" location="${basedir}/thirdparty"/>
   <property name="build.classes.dir" location="${build.dir}/classes"/>
   <property name="test.reports.dir" location="${build.dir}/reports"/>
   <property name="genesis.dir" location="${dist.dir}/genesis"/>
@@ -34,12 +35,14 @@
   <property name="deprecation" value="on"/>
 
   <!-- 
-   All libraries are located in the project library directory ${lib.dir}
+   All dependant libraries are located in the project library directory ${lib.dir}
   -->
   <path id="classpath">
     <fileset dir="${lib.dir}">
       <include name="**/*.jar"/>
     </fileset>
+    <pathelement location="${engine.dir}/lib/${ant.project.name}.jar"/>
+    <pathelement location="${engine.dir}/lib/${ant.project.name}-test.jar"/>
   </path>
 
   <!-- 
@@ -47,7 +50,11 @@
    -->
   <target name="init">
     <tstamp/>
+    <mkdir dir="${dist.dir}"/>
+    <mkdir dir="${genesis.dir}"/>
+    <mkdir dir="${engine.dir}/lib"/>
     <mkdir dir="${build.classes.dir}"/>
+    <mkdir dir="${test.reports.dir}"/>
     <available file="${lib.dir}/weblogic.jar" property="weblogic"/>
   </target>
 
@@ -79,9 +86,6 @@
    Create a distribution of Genesis.
    -->
   <target name="dist" depends="comp">
-    <mkdir dir="${dist.dir}"/>
-    <mkdir dir="${genesis.dir}"/>
-    <mkdir dir="${engine.dir}/lib"/>
     <copy todir="${genesis.dir}">
       <fileset dir="${distribution.dir}"/>
     </copy>
@@ -101,17 +105,32 @@
   <!-- 
    Test the java source code.
    -->
-  <target name="test" depends="dist" 
+  <target name="test-weblogic" depends="dist" if="weblogic"
+          description="  - (test) the (webogic) package">
+    <junit printsummary="yes" haltonfailure="yes">
+      <classpath>
+        <path refid="classpath"/>
+      </classpath>
+      <formatter type="xml"/>
+      <batchtest fork="no" todir="${test.reports.dir}">
+        <fileset dir="${build.classes.dir}">
+          <include name="**/TripleDesTest.class"/>
+        </fileset>
+      </batchtest>
+    </junit>
+  </target>
+
+  <!-- 
+   Test the java source code.
+   -->
+  <target name="test" depends="test-weblogic, dist" 
           description="  - (test)s the genesis distribution">
-      <mkdir dir="${test.reports.dir}"/>
       <junit printsummary="yes" haltonfailure="yes">
         <classpath>
-          <pathelement location="${engine.dir}/lib/${ant.project.name}.jar"/>
-          <pathelement location="${engine.dir}/lib/${ant.project.name}-test.jar"/>
-          <pathelement location="${lib.dir}/junit-4.6.jar"/>
+          <path refid="classpath"/>
         </classpath>
         <formatter type="xml"/>
-        <batchtest fork="yes" todir="${test.reports.dir}">
+        <batchtest fork="no" todir="${test.reports.dir}">
           <fileset dir="${build.classes.dir}">
             <include name="**/*Test*.class"/>
             <exclude name="**/TripleDes*.class"/>

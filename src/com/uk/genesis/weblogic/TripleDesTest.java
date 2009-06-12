@@ -4,12 +4,16 @@ import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.types.FilterSet;
 
-import com.uk.genesis.internal.ant.TripleDes;
+import com.uk.genesis.weblogic.TripleDes;
 
 import junit.framework.TestCase;
 
 public class TripleDesTest extends TestCase {
-	
+
+        public void setUp() {
+
+        }
+
 	public void testValidatesFilternameSet() {
 		TripleDes task = new TripleDes();
 		task.setProject(new Project());
@@ -22,6 +26,7 @@ public class TripleDesTest extends TestCase {
 			assertTrue(ex.getMessage().contains("filtername"));
 		}
 	}
+
 	public void testValidatesEncryptionServiceSet() {
 		TripleDes task = new TripleDes();
 		task.setProject(new Project());
@@ -56,7 +61,7 @@ public class TripleDesTest extends TestCase {
 		TripleDes task = new TripleDes();
 		task.setProject(project);
 		task.setFiltername("test.filter");
-		task.setEncryptionservice("etc/testdata/encservice");
+		task.setEncryptionservice("./etc/testdata/encservice");
 		task.execute();	
 	}
 	
