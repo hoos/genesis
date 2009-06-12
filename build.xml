@@ -47,14 +47,27 @@
    -->
   <target name="init">
     <tstamp/>
+    <mkdir dir="${build.classes.dir}"/>
+    <available file="${lib.dir}/weblogic.jar" property="weblogic"/>
+  </target>
+
+  <!-- 
+   Compile the weblogic package.
+   -->
+  <target name="weblogic" if="weblogic" 
+          description="  - compiles the (weblogic) package">
+    <javac srcdir="${src.dir}" destdir="${build.classes.dir}"
+         optimize="${optimize}" debug="${debug}"  deprecation="${deprecation}"
+         bootclasspath="${bootclasspath}" classpathref="classpath">
+      <include name="**/weblogic/*"/>
+    </javac>
   </target>
 
   <!-- 
    Compile the java source code.
    -->
-  <target name="comp" depends="clean" 
+  <target name="comp" depends="clean, init, weblogic" 
           description="  - (comp)iles the source code">
-    <mkdir dir="${build.classes.dir}"/>
     <javac srcdir="${src.dir}" destdir="${build.classes.dir}"
            optimize="${optimize}" debug="${debug}"  deprecation="${deprecation}"
            bootclasspath="${bootclasspath}" classpathref="classpath">
