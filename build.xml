@@ -85,7 +85,8 @@
   <!-- 
    Create a distribution of Genesis.
    -->
-  <target name="dist" depends="comp">
+  <target name="dist" depends="comp"
+          description="  - creates a (dist)ribution package of genesis">
     <copy todir="${genesis.dir}">
       <fileset dir="${distribution.dir}"/>
       <fileset dir="${thirdparty.dir}"/>
