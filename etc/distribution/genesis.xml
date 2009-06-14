@@ -25,6 +25,17 @@
         </model:object>
     </model>
     <archetypes>
+      <archetype name="weblogic103" buildfile="archetypes/Oracle/weblogic103/build.xml">
+          <operation name="build" target="build" />
+          <operation name="package" target="package" />
+          <requires type="/Enterprise" qnameproperty="enterprise_id" nameproperty="enterprise_name" />
+          <requires type="/Enterprise/Datacentre" qnameproperty="datacentre_id" nameproperty="datacentre_name" />
+          <requires type="/Enterprise/Datacentre/Rack" qnameproperty="rack_id" nameproperty="rack_name" />
+          <requires type="/Enterprise/Datacentre/Rack/Node" qnameproperty="node_id" nameproperty="node_name" />
+          <requires type="/Enterprise/Service" qnameproperty="service_id" nameproperty="service_name" />
+          <requires type="/Enterprise/Service/Environment" qnameproperty="environment_id" nameproperty="environment_name" />
+          <requires type="/Enterprise/Service/Environment/Application" qnameproperty="application_id" nameproperty="application_name" />
+      </archetype>      
         <archetype name="MyApplication" buildfile="archetypes/MyApplication/build-MyApplication.xml">
             <operation name="build" target="build-MyApplication" />
             <operation name="package" target="package-MyApplication" />
