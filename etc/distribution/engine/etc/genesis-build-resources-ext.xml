@@ -1,5 +1,41 @@
 
 <project name="genesis-build-resources-ext">
+  
+  <!-- Define the rpm macro -->
+    <macrodef name="rpmbuild">
+        <attribute name="workdir" />
+        <attribute name="Summary" />
+        <attribute name="Name" />
+        <attribute name="Version" />
+        <attribute name="Release" />
+        <attribute name="License" default="GPL" />
+        <attribute name="Group" default="application" />
+        <attribute name="description"/>
+        <attribute name="prep"/>
+        <attribute name="setup"/>
+        <attribute name="build" />
+        <attribute name="install" />
+        <attribute name="files" />
+        <attribute name="defattr" />                              
+        <sequential>
+      <!-- Make the packaging directory -->
+            <mkdir dir="@{workdir}" />
+      <!-- Write out the pkginfo file -->
+            <echo file="@{workdir}/rpmbuild" append="false" message="Summary: @{Summary}${line.separator}" />
+            <echo file="@{workdir}/rpmbuild" append="true"  message="Name: @{Name}${line.separator}" />
+            <echo file="@{workdir}/rpmbuild" append="true"  message="Version: @{Version}${line.separator}" />
+            <echo file="@{workdir}/rpmbuild" append="true"  message="Release: @{Release}${line.separator}" />
+            <echo file="@{workdir}/rpmbuild" append="true"  message="License: @{License}${line.separator}" />
+            <echo file="@{workdir}/rpmbuild" append="true"  message="Group: @{Group}${line.separator}" />
+            <echo file="@{workdir}/rpmbuild" append="true"  message="description: @{description}${line.separator}" />
+            <echo file="@{workdir}/rpmbuild" append="true"  message="prep: @{prep}${line.separator}" />
+            <echo file="@{workdir}/rpmbuild" append="true"  message="setup: @{setup}${line.separator}" />
+            <echo file="@{workdir}/rpmbuild" append="true"  message="build: @{build}${line.separator}" />
+            <echo file="@{workdir}/rpmbuild" append="true"  message="install: @{install}${line.separator}" />
+            <echo file="@{workdir}/rpmbuild" append="true"  message="files: @{files}${line.separator}" />
+            <echo file="@{workdir}/rpmbuild" append="true"  message="defattr: @{build}${line.separator}" />                                    
+        </sequential>
+    </macrodef>
 
   <!-- Define the solaris pkginfo macro -->
     <macrodef name="pkginfo">
