@@ -200,6 +200,27 @@
       <!-- Builds the wlserver103 RPM package -->
       <target name="build-wlserver103-rpm-package" depends="build,os-check" if="isDarwin">  
         <echo message="Checking for Linux Platform"  
+        <rpmspec 
+          Summary="${Summary}"
+          Name="${Name}"
+          Version="${Version}"
+          Release="${Release}"
+          Source0="${Source0}"
+          License="${License}"
+          Group="${Group}"
+          description="${description}"
+          prep="${prep}"
+          setup="${setup}"
+          build="${build}"
+          install="${install}"
+          files="${files}"
+          defattr="${defattr}"/>  
+          
+          <rpmbuild
+            name="WLSConfig-${Global.Environment.Name}-${servername}"
+            workdir="${server.package.dir}"
+            pkgname="${pkgname}" />          
+            
       </target>
 
 
@@ -238,9 +259,6 @@
      <!-- wlserver103 specific protoype changes -->
      <exec dir="${server.package.dir}" executable="sed" input="${server.package.dir}/prototype.home" output="${server.package.dir}/prototype.genesis">
        <arg value="s/genesis genesis/bea mwadmin/g" />
-<!--
-       <arg value="s/genesis genesis/bea mwadmin/g" />
--->
      </exec>
      <exec dir="${server.package.dir}" executable="sed" input="${server.package.dir}/prototype.genesis" output="${server.package.dir}/prototype">
          <arg value="s/\/fs01\/app 0755 bea mwadmin/\/fs01\/app 0755 root other/g" />
