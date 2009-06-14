@@ -1,0 +1,116 @@
+####<28-Mar-2009 17:51:53 o'clock GMT> <Error> <Socket> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262713963> <BEA-000438> <Unable to load performance pack. Using Java I/O instead. Please ensure that libmuxer library is in :'/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/i386/client:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/i386:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/../lib/i386:/usr/java/packages/lib/i386:/lib:/usr/lib'
+> 
+####<28-Mar-2009 17:51:55 o'clock GMT> <Notice> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262715851> <BEA-090082> <Security initializing using security realm myrealm.> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262717593> <BEA-000365> <Server state changed to STANDBY> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262717593> <BEA-000365> <Server state changed to STARTING> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <Log Management> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262717660> <BEA-170027> <The Server has established connection with the Domain level Diagnostic Service successfully.> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262717723> <BEA-000365> <Server state changed to ADMIN> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262717724> <BEA-000365> <Server state changed to RESUMING> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Warning> <Server> <localhost> <AdminServer> <DynamicListenThread[Default]> <<WLS Kernel>> <> <> <1238262717740> <BEA-002611> <Hostname "10.211.55.7", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 169.254.62.162, 127.0.0.1> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262717741> <BEA-002613> <Channel "Default[4]" is now listening on 169.254.62.162:7001 for protocols iiop, t3, ldap, snmp, http.> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262717741> <BEA-002613> <Channel "Default[3]" is now listening on 172.16.39.1:7001 for protocols iiop, t3, ldap, snmp, http.> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262717741> <BEA-002613> <Channel "Default[1]" is now listening on 10.37.129.3:7001 for protocols iiop, t3, ldap, snmp, http.> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262717741> <BEA-002613> <Channel "Default[2]" is now listening on 172.16.145.1:7001 for protocols iiop, t3, ldap, snmp, http.> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262717742> <BEA-002613> <Channel "Default[5]" is now listening on 127.0.0.1:7001 for protocols iiop, t3, ldap, snmp, http.> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262717742> <BEA-002613> <Channel "Default" is now listening on 10.211.55.7:7001 for protocols iiop, t3, ldap, snmp, http.> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262717742> <BEA-000331> <Started WebLogic Admin Server "AdminServer" for domain "base_domain" running in Development Mode> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Warning> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[1]]> <<WLS Kernel>> <> <> <1238262717743> <BEA-002611> <Hostname "10.37.129.3", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 169.254.62.162, 127.0.0.1> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Warning> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[2]]> <<WLS Kernel>> <> <> <1238262717744> <BEA-002611> <Hostname "172.16.145.1", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 169.254.62.162, 127.0.0.1> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Warning> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[3]]> <<WLS Kernel>> <> <> <1238262717745> <BEA-002611> <Hostname "172.16.39.1", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 169.254.62.162, 127.0.0.1> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Warning> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[5]]> <<WLS Kernel>> <> <> <1238262717745> <BEA-002611> <Hostname "127.0.0.1", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 169.254.62.162, 127.0.0.1> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Warning> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[4]]> <<WLS Kernel>> <> <> <1238262717746> <BEA-002611> <Hostname "169.254.62.162", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 169.254.62.162, 127.0.0.1> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262717774> <BEA-000360> <Server started in RUNNING mode> 
+####<28-Mar-2009 17:51:57 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262717773> <BEA-000365> <Server state changed to RUNNING> 
+####<28-Mar-2009 17:52:22 o'clock GMT> <Warning> <netuix> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '4' for queue: 'weblogic.kernel.Default (self-tuning)'> <weblogic> <> <> <1238262742626> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=HomePage1.> 
+####<28-Mar-2009 17:53:50 o'clock GMT> <Warning> <RMI> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '6' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262830642> <BEA-080003> <RuntimeException thrown by rmi server: weblogic.corba.cos.naming.RootNamingContextImpl.resolve([Lorg.omg.CosNaming.NameComponent;)
+ org.omg.CORBA.NO_PERMISSION: User <anonymous> does not have permission on weblogic.management.mbeanservers to perform lookup operation.  vmcid: 0x0  minor code: 0  completed: No.
+org.omg.CORBA.NO_PERMISSION: User <anonymous> does not have permission on weblogic.management.mbeanservers to perform lookup operation.  vmcid: 0x0  minor code: 0  completed: No
+	at weblogic.corba.cos.naming.NamingContextImpl.throwNamingException(NamingContextImpl.java:512)
+	at weblogic.corba.cos.naming.NamingContextImpl.resolve(NamingContextImpl.java:169)
+	at weblogic.corba.cos.naming._NamingContextAnyImplBase._invoke(_NamingContextAnyImplBase.java:306)
+	at weblogic.corba.idl.CorbaServerRef.invoke(CorbaServerRef.java:249)
+	at weblogic.rmi.cluster.ClusterableServerRef.invoke(ClusterableServerRef.java:230)
+	at weblogic.rmi.internal.BasicServerRef$1.run(BasicServerRef.java:477)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:363)
+	at weblogic.security.service.SecurityManager.runAs(Unknown Source)
+	at weblogic.rmi.internal.BasicServerRef.handleRequest(BasicServerRef.java:473)
+	at weblogic.rmi.internal.wls.WLSExecuteRequest.run(WLSExecuteRequest.java:118)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:201)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:173)
+javax.naming.NoPermissionException: User <anonymous> does not have permission on weblogic.management.mbeanservers to perform lookup operation.
+	at weblogic.jndi.internal.ServerNamingNode.checkPermission(ServerNamingNode.java:443)
+	at weblogic.jndi.internal.ServerNamingNode.checkLookup(ServerNamingNode.java:423)
+	at weblogic.jndi.internal.ServerNamingNode.lookupHere(ServerNamingNode.java:180)
+	at weblogic.jndi.internal.BasicNamingNode.lookup(BasicNamingNode.java:206)
+	at weblogic.jndi.internal.BasicNamingNode.lookup(BasicNamingNode.java:214)
+	at weblogic.jndi.internal.BasicNamingNode.lookup(BasicNamingNode.java:214)
+	at weblogic.jndi.internal.WLEventContextImpl.lookup(WLEventContextImpl.java:254)
+	at weblogic.jndi.internal.WLContextImpl.lookup(WLContextImpl.java:380)
+	at javax.naming.InitialContext.lookup(InitialContext.java:392)
+	at weblogic.corba.cos.naming.NamingContextImpl.resolveObject(NamingContextImpl.java:454)
+	at weblogic.corba.cos.naming.NamingContextImpl.resolve(NamingContextImpl.java:167)
+	at weblogic.corba.cos.naming._NamingContextAnyImplBase._invoke(_NamingContextAnyImplBase.java:306)
+	at weblogic.corba.idl.CorbaServerRef.invoke(CorbaServerRef.java:249)
+	at weblogic.rmi.cluster.ClusterableServerRef.invoke(ClusterableServerRef.java:230)
+	at weblogic.rmi.internal.BasicServerRef$1.run(BasicServerRef.java:477)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:363)
+	at weblogic.security.service.SecurityManager.runAs(Unknown Source)
+	at weblogic.rmi.internal.BasicServerRef.handleRequest(BasicServerRef.java:473)
+	at weblogic.rmi.internal.wls.WLSExecuteRequest.run(WLSExecuteRequest.java:118)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:201)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:173)
+> 
+####<28-Mar-2009 17:54:08 o'clock GMT> <Warning> <Socket> <localhost> <AdminServer> <DynamicListenThread[Default[5]]> <<WLS Kernel>> <> <> <1238262848445> <BEA-000402> <There are: 5 active sockets, but the maximum number of socket reader threads allowed by the configuration is: 4. You may want to alter your configuration.> 
+####<28-Mar-2009 17:55:10 o'clock GMT> <Warning> <RMI> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262910572> <BEA-080003> <RuntimeException thrown by rmi server: weblogic.corba.cos.naming.RootNamingContextImpl.resolve([Lorg.omg.CosNaming.NameComponent;)
+ org.omg.CORBA.NO_PERMISSION: User <anonymous> does not have permission on weblogic.management.mbeanservers to perform lookup operation.  vmcid: 0x0  minor code: 0  completed: No.
+org.omg.CORBA.NO_PERMISSION: User <anonymous> does not have permission on weblogic.management.mbeanservers to perform lookup operation.  vmcid: 0x0  minor code: 0  completed: No
+	at weblogic.corba.cos.naming.NamingContextImpl.throwNamingException(NamingContextImpl.java:512)
+	at weblogic.corba.cos.naming.NamingContextImpl.resolve(NamingContextImpl.java:169)
+	at weblogic.corba.cos.naming._NamingContextAnyImplBase._invoke(_NamingContextAnyImplBase.java:306)
+	at weblogic.corba.idl.CorbaServerRef.invoke(CorbaServerRef.java:249)
+	at weblogic.rmi.cluster.ClusterableServerRef.invoke(ClusterableServerRef.java:230)
+	at weblogic.rmi.internal.BasicServerRef$1.run(BasicServerRef.java:477)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:363)
+	at weblogic.security.service.SecurityManager.runAs(Unknown Source)
+	at weblogic.rmi.internal.BasicServerRef.handleRequest(BasicServerRef.java:473)
+	at weblogic.rmi.internal.wls.WLSExecuteRequest.run(WLSExecuteRequest.java:118)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:201)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:173)
+javax.naming.NoPermissionException: User <anonymous> does not have permission on weblogic.management.mbeanservers to perform lookup operation.
+	at weblogic.jndi.internal.ServerNamingNode.checkPermission(ServerNamingNode.java:443)
+	at weblogic.jndi.internal.ServerNamingNode.checkLookup(ServerNamingNode.java:423)
+	at weblogic.jndi.internal.ServerNamingNode.lookupHere(ServerNamingNode.java:180)
+	at weblogic.jndi.internal.BasicNamingNode.lookup(BasicNamingNode.java:206)
+	at weblogic.jndi.internal.BasicNamingNode.lookup(BasicNamingNode.java:214)
+	at weblogic.jndi.internal.BasicNamingNode.lookup(BasicNamingNode.java:214)
+	at weblogic.jndi.internal.WLEventContextImpl.lookup(WLEventContextImpl.java:254)
+	at weblogic.jndi.internal.WLContextImpl.lookup(WLContextImpl.java:380)
+	at javax.naming.InitialContext.lookup(InitialContext.java:392)
+	at weblogic.corba.cos.naming.NamingContextImpl.resolveObject(NamingContextImpl.java:454)
+	at weblogic.corba.cos.naming.NamingContextImpl.resolve(NamingContextImpl.java:167)
+	at weblogic.corba.cos.naming._NamingContextAnyImplBase._invoke(_NamingContextAnyImplBase.java:306)
+	at weblogic.corba.idl.CorbaServerRef.invoke(CorbaServerRef.java:249)
+	at weblogic.rmi.cluster.ClusterableServerRef.invoke(ClusterableServerRef.java:230)
+	at weblogic.rmi.internal.BasicServerRef$1.run(BasicServerRef.java:477)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:363)
+	at weblogic.security.service.SecurityManager.runAs(Unknown Source)
+	at weblogic.rmi.internal.BasicServerRef.handleRequest(BasicServerRef.java:473)
+	at weblogic.rmi.internal.wls.WLSExecuteRequest.run(WLSExecuteRequest.java:118)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:201)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:173)
+> 
+####<28-Mar-2009 17:56:29 o'clock GMT> <Warning> <netuix> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '4' for queue: 'weblogic.kernel.Default (self-tuning)'> <weblogic> <> <> <1238262989676> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=ServerConfigGeneralTabPage&handle=com.bea.console.handles.JMXHandle%28%22com.bea%3AName%3DAdminServer%2CType%3DServer%22%29.> 
+####<28-Mar-2009 17:56:52 o'clock GMT> <Warning> <Management> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '4' for queue: 'weblogic.kernel.Default (self-tuning)'> <weblogic> <> <> <1238263012817> <BEA-141239> <The non-dynamic attribute DefaultIIOPPasswordEncrypted on weblogic.management.configuration.ServerMBeanImpl@45cbb1ca([base_domain]/Servers[AdminServer]) has been changed. This may require redeploying or rebooting configured entities> 
+####<28-Mar-2009 17:56:52 o'clock GMT> <Warning> <Management> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '4' for queue: 'weblogic.kernel.Default (self-tuning)'> <weblogic> <> <> <1238263012818> <BEA-141238> <A non-dynamic change has been made which affects the server AdminServer. This server must be rebooted in order to consume this change.> 
+####<28-Mar-2009 17:57:37 o'clock GMT> <Warning> <netuix> <localhost> <AdminServer> <[STANDBY] ExecuteThread: '8' for queue: 'weblogic.kernel.Default (self-tuning)'> <weblogic> <> <> <1238263057429> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=ServerConfigGeneralTabPage&handle=com.bea.console.handles.JMXHandle%28%22com.bea%3AName%3DAdminServer%2CType%3DServer%22%29.> 
+####<28-Mar-2009 17:57:43 o'clock GMT> <Warning> <netuix> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '8' for queue: 'weblogic.kernel.Default (self-tuning)'> <weblogic> <> <> <1238263063838> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/jsp/core/server/lifecycle/ConsoleShutdown.jsp.> 
+####<28-Mar-2009 17:57:48 o'clock GMT> <Alert> <WebLogicServer> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '8' for queue: 'weblogic.kernel.Default (self-tuning)'> <weblogic> <> <> <1238263068848> <BEA-000396> <Server shutdown has been requested by weblogic> 
+####<28-Mar-2009 17:57:48 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '8' for queue: 'weblogic.kernel.Default (self-tuning)'> <weblogic> <> <> <1238263068850> <BEA-000365> <Server state changed to FORCE_SUSPENDING> 
+####<28-Mar-2009 17:57:48 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '8' for queue: 'weblogic.kernel.Default (self-tuning)'> <weblogic> <> <> <1238263068857> <BEA-000365> <Server state changed to ADMIN> 
+####<28-Mar-2009 17:57:48 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '8' for queue: 'weblogic.kernel.Default (self-tuning)'> <weblogic> <> <> <1238263068858> <BEA-000365> <Server state changed to FORCE_SHUTTING_DOWN> 
+####<28-Mar-2009 17:57:48 o'clock GMT> <Notice> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[4]]> <<WLS Kernel>> <> <> <1238263068859> <BEA-002607> <Channel "Default[4]" listening on 169.254.62.162:7001 was shutdown.> 
+####<28-Mar-2009 17:57:48 o'clock GMT> <Notice> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[1]]> <<WLS Kernel>> <> <> <1238263068859> <BEA-002607> <Channel "Default[1]" listening on 10.37.129.3:7001 was shutdown.> 
+####<28-Mar-2009 17:57:48 o'clock GMT> <Notice> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[2]]> <<WLS Kernel>> <> <> <1238263068859> <BEA-002607> <Channel "Default[2]" listening on 172.16.145.1:7001 was shutdown.> 
+####<28-Mar-2009 17:57:48 o'clock GMT> <Notice> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[3]]> <<WLS Kernel>> <> <> <1238263068860> <BEA-002607> <Channel "Default[3]" listening on 172.16.39.1:7001 was shutdown.> 
+####<28-Mar-2009 17:57:48 o'clock GMT> <Notice> <Server> <localhost> <AdminServer> <DynamicListenThread[Default]> <<WLS Kernel>> <> <> <1238263068860> <BEA-002607> <Channel "Default" listening on 10.211.55.7:7001 was shutdown.> 
+####<28-Mar-2009 17:57:48 o'clock GMT> <Notice> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[5]]> <<WLS Kernel>> <> <> <1238263068860> <BEA-002607> <Channel "Default[5]" listening on 127.0.0.1:7001 was shutdown.> 

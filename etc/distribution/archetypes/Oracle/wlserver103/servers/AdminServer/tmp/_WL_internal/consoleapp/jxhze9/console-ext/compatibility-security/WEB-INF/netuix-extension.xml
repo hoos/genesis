@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-portal-extension
+  xmlns="http://www.bea.com/servers/portal/weblogic-portal/8.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.bea.com/servers/portal/weblogic-portal/8.0 netuix-extension-1_0_0.xsd">
+
+  <provider-info>
+    <title>Compatibility Security Pages</title>
+    <version>10.3</version>
+    <description>This extension adds console pages to support configuring, monitoring, and controlling older security configurations from upgraded WebLogic Server 7.1 domains.</description>
+    <author>Oracle</author>
+    <support-url>http://www.bea.com</support-url>
+  </provider-info>
+
+  <portal-file>/console.portal</portal-file>
+
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ContentBook"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/security/compatibility/SecurityCompatibility.book" />
+  </book-extension>
+
+  <book-extension>
+    <book-location>
+      <parent-label-location label="CoreDomainConfigGeneralBook"/>
+      <book-insertion-point page-label="DomainSecurityconfigTabPage" action="append"/>
+    </book-location>
+  <page-content content-uri="/PortalConfig/core/domain/DomainCompatibilitySecurity.book" />
+  </book-extension>
+  
+</weblogic-portal-extension>

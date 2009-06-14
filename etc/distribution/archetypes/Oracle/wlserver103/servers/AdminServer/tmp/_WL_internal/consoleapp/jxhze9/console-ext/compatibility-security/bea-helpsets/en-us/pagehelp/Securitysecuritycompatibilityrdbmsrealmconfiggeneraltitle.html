@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="date last modified" content="July 25 2008">
+<meta name="help ID" content="Security.security.compatibility.rdbmsrealmconfiggeneral.title">
+<title>RDBMS Realm: General</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">RDBMS Realm: General</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>The RDBMS security realm is an Oracle-provided custom security realm that
+    stores users, groups, and access control lists (ACLs) in a relational
+    database. Use this page to define a name for the realm and specify the
+    name of the WebLogic class that implements the RDBMS security realm. The
+    Java class needs to be in the CLASSPATH of WebLogic Server.</p>
+<p>When using the RDBMS security realm, you must configure a Caching
+    realm. When configuring the Caching realm, select the RDBMS security realm
+    as the Basic realm. The Basic attribute defines the association between
+    the Caching realm and the RDBMS security realm.</p>
+<p>To use the RDBMS security realm, you need to use Compatibility
+    security. The use of the RDBMS security realm is deprecated in WebLogic
+    Server 7.0.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.rdbmsrealmconfiggeneral.name.label">Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The name of this RDBMS realm.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.rdbmsrealmconfiggeneral.realmclassname.label">Realm Class</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The name of the Java class that implements the RDBMS security
+        realm.</p>
+<p>This class should be included in the CLASSPATH of WebLogic
+        Server.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.ConfigureRDBMSSecurityRealms">Configure RDBMS
+  security realms</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.DefineRDBMSSecurityRealmDatabaseAttributes">Define RDBMS security
+  realm database attributes</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.DefineRDBMSSecurityRealmDatabaseSchema">Define RDBMS security
+  realm database schema</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.ConfigureCachingRealms">Configure Caching
+  realms</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://edocs.bea.com/wls/docs103/secmanage/compat.html">Using Compatibility
+    Security</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

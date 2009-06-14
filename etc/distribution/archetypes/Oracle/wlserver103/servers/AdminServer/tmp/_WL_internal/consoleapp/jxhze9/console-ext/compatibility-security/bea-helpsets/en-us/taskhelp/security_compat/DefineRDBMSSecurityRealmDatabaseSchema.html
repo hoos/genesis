@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="July 25 2008" name="date last modified">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Define RDBMS security
+  realm database schema</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="security_6x1117368"></a>
+
+
+  <h1 class="topictitle1">Define RDBMS security
+  realm database schema</h1>
+
+  <div><!--topic body-->
+    <div class="prereq"><p class="sectiontitle"><b>
+        Before you begin
+      </b></p>
+      <p>Configure an RDBMS security realm. See <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=security_compat.ConfigureRDBMSSecurityRealms">Configure RDBMS
+  security realms</a>.</p>
+    </div>
+
+    <div><br>
+      <p><a name="security_6x1117368__security_6x1129357"></a>To define the database
+      schema used by the RDBMS security realm:</p>
+    </div>
+
+    <ol>
+      <li>
+        <span><a name="security_6x1117368__security_6x1113261"></a>In the left
+        pane, expand <span>Compatibility Security</span> &gt;
+        <span>Realms</span> and click the name of the RDBMS security
+        realm.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1117368__security_6x1117623"></a>Under
+        <b>Configuration &gt;</b>
+        <b>Schema</b> for the RDBMS security realm, define the
+        schema used to store Users, Groups, and ACLs in the database in the
+        Schema Properties box.</span>
+
+         
+           The following code example contains the database statements entered in the Schema properties for the RDBMS code example shipped with WebLogic Server in the 
+
+          <tt>/samples/examples/security/rdbmsrealm</tt>
+
+           directory. 
+        
+
+         
+          <pre>
+"getGroupNewStatement=true;getUser=SELECT U_NAME, U_PASSWORD FROM users WHERE U_NAME = ?;
+getGroupMembers=SELECT GM_GROUP, GM_MEMBER from groupmembers WHERE GM_GROUP = ?;
+getAclEntries=SELECT A_NAME, A_PRINCIPAL, A_PERMISSION FROM aclentries WHERE A_NAME = ? ORDER BY A_PRINCIPAL;
+getUsers=SELECT U_NAME, U_PASSWORD FROM users;
+getGroups=SELECT GM_GROUP, GM_MEMBER FROM groupmembers;
+getAcls=SELECT A_NAME, A_PRINCIPAL, A_PERMISSION FROM aclentries ORDER BY A_NAME, A_PRINCIPAL;
+getPermissions=SELECT DISTINCT A_PERMISSION FROM aclentries;
+getPermission=SELECT DISTINCT A_PERMISSION FROM aclentries WHERE A_PERMISSION = ?;
+newUser=INSERT INTO users VALUES ( ? , ? );
+addGroupMember=INSERT INTO groupmembers VALUES ( ? , ? );
+removeGroupMember=DELETE FROM groupmembers WHERE GM_GROUP = ? AND GM_MEMBER = ?;
+deleteUser1=DELETE FROM users WHERE U_NAME = ?;
+deleteUser2=DELETE FROM groupmembers WHERE GM_MEMBER = ?;
+deleteUser3=DELETE FROM aclentries WHERE A_PRINCIPAL = ?;
+deleteGroup1=DELETE FROM groupmembers WHERE GM_GROUP = ?;
+deleteGroup2=DELETE FROM aclentries WHERE A_PRINCIPAL = ?"</pre>
+        
+      </li>
+
+      <li>
+        <span><a name="security_6x1117368__security_6x1125869"></a>Click
+        <b>Save</b> to save your changes.</span>
+      </li>
+    </ol>
+  </div>
+
+
+</body></html>

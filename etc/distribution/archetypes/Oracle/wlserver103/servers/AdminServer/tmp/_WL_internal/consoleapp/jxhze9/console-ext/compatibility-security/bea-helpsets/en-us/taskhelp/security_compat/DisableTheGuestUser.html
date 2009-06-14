@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="July 25 2008" name="date last modified">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Disable the Guest
+  user</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="security_6x1106222"></a>
+
+
+  <h1 class="topictitle1">Disable the Guest
+  user</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="security_6x1106222__security_6x1119868"></a>For a more secure
+      deployment, Oracle recommends running WebLogic Server with the <code>guest</code> account disabled.</p>
+
+      <p><a name="security_6x1106222__security_6x1129415"></a>To disable the Guest
+      user:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="security_6x1106222__security_6x1132962"></a>In the left
+        pane, select your domain (for example, mydomain).</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1106222__security_6x1132963"></a>Select
+        <b>Compatibility Security</b> &gt;
+        <b>General</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1106222__security_6x1125992"></a>Select the
+        <b>Guest Disable</b> checkbox.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1106222__security_6x1125993"></a>Reboot
+        WebLogic Server.</span>
+
+         
+          <p><a name="security_6x1106222__security_6x1119885"></a>Disabling the <code>guest</code> account just disables
+          the ability to log in into the account <code>guest</code>; it does not disable
+          the ability for unauthenticated users to access a WebLogic Server
+          deployment.</p>
+        
+      </li>
+    </ol>
+  </div>
+
+
+</body></html>

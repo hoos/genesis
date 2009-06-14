@@ -1,0 +1,215 @@
+####<28-Mar-2009 17:42:10 o'clock GMT> <Info> <WebLogicServer> <localhost> <> <main> <> <> <> <1238262130673> <BEA-000377> <Starting WebLogic Server with Java HotSpot(TM) Client VM Version 1.6.0_03-p3-landonf_03_feb_2008_02_12-b00 from Sun Microsystems Inc.> 
+####<28-Mar-2009 17:42:10 o'clock GMT> <Info> <Management> <localhost> <> <main> <> <> <> <1238262130853> <BEA-141107> <Version: WebLogic Server 10.3  Fri Jul 25 16:30:05 EDT 2008 1137967 > 
+####<28-Mar-2009 17:42:11 o'clock GMT> <Notice> <WebLogicServer> <localhost> <> <main> <> <> <> <1238262131755> <BEA-000365> <Server state changed to STARTING> 
+####<28-Mar-2009 17:42:11 o'clock GMT> <Info> <WorkManager> <localhost> <> <main> <> <> <> <1238262131763> <BEA-002900> <Initializing self-tuning thread pool> 
+####<28-Mar-2009 17:42:11 o'clock GMT> <Info> <WebLogicServer> <localhost> <> <main> <> <> <> <1238262131834> <BEA-000214> <WebLogic Server "AdminServer" version:
+WebLogic Server 10.3  Fri Jul 25 16:30:05 EDT 2008 1137967  (c) 1995, 1996, 1997, 1998 WebLogic, Inc.
+ (c) 1999, 2000, 2001 BEA Systems, Inc.> 
+####<28-Mar-2009 17:42:11 o'clock GMT> <Notice> <Log Management> <localhost> <> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <> <> <> <1238262131887> <BEA-170019> <The server log file /Users/mikemochan/dev/bea/wls103/user_projects/domains/base_domain/servers/AdminServer/logs/AdminServer.log is opened. All server side log events will be written to this file.> 
+####<28-Mar-2009 17:42:11 o'clock GMT> <Info> <Log Management> <localhost> <> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <> <> <> <1238262131890> <BEA-170023> <The Server Logging is initialized with Java Logging API implementation.> 
+####<28-Mar-2009 17:42:11 o'clock GMT> <Info> <Diagnostics> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262131962> <BEA-320001> <The ServerDebug service initialized successfully.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Store> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132012> <BEA-280050> <Persistent store "WLS_DIAGNOSTICS" opened: directory="/Users/mikemochan/dev/bea/wls103/user_projects/domains/base_domain/servers/AdminServer/data/store/diagnostics" writePolicy="Disabled" blockSize=512 directIO=false driver="NIO"> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132103> <BEA-002622> <The protocol "t3" is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132103> <BEA-002622> <The protocol "t3s" is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132103> <BEA-002622> <The protocol "http" is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132103> <BEA-002622> <The protocol "https" is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132104> <BEA-002622> <The protocol "iiop" is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132104> <BEA-002622> <The protocol "iiops" is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132105> <BEA-002622> <The protocol "ldap" is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132105> <BEA-002622> <The protocol "ldaps" is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132106> <BEA-002622> <The protocol "cluster" is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132107> <BEA-002622> <The protocol "clusters" is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132110> <BEA-002622> <The protocol "snmp" is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132111> <BEA-002622> <The protocol "admin" is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132111> <BEA-002624> <The administration protocol is "t3s" and is now configured.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <RJVM> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132125> <BEA-000570> <Network Configuration for Channel "AdminServer"
+ Listen Address		 :7001
+ Public Address		 N/A
+ Http Enabled		 true
+ Tunneling Enabled	 false
+ Outbound Enabled	 false
+ Admin Traffic Enabled	 true> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132148> <BEA-002609> <Channel Service initialized.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Error> <Socket> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132156> <BEA-000438> <Unable to load performance pack. Using Java I/O instead. Please ensure that libmuxer library is in :'/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/i386/client:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/i386:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/../lib/i386:/usr/java/packages/lib/i386:/lib:/usr/lib'
+> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <Socket> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132156> <BEA-000447> <Native IO Disabled. Using Java IO.> 
+####<28-Mar-2009 17:42:12 o'clock GMT> <Info> <IIOP> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262132332> <BEA-002014> <IIOP subsystem enabled.> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133071> <BEA-000000> <Starting OpenJPA 1.1.0> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133121> <BEA-000000> <StoreServiceImpl.initJDO - StoreService is initialized with Id = ldap_XInivu9ijoqd+93304JxKuOn+Zg=> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133155> <BEA-090516> <The Authenticator provider has preexisting LDAP data.> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133331> <BEA-090516> <The Authorizer provider has preexisting LDAP data.> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133430> <BEA-000000> <Parsing class "com.bea.common.security.store.data.Top".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133445> <BEA-000000> <Parsing class "com.bea.common.security.store.data.DomainRealmScope".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133447> <BEA-000000> <Parsing class "com.bea.common.security.store.data.RegistryScope".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133448> <BEA-000000> <Parsing class "com.bea.common.security.store.data.PKITypeScope".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133450> <BEA-000000> <Parsing class "com.bea.common.security.store.data.XACMLTypeScope".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133451> <BEA-000000> <Parsing class "com.bea.common.security.store.data.BEASAMLPartner".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133452> <BEA-000000> <Parsing class "com.bea.common.security.store.data.Credential".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133453> <BEA-000000> <Parsing class "com.bea.common.security.store.data.CredentialMap".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133456> <BEA-000000> <Parsing class "com.bea.common.security.store.data.XACMLEntry".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133459> <BEA-000000> <Parsing class "com.bea.common.security.store.data.BEASAMLAssertingParty".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133468> <BEA-000000> <Parsing class "com.bea.common.security.store.data.BEASAMLRelyingParty".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133476> <BEA-000000> <Parsing class "com.bea.common.security.store.data.PasswordCredential".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133478> <BEA-000000> <Parsing class "com.bea.common.security.store.data.UserPasswordCredential".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133481> <BEA-000000> <Parsing class "com.bea.common.security.store.data.PasswordCredentialMap".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133485> <BEA-000000> <Parsing class "com.bea.common.security.store.data.ResourceMap".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133490> <BEA-000000> <Parsing class "com.bea.common.security.store.data.PKIResourceMap".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133494> <BEA-000000> <Parsing class "com.bea.common.security.store.data.WLSCertRegEntry".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133499> <BEA-000000> <Parsing class "com.bea.common.security.store.data.WLSCredMapCollectionInfo".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133501> <BEA-000000> <Parsing class "com.bea.common.security.store.data.WLSPolicyCollectionInfo".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133504> <BEA-000000> <Parsing class "com.bea.common.security.store.data.WLSRoleCollectionInfo".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133506> <BEA-000000> <Parsing class "com.bea.common.security.store.data.XACMLAuthorizationPolicy".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133509> <BEA-000000> <Parsing class "com.bea.common.security.store.data.XACMLRoleAssignmentPolicy".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133513> <BEA-000000> <Parsing class "com.bea.common.security.store.data.Endpoint".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133516> <BEA-000000> <Parsing class "com.bea.common.security.store.data.Partner".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133521> <BEA-000000> <Parsing class "com.bea.common.security.store.data.SPPartner".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133528> <BEA-000000> <Parsing class "com.bea.common.security.store.data.IdPPartner".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133535> <BEA-000000> <Parsing class "com.bea.common.security.store.data.SAML2CacheEntry".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133537> <BEA-000000> <Parsing class "com.bea.common.security.store.data.SchemaVersion".> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133910> <BEA-090516> <The CredentialMapper provider has preexisting LDAP data.> 
+####<28-Mar-2009 17:42:13 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262133919> <BEA-090516> <The RoleMapper provider has preexisting LDAP data.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134050> <BEA-090093> <No pre-WLS 8.1 Keystore providers are configured for server AdminServer for security realm myrealm.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Notice> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134051> <BEA-090082> <Security initializing using security realm myrealm.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <Server> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134349> <BEA-002622> <The protocol "[snmp, https, t3, cluster-broadcast-secure, ldaps, cluster-broadcast, ldap, http, iiop, admin, t3s, iiops]" is now configured.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <XML> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134356> <BEA-130036> <Initializing XMLRegistry.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <messaging.interception> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134362> <BEA-400000> <Initializing message interception service> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <Store> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134491> <BEA-280050> <Persistent store "_WLS_AdminServer" opened: directory="/Users/mikemochan/dev/bea/wls103/user_projects/domains/base_domain/servers/AdminServer/data/store/default" writePolicy="Direct-Write" blockSize=512 directIO=false driver="NIO"> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JDBC> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134648> <BEA-001135> <Initializing the JDBC service.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JDBC> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134653> <BEA-001137> <Initialization complete.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JDBC> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134653> <BEA-001138> <Resuming the JDBC service.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JDBC> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134654> <BEA-001140> <Resume complete.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <Connector> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134672> <BEA-190000> <Initializing J2EE Connector Service> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <Connector> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134674> <BEA-190001> <J2EE Connector Service initialized successfully> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134747> <BEA-040305> <JMS service is initialized and in standby mode.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134778> <BEA-040090> <Deployed 8 default connection factories.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134802> <BEA-040407> <Default connection factory "DefaultXAConnectionFactory2" with its JNDI name "weblogic.jms.XAConnectionFactory2" is started.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134802> <BEA-040407> <Default connection factory "MessageDrivenBeanConnectionFactory" with its JNDI name "weblogic.jms.MessageDrivenBeanConnectionFactory" is started.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134802> <BEA-040407> <Default connection factory "DefaultConnectionFactory" with its JNDI name "weblogic.jms.ConnectionFactory" is started.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134803> <BEA-040407> <Default connection factory "TopicConnectionFactory" with its JNDI name "javax.jms.TopicConnectionFactory" is started.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134803> <BEA-040407> <Default connection factory "DefaultXAConnectionFactory" with its JNDI name "weblogic.jms.XAConnectionFactory" is started.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134803> <BEA-040407> <Default connection factory "DefaultXAConnectionFactory0" with its JNDI name "weblogic.jms.XAConnectionFactory0" is started.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134803> <BEA-040407> <Default connection factory "QueueConnectionFactory" with its JNDI name "javax.jms.QueueConnectionFactory" is started.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134803> <BEA-040407> <Default connection factory "DefaultXAConnectionFactory1" with its JNDI name "weblogic.jms.XAConnectionFactory1" is started.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134804> <BEA-040306> <JMS service is active now.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <HTTP> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134826> <BEA-101128> <Initializing HTTP services.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <HTTP> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134838> <BEA-101135> <AdminServer is the default Web server.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <HTTP> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134839> <BEA-101052> <[HttpServer (defaultWebserver) name: AdminServer] Initialized> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <HTTP> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134840> <BEA-101129> <Initializing the Web application container.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <WTC> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134865> <BEA-180046> <INFO: Logging service enabled.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <WTC> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134867> <BEA-180046> <INFO: TC Configuration Helper instantiated!> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <WTC> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134869> <BEA-180046> <INFO: TC Task Manager instantiated!> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <WTC> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134871> <BEA-180046> <INFO: TC security service instantiated!> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <WTC> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134873> <BEA-180046> <INFO: TC Outbound routing service instantiated!> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <WTC> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134875> <BEA-180046> <INFO: TC Transaction service instantiated!> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <WebService> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134883> <BEA-220031> <The server does not support reliable SOAP messaging.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <WebService> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134883> <BEA-220027> <Web Service reliable agents are started on the server.> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMX> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134920> <BEA-149512> <JMX Connector Server started at service:jmx:iiop://172.16.145.1:7001/jndi/weblogic.management.mbeanservers.runtime .> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <JMX> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134923> <BEA-149512> <JMX Connector Server started at service:jmx:iiop://172.16.145.1:7001/jndi/weblogic.management.mbeanservers.edit .> 
+####<28-Mar-2009 17:42:14 o'clock GMT> <Info> <Management> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262134931> <BEA-141187> <Java system properties are defined as follows: 
+file.encoding = UTF-8
+file.encoding.pkg = sun.io
+file.separator = /
+java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+java.awt.printerjob = sun.print.PSPrinterJob
+java.class.path = :/Users/mikemochan/dev/bea/wls103/patch_wls1030/profiles/default/sys_manifest_classpath/weblogic_patch.jar:/Users/mikemochan/dev/bea/wls103/patch_cie660/profiles/default/sys_manifest_classpath/weblogic_patch.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/lib/tools.jar:/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/weblogic_sp.jar:/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/weblogic.jar:/Users/mikemochan/dev/bea/wls103/modules/features/weblogic.server.modules_10.3.0.0.jar:/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/webservices.jar:/Users/mikemochan/dev/bea/wls103/modules/org.apache.ant_1.6.5/lib/ant-all.jar:/Users/mikemochan/dev/bea/wls103/modules/net.sf.antcontrib_1.0.0.0_1-0b2/lib/ant-contrib.jar::/Users/mikemochan/dev/bea/wls103/wlserver_10.3/common/eval/pointbase/lib/pbclient57.jar:/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/xqrl.jar::
+java.class.version = 50.0
+java.endorsed.dirs = /Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/endorsed
+java.ext.dirs = /Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/ext:/usr/java/packages/lib/ext
+java.home = /Users/mikemochan/dev/soylatte16-i386-1.0.2/jre
+java.io.tmpdir = /var/tmp/
+java.library.path = /Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/i386/client:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/i386:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/../lib/i386:/usr/java/packages/lib/i386:/lib:/usr/lib
+java.naming.factory.initial = weblogic.jndi.WLInitialContextFactory
+java.naming.factory.url.pkgs = weblogic.jndi.factories:weblogic.corba.j2ee.naming.url:weblogic.jndi.factories:weblogic.corba.j2ee.naming.url
+java.protocol.handler.pkgs = weblogic.net
+java.runtime.name = Java(TM) SE Runtime Environment
+java.runtime.version = 1.6.0_03-p3-landonf_03_feb_2008_02_12-b00
+java.security.policy = /Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/weblogic.policy
+java.specification.name = Java Platform API Specification
+java.specification.vendor = Sun Microsystems Inc.
+java.specification.version = 1.6
+java.vendor = Sun Microsystems Inc.
+java.vendor.url = http://java.sun.com/
+java.vendor.url.bug = http://java.sun.com/cgi-bin/bugreport.cgi
+java.version = 1.6.0_03-p3
+java.vm.info = mixed mode
+java.vm.name = Java HotSpot(TM) Client VM
+java.vm.specification.name = Java Virtual Machine Specification
+java.vm.specification.vendor = Sun Microsystems Inc.
+java.vm.specification.version = 1.0
+java.vm.vendor = Sun Microsystems Inc.
+java.vm.version = 1.6.0_03-p3-landonf_03_feb_2008_02_12-b00
+javax.rmi.CORBA.PortableRemoteObjectClass = weblogic.iiop.PortableRemoteObjectDelegateImpl
+javax.rmi.CORBA.UtilClass = weblogic.iiop.UtilDelegateImpl
+javax.xml.rpc.ServiceFactory = weblogic.webservice.core.rpc.ServiceFactoryImpl
+javax.xml.soap.MessageFactory = weblogic.webservice.core.soap.MessageFactoryImpl
+org.omg.CORBA.ORBClass = weblogic.corba.orb.ORB
+org.omg.CORBA.ORBSingletonClass = weblogic.corba.orb.ORB
+org.xml.sax.driver = weblogic.xml.jaxp.RegistryXMLReader
+org.xml.sax.parser = weblogic.xml.jaxp.RegistryParser
+os.arch = i386
+os.name = Darwin
+os.version = 9.6.0
+path.separator = :
+platform.home = /Users/mikemochan/dev/bea/wls103/wlserver_10.3
+sun.arch.data.model = 32
+sun.boot.class.path = /Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/resources.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/rt.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/sunrsasign.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/jsse.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/jce.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/charsets.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/classes
+sun.boot.library.path = /Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/i386
+sun.cpu.endian = little
+sun.io.unicode.encoding = UnicodeBig
+sun.java.launcher = SUN_STANDARD
+sun.jnu.encoding = UTF-8
+sun.management.compiler = HotSpot Client Compiler
+sun.os.patch.level = unknown
+user.country = GB
+user.dir = /Users/mikemochan/dev/bea/wls103/user_projects/domains/base_domain
+user.home = /Users/mikemochan
+user.language = en
+user.name = mikemochan
+user.timezone = Europe/London
+vde.home = /Users/mikemochan/dev/bea/wls103/user_projects/domains/base_domain/servers/AdminServer/data/ldap
+weblogic.Name = AdminServer
+weblogic.classloader.preprocessor = weblogic.diagnostics.instrumentation.DiagnosticClassPreProcessor
+weblogic.ext.dirs = /Users/mikemochan/dev/bea/wls103/patch_wls1030/profiles/default/sysext_manifest_classpath:/Users/mikemochan/dev/bea/wls103/patch_cie660/profiles/default/sysext_manifest_classpath
+weblogic.home = /Users/mikemochan/dev/bea/wls103/wlserver_10.3/server
+weblogic.management.discover = true
+wls.home = /Users/mikemochan/dev/bea/wls103/wlserver_10.3/server
+> 
+####<28-Mar-2009 17:42:15 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262135869> <BEA-000365> <Server state changed to STANDBY> 
+####<28-Mar-2009 17:42:15 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262135869> <BEA-000365> <Server state changed to STARTING> 
+####<28-Mar-2009 17:42:15 o'clock GMT> <Info> <SAFService> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262135883> <BEA-281003> <SAF Service has been initialized.> 
+####<28-Mar-2009 17:42:15 o'clock GMT> <Info> <SAFService> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262135885> <BEA-281002> <SAF Service has been started.> 
+####<28-Mar-2009 17:42:15 o'clock GMT> <Info> <Deployer> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262135890> <BEA-149209> <Resuming.> 
+####<28-Mar-2009 17:42:15 o'clock GMT> <Info> <Diagnostics> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262135933> <BEA-320000> <The Diagnostics subsystem is initializing on Server AdminServer.> 
+####<28-Mar-2009 17:42:15 o'clock GMT> <Info> <Log Management> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262135939> <BEA-170025> <Initialized Domain Logging. Domain log events will be written to /Users/mikemochan/dev/bea/wls103/user_projects/domains/base_domain/servers/AdminServer/logs/base_domain.log.> 
+####<28-Mar-2009 17:42:15 o'clock GMT> <Notice> <Log Management> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262135940> <BEA-170027> <The Server has established connection with the Domain level Diagnostic Service successfully.> 
+####<28-Mar-2009 17:42:15 o'clock GMT> <Info> <Diagnostics> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262135971> <BEA-320077> <Initialized the Diagnostic Accessor Service.> 
+####<28-Mar-2009 17:42:15 o'clock GMT> <Info> <JMX> <localhost> <AdminServer> <[STANDBY] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262135996> <BEA-149512> <JMX Connector Server started at service:jmx:iiop://172.16.145.1:7001/jndi/weblogic.management.mbeanservers.domainruntime .> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136003> <BEA-000365> <Server state changed to ADMIN> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136003> <BEA-000365> <Server state changed to RESUMING> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <Management> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262136006> <BEA-141052> <The auto deployment poller has started.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Emergency> <Security> <localhost> <AdminServer> <[ACTIVE] ExecuteThread: '0' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1238262136015> <BEA-090087> <Server failed to bind to the configured Admin port. The port may already be used by another process.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Error> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[2]]> <<WLS Kernel>> <> <> <1238262136016> <BEA-002606> <Unable to create a server socket for listening on channel "Default[2]". The address 169.254.105.11 might be incorrect or another process is using port 7001: java.net.BindException: Address already in use.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Error> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[3]]> <<WLS Kernel>> <> <> <1238262136016> <BEA-002606> <Unable to create a server socket for listening on channel "Default[3]". The address 127.0.0.1 might be incorrect or another process is using port 7001: java.net.BindException: Address already in use.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Error> <Server> <localhost> <AdminServer> <DynamicListenThread[Default[1]]> <<WLS Kernel>> <> <> <1238262136017> <BEA-002606> <Unable to create a server socket for listening on channel "Default[1]". The address 172.16.39.1 might be incorrect or another process is using port 7001: java.net.BindException: Address already in use.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Error> <Server> <localhost> <AdminServer> <DynamicListenThread[Default]> <<WLS Kernel>> <> <> <1238262136017> <BEA-002606> <Unable to create a server socket for listening on channel "Default". The address 172.16.145.1 might be incorrect or another process is using port 7001: java.net.BindException: Address already in use.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Critical> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136017> <BEA-000362> <Server failed. Reason: Server failed to bind to any usable port. See preceeding log message for details.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136018> <BEA-000365> <Server state changed to FAILED> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Error> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136018> <BEA-000383> <A critical service failed. The server will shut itself down> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Notice> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136019> <BEA-000365> <Server state changed to FORCE_SHUTTING_DOWN> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <JMX> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136021> <BEA-149513> <JMX Connector Server stopped at service:jmx:iiop://172.16.145.1:7001/jndi/weblogic.management.mbeanservers.domainruntime .> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <Diagnostics> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136022> <BEA-320002> <The Diagnostics subsystem is stopping on Server AdminServer.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <SAFService> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136022> <BEA-281004> <SAF Service has been suspended.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <SAFService> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136023> <BEA-281005> <SAF Service has been shut down.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <JMX> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136029> <BEA-149513> <JMX Connector Server stopped at service:jmx:iiop://172.16.145.1:7001/jndi/weblogic.management.mbeanservers.edit .> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <JMX> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136029> <BEA-149513> <JMX Connector Server stopped at service:jmx:iiop://172.16.145.1:7001/jndi/weblogic.management.mbeanservers.runtime .> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <WebService> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136029> <BEA-220028> <Web Service reliable agents are suspended.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <WebService> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136030> <BEA-220029> <Web Service reliable agents are shut down.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <MessagingBridge> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136034> <BEA-200001> <The messaging bridge service has successfully shut down.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136131> <BEA-040308> <JMS service is suspending.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136140> <BEA-040107> <Undeployed 8 default connection factories.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <JMS> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136141> <BEA-040015> <JMS shutdown is complete.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <JDBC> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136141> <BEA-001144> <Force Suspending the JDBC service.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <JDBC> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136141> <BEA-001146> <Force suspend of the JDBC service completed.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <JDBC> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136142> <BEA-001147> <Shutting down the JDBC service.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <JDBC> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136142> <BEA-001149> <Shutdown of the JDBC service completed.> 
+####<28-Mar-2009 17:42:16 o'clock GMT> <Info> <WebLogicServer> <localhost> <AdminServer> <main> <<WLS Kernel>> <> <> <1238262136174> <BEA-000236> <Stopping execute threads.> 

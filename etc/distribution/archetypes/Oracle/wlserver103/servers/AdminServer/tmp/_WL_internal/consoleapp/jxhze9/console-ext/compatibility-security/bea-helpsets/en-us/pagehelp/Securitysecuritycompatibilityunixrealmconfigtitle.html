@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="date last modified" content="July 25 2008">
+<meta name="help ID" content="Security.security.compatibility.unixrealmconfig.title">
+<title>Unix Realm: Configuration</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Unix Realm: Configuration</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>The UNIX security realm executes a small native program, wlauth, to
+    look up users and groups and to authenticate users on the basis of their
+    UNIX login names and passwords. The UNIX security realm can only be used
+    on the Solaris and Linux platforms. Use this page to define a name for the
+    realm and the name of the program used to authenticate users in the UNIX
+    security realm.</p>
+<p>When using the UNIX security realm, you must configure a Caching realm.
+    When configuring the Caching realm, select the UNIX security realm as the
+    Basic realm. The Basic attribute defines the association between the
+    Caching realm and the UNIX security realm.</p>
+<p>To use the UNIX security realm, you need to use Compatibility security.
+    The use of the UNIX security realm is deprecated in this release of
+    WebLogic Server.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.unixrealmconfig.name.label">Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getName"></a><a name="Name"></a>
+<p>The user-specified name of this MBean instance.</p>
+<p>This name is included as one of the key properties in the 
+MBean's <code>javax.management.ObjectName</code>:<br> 
+ 
+<code>Name=<i>user-specified-name</i></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.unixrealmconfig.authprogram.label">Auth Program</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getAuthProgram"></a><a name="AuthProgram"></a>
+<p>The name of the program used to authenticate users in the UNIX 
+security realm. In most cases, the name of the program is 
+<tt>wlauth</tt>. The authentication program must run <tt>setuid 
+root</tt>.</p>
+<ul> 
+
+<li> 
+
+<p>If the program name is <tt>wlauth</tt> and is in the 
+<tt>CLASSPATH</tt>, you need not explicitly set this attribute; 
+leave the attribute blank.</p> 
+
+</li> 
+ 
+
+<li> 
+
+<p>If the program name is different than <tt>wlauth</tt>, ir of it 
+is not in the <tt>CLASSPATH</tt> of WebLogic Server, specify this 
+attribute.</p> 
+
+</li> 
+
+</ul>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.unixrealmconfig.realmclassname.label">Realm Classname</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRealmClassName"></a><a name="RealmClassName"></a>
+<p>Gets the realmClassName attribute of the BasicRealmMBean 
+object</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.ConfigureWlauthForUNIXSecurityRealms">Configure wlauth for
+  UNIX security realms</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.ConfiguringUNIXSecurityRealms">Configure UNIX
+  security realms</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://edocs.bea.com/wls/docs103/secmanage/compat.html">Using Compatibility
+    Security</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

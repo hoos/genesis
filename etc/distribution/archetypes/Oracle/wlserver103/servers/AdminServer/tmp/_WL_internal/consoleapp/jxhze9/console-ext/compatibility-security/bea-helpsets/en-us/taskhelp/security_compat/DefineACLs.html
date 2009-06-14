@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="July 25 2008" name="date last modified">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Define ACLs</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="security_6x1106252"></a>
+
+
+  <h1 class="topictitle1">Define ACLs</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="security_6x1106252__security_6x1134551"></a>Compatibility security
+      provides backward compatibility for ACLs and should not be considered a
+      long-term security solution. The steps in this section should only be
+      used if you corrupt an existing 6.x security realm and you have no
+      choice but to restore it. Instead of ACLs, use security roles and
+      security policies to protect WebLogic resources.</p>
+
+      <p><a name="security_6x1106252__security_6x1134552"></a><b>Note: </b>ACLs on
+      MBeans are not supported in this release of WebLogic Server. For more
+      information, see "Layered Security Scheme for Server Resources" in <i>Securing WebLogic Resources</i>.</p>
+
+      <p><a name="security_6x1106252__security_6x1134554"></a>When you specify an ACL
+      for a JDBC connection pool, you must specifically define access to the
+      JDBC connection pool for the <code>system</code> user in the
+      <code>filerealm.properties</code> file. For example:</p>
+
+      <pre>acl.reserve.poolforsecurity=system
+acl.reset.poolforsecurity=system</pre>
+
+      <p><a name="security_6x1106252__security_6x1129507"></a>To create ACLs for
+      WebLogic resources:</p>
+    </div>
+
+    <ol>
+      <li>
+        <span><a name="security_6x1106252__security_6x1122930"></a>Expand
+        <b>Compatibility Security</b><span> &gt;
+        ACLs</span> and click <b>New</b>.</span>
+
+        <span>
+          <p>The <span>Create a New ACL</span> page appears.</p>
+        </span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1106252__security_6x1106344"></a>Enter the
+        appropriate values for the ACL's name, permission, user, and group
+        properties and click <b>OK</b>.</span>
+      </li>
+    </ol>
+  </div>
+
+
+</body></html>

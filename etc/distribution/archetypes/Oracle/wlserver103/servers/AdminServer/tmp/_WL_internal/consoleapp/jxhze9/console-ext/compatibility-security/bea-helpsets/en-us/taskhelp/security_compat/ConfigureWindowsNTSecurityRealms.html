@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="July 25 2008" name="date last modified">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Configure Windows NT
+  security realms</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="security_6x1105735"></a>
+
+
+  <h1 class="topictitle1">Configure Windows NT
+  security realms</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="security_6x1105735__security_6x1129226"></a>To configure the Windows
+      NT security realm:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="security_6x1105735__security_6x1122583"></a>In the left
+        pane, expand <b>Compatibility Security &gt; Realms</b>
+        and click <b>New</b>.</span>
+
+        <span>
+          <p>The <span>Create a New Basic Realm</span> page
+          appears.</p>
+        </span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105735__security_6x1112114"></a>In the
+        <b>Name</b> field, enter a name for the Windows NT
+        security realm.</span>
+      </li>
+
+      <li>
+        <span>In the <b>Type</b> drop-down list, select
+        <kbd>NT Realm</kbd> and click
+        <b>OK</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105735__security_6x1105787"></a>Configure
+        the Caching realm.</span>
+
+         
+          <p>For more information, see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=security_compat.ConfigureCachingRealms">Configure Caching
+  realms</a>.</p>
+
+          <p><a name="security_6x1105735__security_6x1105789"></a>When configuring the
+          Caching realm, select your Windows NT security realm from the
+          pull-down menu for the Basic Realm attribute on the<span>
+          Caching Realms: Configuration: General</span> page. The Basic
+          Realm attribute defines the association between the Caching realm
+          and the alternate security realm (in this case, the Windows NT
+          security realm).</p>
+        
+      </li>
+
+      <li>
+        <span><a name="security_6x1105735__security_6x1132962"></a>In the left
+        pane, select your domain (for example, mydomain).</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105735__security_6x1132963"></a>Expand
+        <b>Compatibility Security &gt; File Realm</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105735__security_6x1105792"></a>In the
+        Caching Realm field, select the name of the Caching realm to be used
+        with the Windows NT security realm. A list of configured Caching
+        realms appears on the pull-down menu.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105735__security_6x1105793"></a>Reboot
+        WebLogic Server.</span>
+      </li>
+    </ol>
+
+    <div class="postreq"><p class="sectiontitle"><b>
+        After you finish
+      </b></p>
+      <p><a name="security_6x1105735__security_6x1134121"></a>Use the following command
+      to verify that you have the correct privileges to run WebLogic Server as
+      the specified Windows NT user:</p>
+
+      <p><a name="security_6x1105735__security_6x1134122"></a><code>java
+      weblogic.security.ntrealm.NTRealm username password</code></p>
+
+      <p><a name="security_6x1105735__security_6x1134123"></a>where <code>username</code> and <code>password</code> are the username and
+      password of the Windows NT account under which WebLogic Server runs.</p>
+
+      <div><a name="security_6x1105735__security_6x1134124"></a>The output from this
+      command indicates whether the specified username and password
+      authenticated properly.<table border="1">
+          <tr>
+            <th valign="bottom" align="left" id="t1">Command</th>
+
+            <th valign="bottom" align="left" id="t2">Description</th>
+          </tr>
+
+          <tr>
+            <td valign="top" align="left" headers="t1"><p><a name="security_6x1105735__security_6x1134135"></a><code>auth?poppy</code></p></td>
+
+            <td valign="top" align="left" headers="t2"><p><a name="security_6x1105735__security_6x1134137"></a>The entered username and password
+            authenticated correctly.</p></td>
+          </tr>
+
+          <tr>
+            <td valign="top" align="left" headers="t1"><p><a name="security_6x1105735__security_6x1134139"></a><code>auth?null</code></p></td>
+
+            <td valign="top" align="left" headers="t2"><p><a name="security_6x1105735__security_6x1134141"></a>The entered username and password did not
+            authenticate properly.</p></td>
+          </tr>
+        </table></div>
+
+      <div><a name="security_6x1105735__security_6x1134143"></a>If the test comes up with
+      an immediate failure stating that the client or user running WebLogic
+      Server does not have the privileges to run the Windows NT Security
+      realm,then it may be necessary to do one of two things:<ul>
+          <li>Boot the server using
+          -Dweblogic.security.ntrealm.logonNetwork=true to change the
+          NTRealm's NT Logon from LOGON32_LOGIN_INTERACTIVE to
+          LOGON32_LOGIN_NETWORK.</li>
+
+          <li>Update the permissions (referred to as rights) for the Windows
+          user running WebLogic Server to provide the user with the NT "Log on
+          Locally" user right. See <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=security_compat.UpdateUserPermissionsInWindowsNTAnd2000">Update user
+  permissions in Windows NT and 2000</a>.</li>
+        </ul></div>
+    </div>
+  </div>
+
+
+</body></html>

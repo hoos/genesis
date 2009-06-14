@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="July 25 2008" name="date last modified">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Configure custom
+  security realms</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="security_6x1131563"></a>
+
+
+  <h1 class="topictitle1">Configure custom
+  security realms</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="security_6x1131563__security_6x1106080"></a>You can create a custom
+      security realm that draws from an existing store of users such as
+      directory server on the network. To use a custom security realm, you
+      first create an implementation of the <code>weblogic.security.acl.AbstractListableRealm</code>
+      interface or the <code>weblogic.security.acl.AbstractManageableRealm</code>
+      interface and then use the Administration Console to install your
+      implementation.</p>
+
+      <p><a name="security_6x1131563__security_6x1129371"></a>To install a custom
+      security realm:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="security_6x1131563__security_6x1122583"></a>In the left
+        pane, expand <b>Compatibility Security &gt; Realms</b>
+        and click <b>New</b>.</span>
+
+        <span>
+          <p>The <span>Create a New Basic Realm</span> page
+          appears.</p>
+        </span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1131563__security_6x1112114"></a>In the
+        <b>Name</b> field, enter a name for the custom
+        security realm.</span>
+      </li>
+
+      <li>
+        <span>In the <b>Type</b> drop-down list, select
+        <kbd>Custom Realm</kbd> and click
+        <b>OK</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1131563__security_6x1133394"></a>On the
+        <span>Summary of Security Compatibility: Basic Realms</span>
+        page, click the name of the new Custom realm.</span>
+
+        <span>
+          <p>The Settings page for the Custom security realm appears.</p>
+        </span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1131563__security_6x1113814"></a>On the
+        Settings page for the Custom security realm, set the appropriate
+        attributes for the realm and click Save.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1131563__security_6x1113817"></a>Configure
+        the Caching realm. For more information, see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=security_compat.ConfigureCachingRealms">Configure Caching
+  realms</a> .</span>
+
+         
+           When configuring the Caching realm, select the 
+
+          <b>LDAP Realm V2</b>
+
+           option from the pull-down menu for the Basic Realm attribute on the 
+
+          <span>Caching Realms: Configuration: General</span>
+
+           page. The Basic Realm attribute defines the association between the Caching realm and the alternate security realm (in this case, the LDAP V2 security realm). 
+        
+      </li>
+
+      <li>
+        <span><a name="security_6x1131563__security_6x1132962"></a>In the left
+        pane, select your domain (for example, mydomain).</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1131563__security_6x1132963"></a>Select
+        <b>Compatibility Security</b> &gt; <b>File
+        Realm</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1131563__security_6x1113822"></a>In the
+        Caching Realm field, select the Caching realm to be used with the
+        custom security realm.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1131563__security_6x1113823"></a>Reboot
+        WebLogic Server.</span>
+      </li>
+    </ol>
+  </div>
+
+
+</body></html>

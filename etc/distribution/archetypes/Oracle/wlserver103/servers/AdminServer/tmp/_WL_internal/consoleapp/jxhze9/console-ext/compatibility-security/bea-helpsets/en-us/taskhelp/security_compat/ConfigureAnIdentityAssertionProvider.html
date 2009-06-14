@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="July 25 2008" name="date last modified">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Enable the Identity
+  Assertion provider</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="security_6x1132786"></a>
+
+
+  <h1 class="topictitle1">Enable the Identity
+  Assertion provider</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="security_6x1132786__security_6x1132852"></a>The Realm Adapter
+      Authentication provider includes an Identity Assertion provider.The
+      Identity Assertion provider provides backward compatibility for
+      implementations of the
+      <kbd>weblogic.security.acl.CertAuthenticator</kbd> class.
+      The identity assertion is performed on X.509 tokens. By default, the
+      Identity Assertion provider is not enabled in the Realm Adapter
+      Authentication provider.</p>
+
+      <p><a name="security_6x1132786__security_6x1132854"></a>To enable identity
+      assertion in the Realm Adapter Authentication provider:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="security_6x1132786__security_6x1132886"></a>In the left
+        pane, select <b>Security Realms</b> and click on the
+        name of the security realm.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1132786__security_6x1132856"></a>Select
+        <b>Providers &gt; Authentication</b> and click the
+        name of the <b>RealmAdapterAuthenticator</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1132786__security_6x1132857"></a>Expand
+        <b>Configuration &gt; Provider Specific</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1132786__security_6x1132861"></a>Select
+        <kbd>X.509</kbd> in the <b>Active
+        Types</b>: <b>Available</b> list box and use
+        the arrow button to move it to the <b>Chosen</b>
+        box.</span>
+
+         
+          <p><a name="security_6x1132786__security_6x1132862"></a>This step enables the
+          use of 6.x Cert Authenticators.</p>
+        
+      </li>
+
+      <li>
+        <span><a name="security_6x1132786__security_6x1132863"></a>Click
+        <b>Save</b>.</span>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+
+    <div class="postreq"><p class="sectiontitle"><b>
+        After you finish
+      </b></p>
+      <p>Restart WebLogic Server so that your changes can take effect.</p>
+    </div>
+  </div>
+
+
+</body></html>

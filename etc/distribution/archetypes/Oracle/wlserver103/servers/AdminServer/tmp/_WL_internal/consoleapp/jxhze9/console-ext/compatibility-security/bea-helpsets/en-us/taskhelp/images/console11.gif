@@ -1,0 +1,567 @@
+%-12345X@PJL JOB
+@PJL SET RESOLUTION = 600
+@PJL ENTER LANGUAGE = POSTSCRIPT 
+%!PS-Adobe-3.0
+%%Title: cons2662.mif
+%%Creator: PScript5.dll Version 5.2
+%%CreationDate: 2/25/2004 16:9:14
+%%For: litzell
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%Orientation: Portrait
+%%PageOrder: Special
+%%DocumentNeededResources: (atend)
+%%DocumentSuppliedResources: (atend)
+%%DocumentData: Clean7Bit
+%%TargetDevice: (WebWorks Rasterizer) (2014.103)
+%%LanguageLevel: 2
+%%EndComments
+
+%%BeginDefaults
+%%PageBoundingBox: 0 0 612 792
+%%ViewingOrientation: 1 0 0 1
+%%EndDefaults
+
+
+%%BeginProlog
+%%BeginResource: file Pscript_WinNT_ErrorHandler 5.0 0
+/currentpacking where{pop/oldpack currentpacking def/setpacking where{pop false
+setpacking}if}if/$brkpage 64 dict def $brkpage begin/prnt{dup type/stringtype
+ne{=string cvs}if dup length 6 mul/tx exch def/ty 10 def currentpoint/toy exch
+def/tox exch def 1 setgray newpath tox toy 2 sub moveto 0 ty rlineto tx 0
+rlineto 0 ty neg rlineto closepath fill tox toy moveto 0 setgray show}bind def
+/nl{currentpoint exch pop lmargin exch moveto 0 -10 rmoveto}def/=={/cp 0 def
+typeprint nl}def/typeprint{dup type exec}readonly def/lmargin 72 def/rmargin 72
+def/tprint{dup length cp add rmargin gt{nl/cp 0 def}if dup length cp add/cp
+exch def prnt}readonly def/cvsprint{=string cvs tprint( )tprint}readonly def
+/integertype{cvsprint}readonly def/realtype{cvsprint}readonly def/booleantype
+{cvsprint}readonly def/operatortype{(--)tprint =string cvs tprint(-- )tprint}
+readonly def/marktype{pop(-mark- )tprint}readonly def/dicttype{pop
+(-dictionary- )tprint}readonly def/nulltype{pop(-null- )tprint}readonly def
+/filetype{pop(-filestream- )tprint}readonly def/savetype{pop(-savelevel- )
+tprint}readonly def/fonttype{pop(-fontid- )tprint}readonly def/nametype{dup
+xcheck not{(/)tprint}if cvsprint}readonly def/stringtype{dup rcheck{(\()tprint
+tprint(\))tprint}{pop(-string- )tprint}ifelse}readonly def/arraytype{dup rcheck
+{dup xcheck{({)tprint{typeprint}forall(})tprint}{([)tprint{typeprint}forall(])
+tprint}ifelse}{pop(-array- )tprint}ifelse}readonly def/packedarraytype{dup
+rcheck{dup xcheck{({)tprint{typeprint}forall(})tprint}{([)tprint{typeprint}
+forall(])tprint}ifelse}{pop(-packedarray- )tprint}ifelse}readonly def/courier
+/Courier findfont 10 scalefont def end errordict/handleerror{systemdict begin
+$error begin $brkpage begin newerror{/newerror false store vmstatus pop pop 0
+ne{grestoreall}if errorname(VMerror)ne{showpage}if initgraphics courier setfont
+lmargin 720 moveto errorname(VMerror)eq{userdict/ehsave known{clear userdict
+/ehsave get restore 2 vmreclaim}if vmstatus exch pop exch pop PrtVMMsg}{
+(ERROR: )prnt errorname prnt nl(OFFENDING COMMAND: )prnt/command load prnt
+$error/ostack known{nl nl(STACK:)prnt nl nl $error/ostack get aload length{==}
+repeat}if}ifelse systemdict/showpage get exec(%%[ Error: )print errorname
+=print(; OffendingCommand: )print/command load =print( ]%%)= flush}if end end
+end}dup 0 systemdict put dup 4 $brkpage put bind readonly put/currentpacking
+where{pop/setpacking where{pop oldpack setpacking}if}if
+%%EndResource
+userdict /Pscript_WinNT_Incr 230 dict dup begin put
+%%BeginResource: file Pscript_FatalError 5.0 0
+userdict begin/FatalErrorIf{{initgraphics findfont 1 index 0 eq{exch pop}{dup
+length dict begin{1 index/FID ne{def}{pop pop}ifelse}forall/Encoding
+{ISOLatin1Encoding}stopped{StandardEncoding}if def currentdict end
+/ErrFont-Latin1 exch definefont}ifelse exch scalefont setfont counttomark 3 div
+cvi{moveto show}repeat showpage quit}{cleartomark}ifelse}bind def end
+%%EndResource
+userdict begin/PrtVMMsg{vmstatus exch sub exch pop gt{[
+(This job requires more memory than is available in this printer.)100 500
+(Try one or more of the following, and then print again:)100 485
+(For the output format, choose Optimize For Portability.)115 470
+(In the Device Settings page, make sure the Available PostScript Memory is accurate.)
+115 455(Reduce the number of fonts in the document.)115 440
+(Print the document in parts.)115 425 12/Times-Roman showpage
+(%%[ PrinterError: Low Printer VM ]%%)= true FatalErrorIf}if}bind def end
+version cvi 2016 ge{/VM?{pop}bind def}{/VM? userdict/PrtVMMsg get def}ifelse
+105000 VM?
+%%BeginResource: file Pscript_Win_Basic 5.0 0
+/d/def load def/,/load load d/~/exch , d/?/ifelse , d/!/pop , d/`/begin , d/^
+/index , d/@/dup , d/+/translate , d/$/roll , d/U/userdict , d/M/moveto , d/-
+/rlineto , d/&/currentdict , d/:/gsave , d/;/grestore , d/F/false , d/T/true ,
+d/N/newpath , d/E/end , d/Ac/arc , d/An/arcn , d/A/ashow , d/D/awidthshow , d/C
+/closepath , d/V/div , d/O/eofill , d/L/fill , d/I/lineto , d/-c/curveto , d/-M
+/rmoveto , d/+S/scale , d/Ji/setfont , d/Lc/setlinecap , d/Lj/setlinejoin , d
+/Lw/setlinewidth , d/Lm/setmiterlimit , d/sd/setdash , d/S/show , d/LH/showpage
+, d/K/stroke , d/W/widthshow , d/R/rotate , d/L2? false/languagelevel where{pop
+languagelevel 2 ge{pop true}if}if d L2?{/xS/xshow , d/yS/yshow , d/zS/xyshow ,
+d}if/b{bind d}bind d/bd{bind d}bind d/xd{~ d}bd/ld{, d}bd/bn/bind ld/lw/Lw ld
+/lc/Lc ld/lj/Lj ld/sg/setgray ld/ADO_mxRot null d/self & d/OrgMx matrix
+currentmatrix d/reinitialize{: OrgMx setmatrix[/TextInit/GraphInit/UtilsInit
+counttomark{@ where{self eq}{F}?{cvx exec}{!}?}repeat cleartomark ;}b
+/initialize{`{/Pscript_Win_Data where{!}{U/Pscript_Win_Data & put}?/ADO_mxRot ~
+d/TextInitialised? F d reinitialize E}{U/Pscript_Win_Data 230 dict @ ` put
+/ADO_mxRot ~ d/TextInitialised? F d reinitialize}?}b/terminate{!{& self eq
+{exit}{E}?}loop E}b/suspend/terminate , d/resume{` Pscript_Win_Data `}b U `
+/lucas 21690 d/featurebegin{countdictstack lucas[}b/featurecleanup{stopped
+{cleartomark @ lucas eq{! exit}if}loop countdictstack ~ sub @ 0 gt{{E}repeat}
+{!}?}b E/snap{transform 0.25 sub round 0.25 add ~ 0.25 sub round 0.25 add ~
+itransform}b/dsnap{dtransform round ~ round ~ idtransform}b/nonzero_round{@ 0.5
+ge{round}{@ -0.5 lt{round}{0 ge{1}{-1}?}?}?}b/nonzero_dsnap{dtransform
+nonzero_round ~ nonzero_round ~ idtransform}b U<04>cvn{}put/rr{1 ^ 0 - 0 ~ -
+neg 0 - C}b/irp{4 -2 $ + +S fx 4 2 $ M 1 ^ 0 - 0 ~ - neg 0 -}b/rp{4 2 $ M 1 ^ 0
+- 0 ~ - neg 0 -}b/solid{[]0 sd}b/g{@ not{U/DefIf_save save put}if U/DefIf_bool
+2 ^ put}b/DefIf_El{if U/DefIf_bool get not @{U/DefIf_save get restore}if}b/e
+{DefIf_El !}b/UDF{L2?{undefinefont}{!}?}b/UDR{L2?{undefineresource}{! !}?}b
+/freeVM{/Courier findfont[40 0 0 -40 0 0]makefont Ji 2 vmreclaim}b/hfRedefFont
+{findfont @ length dict `{1 ^/FID ne{d}{! !}?}forall & E @ ` ~{/CharStrings 1
+dict `/.notdef 0 d & E d}if/Encoding 256 array 0 1 255{1 ^ ~/.notdef put}for d
+E definefont !}bind d/hfMkCIDFont{/CIDFont findresource @ length 2 add dict `{1
+^ @/FID eq ~ @/XUID eq ~/UIDBase eq or or{! !}{d}?}forall/CDevProc ~ d/Metrics2
+16 dict d/CIDFontName 1 ^ d & E 1 ^ ~/CIDFont defineresource ![~]composefont !}
+bind d
+%%EndResource
+%%BeginResource: file Pscript_Win_Utils_L2 5.0 0
+/rf/rectfill , d/fx{1 1 dtransform @ 0 ge{1 sub 0.5}{1 add -0.5}? 3 -1 $ @ 0 ge
+{1 sub 0.5}{1 add -0.5}? 3 1 $ 4 1 $ idtransform 4 -2 $ idtransform}b/BZ{4 -2 $
+snap + +S fx rf}b/rs/rectstroke , d/rc/rectclip , d/UtilsInit{currentglobal{F
+setglobal}if}b/scol{! setcolor}b/colspA/DeviceGray d/colspABC/DeviceRGB d
+/colspRefresh{colspABC setcolorspace}b/SetColSpace{colspABC setcolorspace}b
+/resourcestatus where{!/ColorRendering/ProcSet resourcestatus{! ! T}{F}?}{F}?
+not{/ColorRendering<</GetHalftoneName{currenthalftone @/HalftoneName known{
+/HalftoneName get}{!/none}?}bn/GetPageDeviceName{currentpagedevice @
+/PageDeviceName known{/PageDeviceName get @ null eq{!/none}if}{!/none}?}bn
+/GetSubstituteCRD{!/DefaultColorRendering/ColorRendering resourcestatus{! !
+/DefaultColorRendering}{(DefaultColorRendering*){cvn exit}127 string
+/ColorRendering resourceforall}?}bn>>/defineresource where{!/ProcSet
+defineresource !}{! !}?}if/buildcrdname{/ColorRendering/ProcSet findresource `
+mark GetHalftoneName @ type @/nametype ne ~/stringtype ne and{!/none}if(.)
+GetPageDeviceName @ type @/nametype ne ~/stringtype ne and{!/none}if(.)5 ^ 0 5
+-1 1{^ length add}for string 6 1 $ 5 ^ 5{~ 1 ^ cvs length 1 ^ length 1 ^ sub
+getinterval}repeat ! cvn 3 1 $ ! ! E}b/definecolorrendering{~ buildcrdname ~
+/ColorRendering defineresource !}b/findcolorrendering where{!}{
+/findcolorrendering{buildcrdname @/ColorRendering resourcestatus{! ! T}{
+/ColorRendering/ProcSet findresource ` GetSubstituteCRD E F}?}b}?
+/selectcolorrendering{findcolorrendering !/ColorRendering findresource
+setcolorrendering}b/G2UBegin{findresource/FontInfo get/GlyphNames2Unicode get
+`}bind d/G2CCBegin{findresource/FontInfo get/GlyphNames2HostCode get `}bind d
+/G2UEnd{E}bind d/AddFontInfoBegin{/FontInfo 8 dict @ `}bind d/AddFontInfo{
+/GlyphNames2Unicode 16 dict d/GlyphNames2HostCode 16 dict d}bind d
+/AddFontInfoEnd{E d}bind d/T0AddCFFMtx2{/CIDFont findresource/Metrics2 get ` d
+E}bind d
+%%EndResource
+end
+%%EndProlog
+
+%%BeginSetup
+statusdict begin (%%[ ProductName: ) print product print ( ]%%)= flush end
+[ 1 0 0 1 0 0 ] false Pscript_WinNT_Incr dup /initialize get exec
+featurebegin{
+%%BeginNonPPDFeature: JobTimeout 0
+0 /languagelevel where{pop languagelevel}{1}ifelse 2 ge{1 dict dup/JobTimeout  4 -1 roll put setuserparams}{statusdict/setjobtimeout get exec}ifelse
+%%EndNonPPDFeature
+}featurecleanup
+
+featurebegin{
+%%BeginNonPPDFeature: WaitTimeout 120
+120 /languagelevel where{pop languagelevel}{1}ifelse 2 ge{1 dict dup/WaitTimeout 4 -1 roll put setuserparams}{statusdict/waittimeout 3 -1 roll put}ifelse
+%%EndNonPPDFeature
+}featurecleanup
+
+featurebegin{
+%%BeginFeature: *HPHalftone PrintersDefault
+
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *Smoothing PrinterDefault
+
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *PageSize Letter
+
+             <</DeferredMediaSelection true /PageSize [612 792] /ImagingBBox null>> setpagedevice
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *OutputBin OnlyOne
+
+%%EndFeature
+}featurecleanup
+1 setlinecap 1 setlinejoin
+/mysetup [ 72 600 V 0 0 -72 600 V 0 792 ] def 
+%%EndSetup
+
+userdict begin /ehsave save def end
+%%Page: 1 1
+%%PageBoundingBox: 0 0 612 792
+%%EndPageComments
+%%BeginPageSetup
+/DeviceRGB dup setcolorspace /colspABC exch def
+mysetup concat colspRefresh
+%%EndPageSetup
+
+30000 VM?
+Pscript_WinNT_Incr begin
+%%BeginResource: file Pscript_WinNT_Compat 5.0 0
+userdict/Pscript_WinNT_Compat 19 dict dup begin/bd{bind def}bind def/ld{load
+def}bd/$x matrix def/ANSIVec[16#0/grave 16#1/acute 16#2/circumflex 16#3/tilde
+16#4/macron 16#5/breve 16#6/dotaccent 16#7/dieresis 16#8/ring 16#9/cedilla 16#A
+/hungarumlaut 16#B/ogonek 16#C/caron 16#D/dotlessi 16#27/quotesingle 16#60
+/grave 16#7C/bar 16#82/quotesinglbase 16#83/florin 16#84/quotedblbase 16#85
+/ellipsis 16#86/dagger 16#87/daggerdbl 16#88/circumflex 16#89/perthousand 16#8A
+/Scaron 16#8B/guilsinglleft 16#8C/OE 16#91/quoteleft 16#92/quoteright 16#93
+/quotedblleft 16#94/quotedblright 16#95/bullet 16#96/endash 16#97/emdash 16#98
+/tilde 16#99/trademark 16#9A/scaron 16#9B/guilsinglright 16#9C/oe 16#9F
+/Ydieresis 16#A0/space 16#A1/exclamdown 16#A4/currency 16#A5/yen 16#A6
+/brokenbar 16#A7/section 16#A8/dieresis 16#A9/copyright 16#AA/ordfeminine 16#AB
+/guillemotleft 16#AC/logicalnot 16#AD/hyphen 16#AE/registered 16#AF/macron
+16#B0/degree 16#B1/plusminus 16#B2/twosuperior 16#B3/threesuperior 16#B4/acute
+16#B5/mu 16#B6/paragraph 16#B7/periodcentered 16#B8/cedilla 16#B9/onesuperior
+16#BA/ordmasculine 16#BB/guillemotright 16#BC/onequarter 16#BD/onehalf 16#BE
+/threequarters 16#BF/questiondown 16#C0/Agrave 16#C1/Aacute 16#C2/Acircumflex
+16#C3/Atilde 16#C4/Adieresis 16#C5/Aring 16#C6/AE 16#C7/Ccedilla 16#C8/Egrave
+16#C9/Eacute 16#CA/Ecircumflex 16#CB/Edieresis 16#CC/Igrave 16#CD/Iacute 16#CE
+/Icircumflex 16#CF/Idieresis 16#D0/Eth 16#D1/Ntilde 16#D2/Ograve 16#D3/Oacute
+16#D4/Ocircumflex 16#D5/Otilde 16#D6/Odieresis 16#D7/multiply 16#D8/Oslash
+16#D9/Ugrave 16#DA/Uacute 16#DB/Ucircumflex 16#DC/Udieresis 16#DD/Yacute 16#DE
+/Thorn 16#DF/germandbls 16#E0/agrave 16#E1/aacute 16#E2/acircumflex 16#E3
+/atilde 16#E4/adieresis 16#E5/aring 16#E6/ae 16#E7/ccedilla 16#E8/egrave 16#E9
+/eacute 16#EA/ecircumflex 16#EB/edieresis 16#EC/igrave 16#ED/iacute 16#EE
+/icircumflex 16#EF/idieresis 16#F0/eth 16#F1/ntilde 16#F2/ograve 16#F3/oacute
+16#F4/ocircumflex 16#F5/otilde 16#F6/odieresis 16#F7/divide 16#F8/oslash 16#F9
+/ugrave 16#FA/uacute 16#FB/ucircumflex 16#FC/udieresis 16#FD/yacute 16#FE/thorn
+16#FF/ydieresis]def currentdict{dup type/operatortype eq{[exch]cvx def}{pop
+pop}ifelse}forall/initialize{currentdict exch begin begin}bind def/terminate{
+/@FL where not{pop end end}{pop}ifelse}bind def/suspend/terminate load def
+/resume/initialize load def/RS{/pagesave where{pop pagesave restore}{$x matrix
+invertmatrix concat}ifelse}def/SS{/pagesave save def}def/CB{pop pop pop pop}def
+/B{pop pop pop pop}def/:/gsave load def/;/grestore load def/N/newpath load def
+end put
+%%EndResource
+end reinitialize
+Pscript_WinNT_Compat begin /$x mysetup def end
+Pscript_WinNT_Incr dup /suspend get exec
+Pscript_WinNT_Compat dup /initialize get exec
+%%BeginDocument: Pscript_Win_PassThrough
+% Copyright (c) 1986-1995 Frame Technology Corporation.
+% DO NOT CHANGE THE FIRST LINE; Adobe PS 5.1.2 depends on it.
+/FMcmyk 100 dict def
+/FmBD{bind def}bind def
+/FmLD{load def}FmBD
+/FMc {
+ FMcmyk length FMcmyk maxlength ge { /FMcmyk FMcmyk dup length dup add dict copy def } if
+ 4 array astore 4 1 roll 8 bitshift add 8 bitshift add exch FMcmyk 3 1 roll put
+}FmBD
+/setcmykcolor where { pop
+ /sc where { pop /sc load 0 get /scignore eq {
+  /FMsc /sc FmLD
+  /sc { 3 copy 8 bitshift add 8 bitshift add FMcmyk 1 index known
+   { FMcmyk exch get aload pop setcmykcolor pop pop pop } { pop FMsc } ifelse
+  }FmBD
+ } if } if
+} if
+mark { /S load
+ dup 0 get /PenW eq { dup 1 get /sl load eq {
+  dup 0 { PenW .75 sub sl } bind put 1 /exec load put
+ } if } if
+} stopped cleartomark       
+/FmX matrix defaultmatrix def
+/FmDC {transform FmX defaultmatrix itransform cvi exch cvi exch} def
+/FmBx { dup 3 index lt {3 1 roll exch} if 
+ 1 index 4 index lt {4 -1 roll 3 1 roll exch 4 1 roll} if
+}FmBD
+/FmPD/cleartomark FmLD
+/FmPD2/cleartomark FmLD
+/FmPD4/cleartomark FmLD
+/FmPT/pop FmLD
+/FmPA{pop pop pop}FmBD
+/FmND{pop pop pop}FmBD
+systemdict /pdfmark known systemdict /currentdistillerparams known and {
+  /FmPD/pdfmark FmLD
+  currentdistillerparams /CoreDistVersion get 2000 ge {
+    /FmPD2/pdfmark FmLD
+    % FmPD4 is like FmPD but for Acrobat 4.05-specific PDF
+    /FmPD4U true def
+    currentdistillerparams /CoreDistVersion get 4050 ge 
+    {
+      /FmPD4 /pdfmark load def
+    }
+    {
+      /FmPD4
+      { FmPD4U 
+	{(%%[Acrobat Distiller 4.05 and up is required to generate Logical PDF Structure]%%) = 
+	  (%%[Logical PDF Structure is not generated.]%%) = flush
+	} if
+	/FmPD4U false def
+	cleartomark
+      } FmBD
+    } ifelse
+
+
+% Procedure FmPA used to define named destinations for all paragraphs (and elements). As
+% a result, the produced PDF files were very large in size, because they contained numerous
+% named destinations that were not actually used. 
+% In FrameMaker 5.5.6 FmND procedure was added to allow to distinguish between 
+% named destinations that were definitely used and all other named destinations.
+% The users were given opportunity to change the definition of the FmPA procedure,
+% so that it either directed Distiller to produce or to not produce named destinations
+% (under fmCG switch).
+% FmND always produced a named destination, but FmPA produced a named destination onlY
+% when fmCG switch was set to 'True'.
+% FrameMaker 5.5.6 used very simplistic method to determine whether a named destination
+% was actually used or not.
+% FrameMaker 6.0 and up uses a much more elaborate method to determine whether a 
+% named destination is actually used or not. It also has an improved "Acrobat Setup" dialog,
+% which allows to specify the user's preference, whether to create PDF files with named
+% destinations for all paragraphs, or Wonly those named destinations that are used.
+% Therefore, there is no need for fmCG switch in FrameMaker 6.0 and up. Now FmND procedure
+% defines a named destination, and FmPA procedure does nothing. Sophisticated users still 
+% have ability to modify definition of FmPA if they wish so.
+
+	  /fmCG true def 
+
+	  /FmND
+	  { mark exch /Dest exch 5 3 roll /View [ /XYZ 5 -2 roll FmDC null ] /DEST FmPD 
+	  }FmBD
+
+	  /FmPA 
+	  { fmCG
+	    { pop pop pop }
+	    { FmND } ifelse
+	  } FmBD
+ } if
+} if
+: N : N [/CropBox[0 6600 FmDC 5100 0 FmDC FmBx]/PAGE FmPD
+[/Dest/P.1/DEST FmPD2
+[
+/Creator (FrameMaker 6.0)
+/CreationDate (D:20040225160914)
+/ModDate (D:20040225160914)
+/DOCINFO FmPD2
+[/Dest/F/DEST FmPD2
+; : N : N ; : N 
+%%EndDocument
+
+Pscript_WinNT_Compat dup /suspend get exec
+Pscript_WinNT_Incr dup /resume get exec
+Pscript_WinNT_Incr begin
+%%BeginResource: file Pscript_Win_GdiObject 5.0 0
+/SavedCTM null d/CTMsave{/SavedCTM SavedCTM currentmatrix d}b/CTMrestore
+{SavedCTM setmatrix}b/mp null d/ADO_mxRot null d/GDIHMatrix null d
+/GDIHPatternDict 22 dict d GDIHPatternDict `/PatternType 1 d/PaintType 2 d/Reps
+L2?{1}{5}? d/XStep 8 Reps mul d/YStep XStep d/BBox[0 0 XStep YStep]d/TilingType
+1 d/PaintProc{` 1 Lw[]0 sd PaintData , exec E}b/FGnd null d/BGnd null d
+/HS_Horizontal{horiz}b/HS_Vertical{vert}b/HS_FDiagonal{fdiag}b/HS_BDiagonal
+{biag}b/HS_Cross{horiz vert}b/HS_DiagCross{fdiag biag}b/MaxXYStep XStep YStep
+gt{XStep}{YStep}? d/horiz{Reps{0 4 M XStep 0 - 0 8 +}repeat 0 -8 Reps mul + K}b
+/vert{Reps{4 0 M 0 YStep - 8 0 +}repeat 0 -8 Reps mul + K}b/biag{Reps{0 0 M
+MaxXYStep @ - 0 YStep neg M MaxXYStep @ - 0 8 +}repeat 0 -8 Reps mul + 0 YStep
+M 8 8 - K}b/fdiag{Reps{0 0 M MaxXYStep @ neg - 0 YStep M MaxXYStep @ neg - 0 8
++}repeat 0 -8 Reps mul + MaxXYStep @ M 8 -8 - K}b E/makehatch{4 -2 $/yOrg ~ d
+/xOrg ~ d GDIHPatternDict/PaintData 3 -1 $ put CTMsave GDIHMatrix setmatrix
+GDIHPatternDict matrix xOrg yOrg + mp CTMrestore ~ U ~ 2 ^ put}b/h0{/h0
+/HS_Horizontal makehatch}b/h1{/h1/HS_Vertical makehatch}b/h2{/h2/HS_FDiagonal
+makehatch}b/h3{/h3/HS_BDiagonal makehatch}b/h4{/h4/HS_Cross makehatch}b/h5{/h5
+/HS_DiagCross makehatch}b/GDIBWPatternMx null d/pfprep{save 8 1 $
+/PatternOfTheDay 8 1 $ GDIBWPatternDict `/yOrg ~ d/xOrg ~ d/PaintData ~ d/yExt
+~ d/Width ~ d/BGnd ~ d/FGnd ~ d/Height yExt RepsV mul d/mx[Width 0 0 Height 0
+0]d E build_pattern ~ !}b/pfbf{/fEOFill ~ d pfprep hbf fEOFill{O}{L}? restore}b
+/GraphInit{GDIHMatrix null eq{/SavedCTM matrix d : ADO_mxRot concat 0 0 snap +
+: 0.48 @ GDIHPatternDict ` YStep mul ~ XStep mul ~ nonzero_dsnap YStep V ~
+XStep V ~ E +S/GDIHMatrix matrix currentmatrix readonly d ; : 0.24 -0.24 +S
+GDIBWPatternDict ` Width Height E nonzero_dsnap +S/GDIBWPatternMx matrix
+currentmatrix readonly d ; ;}if}b
+%%EndResource
+%%BeginResource: file Pscript_Win_GdiObject_L2 5.0 0
+/GDIBWPatternDict 25 dict @ `/PatternType 1 d/PaintType 1 d/RepsV 1 d/RepsH 1 d
+/BBox[0 0 RepsH 1]d/TilingType 1 d/XStep 1 d/YStep 1 d/Height 8 RepsV mul d
+/Width 8 d/mx[Width 0 0 Height neg 0 Height]d/FGnd null d/BGnd null d
+/SetBGndFGnd{BGnd null ne{BGnd aload ! scol BBox aload ! 2 ^ sub ~ 3 ^ sub ~
+rf}if FGnd null ne{FGnd aload ! scol}if}b/PaintProc{` SetBGndFGnd RepsH{Width
+Height F mx PaintData imagemask Width 0 +}repeat E}b E d/mp/makepattern , d
+/build_pattern{CTMsave GDIBWPatternMx setmatrix/nupangle where{! nupangle -90
+eq{nupangle R}if}if GDIBWPatternDict @ ` Width Height ne{Width Height gt{Width
+Height V 1}{1 Height Width V}? +S}if xOrg yOrg E matrix + mp CTMrestore}b/hbf
+{setpattern}b/hf{:/fEOFill ~ d ~ ! setpattern fEOFill{O}{L}? ;}b/pbf{: !
+/fEOFill ~ d GDIBWPatternDict `/yOrg ~ d/xOrg ~ d/PaintData ~ d/OutputBPP ~ d
+/Height ~ d/Width ~ d/PaintType 1 d/PatternType 1 d/TilingType 1 d/BBox[0 0
+Width Height]d/XStep Width d/YStep Height d/mx xOrg yOrg matrix + d 20 dict @ `
+/ImageType 1 d/Width Width d/Height Height d/ImageMatrix[1 0 0 1 0 0]d
+/BitsPerComponent 8 d OutputBPP 24 eq{/Decode[0 1 0 1 0 1]d}{OutputBPP 8 eq{
+/Decode[0 1]d}{/Decode[0 1 0 1 0 1 0 1]d}?}?/DataSource{PaintData}d E/ImageDict
+~ d/PaintProc{` ImageDict image E}b & mx makepattern setpattern E fEOFill{O}{L}
+? ;}b/mask_pbf{:/fEOFill ~ d 20 dict `/yOrg ~ d/xOrg ~ d/PaintData ~ d/Height ~
+d/Width ~ d/PatternType 1 d/PaintType 2 d/TilingType 1 d/BBox[0 0 Width Height]
+d/XStep Width d/YStep Height d/mx xOrg yOrg matrix + d/PaintProc{` Width Height
+T 1 1 dtransform abs ~ abs ~ 0 0 3 -1 $ 0 0 6 array astore{PaintData}imagemask
+E}b & mx makepattern setpattern E fEOFill{O}{L}? ;}b
+%%EndResource
+end reinitialize
+0 6236 M 889 6236 I 889 6600 I 0 6600 I C 
+eoclip /DeviceRGB dup setcolorspace /colspABC exch def
+: N 8 6244 872 172 rp C 
+1 1 1 1 scol  L ; : N 8 6244 M 880 6244 I 880 6416 I 8 6416 I C 
+eoclip 30000 VM?
+Pscript_WinNT_Compat begin /$x mysetup def end
+Pscript_WinNT_Incr dup /suspend get exec
+Pscript_WinNT_Compat dup /initialize get exec
+%%BeginDocument: Pscript_Win_PassThrough
+gsave
+444 6330 translate 0.0 rotate -444 -6330 translate
+
+%%EndDocument
+
+Pscript_WinNT_Compat dup /suspend get exec
+Pscript_WinNT_Incr dup /resume get exec
+Pscript_WinNT_Incr begin
+%%BeginResource: file Pscript_Win_Dib_L2 5.0 0
+/iw 0 d/ih 0 d/im_save 0 d/s 0 d/polarity 0 d/smoothflag 0 d/mystring 0 d/bpc 0
+d/maskcolor 0 d/mask? F d/setup1asciiproc{[currentfile mystring/readhexstring
+cvx/! cvx]cvx bind}b/setup1binaryproc{[currentfile mystring/readstring cvx/!
+cvx]cvx bind}b/setup2asciiproc{currentfile/ASCII85Decode filter/RunLengthDecode
+filter}b/setup2binaryproc{currentfile/RunLengthDecode filter}b/jpegasciiproc
+{currentfile/ASCII85Decode filter<</Relax 1>>/DCTDecode filter}b/jpegbinaryproc
+{currentfile<</Relax 1>>/DCTDecode filter}b/mycolorspace{colspABC}d/myimagedict
+{/myimagedict 10 dict d myimagedict @ `/ImageType 1 d/MultipleDataSource F d E}
+b/imageprocarray[/setup1binaryproc/setup1asciiproc/setup2binaryproc
+/setup2asciiproc/setup1binarydecodeproc/setup1asciidecodeproc]d/jpegprocarray[
+/jpegasciiproc/jpegbinaryproc]d/Q{/im_save save d scol imageprocarray ~ get/s ~
+, d/polarity ~ d/smoothflag ~ d +/dx 2 ^ d/dy 1 ^ d +S/mystring ~ string d/bpc
+~ d/ih ~ d/iw ~ d fx rf}b/X{/im_save save d/mask? ~ d/maskcolor ~ d
+imageprocarray ~ get/s ~ , d/polarity ~ d/smoothflag ~ d +/dx 2 ^ d/dy 1 ^ d +S
+/mystring ~ string d/bpc ~ d/ih ~ d/iw ~ d}b/Z{im_save restore}b/beginjpeg{
+/jpeg_save save d jpegprocarray ~ get/jpegimageproc ~ , d + +S/bpc ~ d/ih ~ d
+/iw ~ d bpc 24 eq{/DeviceRGB}{/DeviceGray}? setcolorspace myimagedict @ `
+/ImageType 1 d/Width iw d/Height ih d/Decode bpc 24 eq{[0 1 0 1 0 1]}{[0 1]}? d
+/ImageMatrix[iw 0 0 ih 0 0]d/BitsPerComponent 8 d/DataSource jpegimageproc d E
+image}b/endjpeg{jpeg_save restore}b/Y{scol myimagedict @ ` mask?{/polarity
+maskcolor 0 get 0 eq{T}{F}? d}if/Width iw d/Height ih d/Decode polarity{[1 0]}{
+[0 1]}? d/ImageMatrix[iw 0 0 ih 0 0]d/DataSource s d/BitsPerComponent 1 d
+/Interpolate smoothflag d E imagemask}bd/doclutimage{/rgbclut ~ d bpc @ 8 eq{!
+255}{@ 4 eq{! 15}{2 eq{3}{1}?}?}?/hival ~ d[/Indexed currentcolorspace hival
+rgbclut]setcolorspace myimagedict @ ` mask?{/ImageType 4 d/MaskColor maskcolor
+d}if/Width iw d/Height ih d/Decode[0 hival]d/ImageMatrix[iw 0 0 ih 0 0]d
+/DataSource s d/BitsPerComponent bpc d/Interpolate smoothflag d E image}b
+/doCMYKclutimage{/CMYKclut ~ d bpc @ 8 eq{! 255}{4 eq{15}{3}?}?/hival ~ d[
+/Indexed/DeviceCMYK hival CMYKclut]setcolorspace myimagedict @ ` mask?{
+/ImageType 4 d/MaskColor maskcolor d}if/Width iw d/Height ih d/Decode[0 hival]d
+/ImageMatrix[iw 0 0 ih 0 0]d/DataSource s d/BitsPerComponent bpc d/Interpolate
+smoothflag d E image}b/doNimage{bpc 24 eq{currentcolorspace}{colspA}?
+setcolorspace myimagedict @ ` mask?{/ImageType 4 d/MaskColor maskcolor d}if
+/Width iw d/Height ih d/Decode bpc 24 eq{[0 1 0 1 0 1]}{[0 1]}? d/ImageMatrix
+[iw 0 0 ih 0 0]d/DataSource s d/BitsPerComponent bpc 24 eq{8}{bpc}? d
+/Interpolate smoothflag d E image}b/doCMYKimage{/DeviceCMYK setcolorspace
+myimagedict @ ` mask?{/ImageType 4 d/MaskColor maskcolor d}if/Width iw d/Height
+ih d/Decode[0 1 0 1 0 1 0 1]d/ImageMatrix[iw 0 0 ih 0 0]d/DataSource s d
+/BitsPerComponent 8 d/Interpolate smoothflag d E image}b
+%%EndResource
+end reinitialize
+/DeviceRGB dup setcolorspace /colspABC exch def
+: 218 43 8 218 872 172 8 6244 F F 3 [ 0 ] F 
+X
+<
+8B8A8A 699292 FFFAFA FF7474 182121 FF8282 FF2525 FFD5D5
+BBBBBB FF4A4A 638E8E B8CECE AAAAAA FFF1F1 FFDDDD FF5B5B
+161919 FF3C3C FFBCBC FF2C2C 656565 FF6363 CBDADA 060707
+C8C8C8 ABC2C2 FF1414 456464 FFAAAA 747474 FFEBEB F0F4F4
+EEEEEE FFF6F6 FF5454 FFB3B3 C1D2D2 3D5959 FE9393 FFE1E1
+334B4B FF9E9E DADADA FED9D9 FFA5A5 FF4141 444444 FF0404
+FF0A0A 5D8989 FFFEFE 979797 FF3434 3A3A3A 749A9A F9F9F9
+A0BABA 243535 FFC5C5 557C7C 6C6C6C 7DA1A1 262C2C A4A3A3
+E3EBEB FF1C1C 4C4C4C 535353 FF6F6F F4F6F6 7D7474 FF8A8A
+7E7E7E 5A8383 517676 B6B6B6 2D4242 FF9898 8DACAC FFD2D2
+668D88 FF6A6A FFC2C2 FFC9C9 4D7070 FFFBF3 5C5C5C 0D1010
+B1B1B1 E8F7F7 F0F0F0 D7D7D7 FFFDFD FFE5E5 FDFDFD FFEDED
+B3B3B3 D4D2D2 FFCECE E7E7E7 E0E0E0 85A7A7 D1DEDE 96B3B3
+678E86 9DB9B9 F6F8F8 FFA1A1 F0EDED E7EEEE FAFCFC EAF0F0
+EFF4F4 F96969 EDF2F2 F3F1F1 C3C3C3 818181 F3F3F3 DCE6E6
+90AFAF FF7878 BDD0D0 F4F2F2 FF0000 000000 FFFFFF 608C8C
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+>
+doclutimage
+JUcj4!Bk&4IY!"5If]t%GJ\f[J*DF`BlCh:JUd!8!Wa0RjaILK'bLUSIKp#Y#NgJdJ*VRb)0"ki
+"u7P8IU"<?s*Oo7%2'?SHiO?4IY!"9If]Wg1?s;m;@bSj:K&22Hic,c#6&uP-6?r3l$e25m=,-S
+7I#=&&fUas!DrstHiXC@rd4l+*%`fM%I/CnJ+%jg!GQH=IK2/'IK:SurHo"W9eUl46k(Jj0+g5[
+s*Ohk!pY6MIfOos(BAm;If`4g9`I*S-lY8.IfX2&mX>?`9b0W>#;?(("U6IY*)/KoIK3aT/-TAc
+)LM`bl$gR#!%%VorI*FM!DHSlI/slujaR;BD=2iS%2CPrHj4j;&MGg^@eP6T>n8+l"YCAQI`6d<
+,o7m-J,OfNIfKWHI/t-1kC3OkAhrh(!<P[fHj'V$%P0XBoR6iC%2Jnj!%dGb`d[t7rd=enJ,OfP
+IfV8tp3csC9'Lg+!IF-^!Fdb^HiXN`mX>9K0L5jOl[Hm(!%%Pk!%%SlomZrQnpLLOqgSW==8[IH
+(]/U\.-Z3^BgqN?#R;mc-P8!9"Wm&["<gYo;?H05aF=19p3lU`!!Mm$!>fGHIfLGcI02K/)cuud
+!!MS:!Bi^<IL$!%5q`F<*YKjcIKN@Z6!`f*b'sFH-1u]ZIfKWCI/t-tqgSSbr-\Q,s*k"srI"YK
+l[Jp9$h8ZH!X&FL!A>)LIKWmdHpe&%I`d-?-1lW_IfN=CBE/2-IKEpoB_$WQ./ePo"RCO<B5mBi
+!%Iko!tPii+T2QGAF=mJ/57;QI`m3@-1cQ^IfKWL(\`=X<W7FK(`-lZIfqJt4"+2/I/lItIfTR^
+n9t?Drd4_j?2o?S?s!=D!!)J:!YQ.kl$gm,!APnlI/t-1r-n\Lo2u*B<W7FK(`-lZIfNRM(]/U\
+-1$*^:1!F=!$)"q!<ir3IK3LKI/j99IKC\t#O-]_IfV8Mn9k9_rI4eMnpLL<rdFnc(MNMlq0`8H
+8aV!.$5W2]!]!Y)r[7Vm!E^0;I/j9:IKC!1%d8AeIfLeaIK()`-2rAo"S@-E@=;/TIKC?&B_HrP
+I/uN(m!f%I+7jpb*`4UE#m1!Q!E^0;I/j9;IKCQB"m:?XJ+A$bIfKWDIK::6rI+eb(MNMlr-\W,
+<&*]g!#bBW!E1TLHiYE7qgJQJ(]Jg_!:bL>-RK>dI`m63IJ\Ko"S@-D(k)@3!b$Ljp4*!g!%$o[
+!<Eu.IK:K'rd4`'/,F\q=;Usb">_u=$t9$^"=k]J&g$mu"_11i=;XL+IKO*h9-EtXbCBP?rI4cp
+r-nZoqgSSKoR6fXIJa3K5#Cs&r-\Pkl@/gtEqFea@P<*^%hADa!E^0;I/uGtrtb`<4EgaR#YtsL
+0J>*a"V(H[![(#:rYGiA2->;M*EG9qpO:;8s*aips*afos*aco!!MqC!>nndIfX1;oR6od9gft+
+pjN6G(\iC\5CNhNqKrDV?[a+bqL&>Hs!e*k4>RiKI`m6@IJnWpIJeQoIJ\Ko"S@-E(`-lTIfr=k
+9IN!fIf]rp1@oqs>WPe=pjN6G(]Jg`659BH!_-E_rd4b\"[W-8!\&RSrd=i3*>&3u"TUJ%FYc\b
+I`m6@IJnWpIJeQoIJ\Ko"S@-E@2EVIIfW.Erd=eY9'Um,$XWIS"<8"-5n<[=!E^0;I0*e\=8mUL
+7NO/\Hiag%,5urk"#:SiI0(*A6iMK;<dnOd9-EtXbCBP?rI4NiqgSSWo6gWUB^pQP./\Jn9^@0/
+$7,:n!WkkFs*Oi5?2/jL=;Usb!amJhrd=i;%MShh!Y5>Crd4ceF"[H?!YdR-rd=f7C@cntJ,arq
+Ie\?FIfMM,I/l:nIf]Wr?M8gK.5:aK!CS^<IK<Oerd=iM>7gd^!_+[Erd4bR#7:BW!u5lJ0)n6>
+5AigeI/uZXo7"l4s*aippjLkG!)3<=!)2[-!.+<e!!`IN!\Z-2pO3-F(]Jga=Bc@9I0)kg#6&uO
+0H)VDHjCo>75mYG(d&W6I/ts(o7"l4s*aippjLkG!BUG`I/smOl[Js:))Co7#8Imr,:>#h*r16c
+=;Usb!a&Y<rd=i;.gH!#!A?/*)@.&ZIUku%=+(naI/ts(o6upR"A2?O9M4Q!!G=jpIKUfAIQ@f8
+HiPVkIK<Oerd=iM>7gd^!_+[Erd4bZ&j$%k"?J&^F?]\P!>Im"I/ts(o6u7?pO<3%+7t!_//nP9
+!AGbuIKBrg+oZok=;Usb!a&Y<rd=i;.gH!##U4^n.;LA12\c7>!^g-*rd=f">4[2oJ+e?l(A3+W
+&fUas"r2Rg,7,8YrdFlM(]Jga=Bc@9I0)kg#6&uO+p(13Hiagp6N2B7!.IuJI/ts(o6u7?p4!*+
+1A?4u%13#]">(Z(;)&#t!!W@N!E^0;I0*e+&H7(Z7Lg+2HibKI"9*ZL'l659I0'Ct<rRLJ/m@jq
+JUd?B!@0GqIKq56HnQ':IMMj0!<s&5IK<Oerd=iM>?CfP!_+4Crd4bk1/\$u!c`QRrd=hJIRF*_
+!A7RIIY!"AIfV]VpjNEP*(25_IOtGF!)<E@!E^0;I/uYsrI"_IIRO0_!X8f4rd4boIRF*_!]9r\
+rd=f">4[2oJ+S3lGX+%WIK;21s*Ol$!tG3X!"AXN";_>m.hhc,""df-!;q6F(]Jg`2'DL>JUd<A
+!X_[fomR'"7kGo)!rRKIFT+-&/jC$Q&2c7&s*b4Y6kKVh"uJ^Xs*b/^*Bk#uFWLH=!BbPsIY!">
+If`@\DRk4IJ+A'l$8rc??FtZ;J+.pj!G)X(+2*,SJ+%jm$@b2u,]+WP?G_/BJ*VRd!BiC[rtYZQ
+5W?]3~> Z
+; 30000 VM?
+Pscript_WinNT_Compat begin /$x mysetup def end
+Pscript_WinNT_Incr dup /suspend get exec
+Pscript_WinNT_Compat dup /initialize get exec
+%%BeginDocument: Pscript_Win_PassThrough
+grestore
+; 
+%%EndDocument
+
+Pscript_WinNT_Compat dup /suspend get exec
+Pscript_WinNT_Incr dup /resume get exec
+N 464 6511 M 442 6512 I 437 6511 I 438 6507 I 457 6430 I 461 6416 I 465 6430 I 490 6506 I 492 6511 I 486 6511 I 482 6508 I 457 6432 I 465 6430 I 465 6432 I 446 6509 I 438 6507 I 442 6504 I 464 6503 I C 
+0 0 0 1 scol  L N 486 6511 M 464 6511 I 464 6503 I 464 6503 I 464 6503 I 486 6503 I C 
+ L N 464 6507 M 442 6508 I 461 6431 I 486 6507 I C 
+ O N 465 6592 M 465 6594 I 469 6594 I 469 6592 I C 
+ L N 462 6512 M 462 6510 I 466 6510 I 466 6512 I C 
+ L N 465 6592 M 469 6592 I 466 6512 I 462 6512 I C 
+ L ; ; ; LH
+(%%[Page: 1]%%) = 
+%%PageTrailer
+
+%%Trailer
+%%BoundingBox: 0 0 612 792
+%%DocumentNeededResources: 
+%%DocumentSuppliedResources: 
+%%+ procset Pscript_WinNT_ErrorHandler 5.0 0
+%%+ procset Pscript_FatalError 5.0 0
+%%+ procset Pscript_Win_Basic 5.0 0
+%%+ procset Pscript_Win_Utils_L2 5.0 0
+%%+ procset Pscript_WinNT_Compat 5.0 0
+%%+ procset Pscript_Win_GdiObject 5.0 0
+%%+ procset Pscript_Win_GdiObject_L2 5.0 0
+%%+ procset Pscript_Win_Dib_L2 5.0 0
+Pscript_WinNT_Incr dup /terminate get exec
+ehsave restore
+%%Pages: 1
+(%%[LastPage]%%) = 
+%%EOF
+%-12345X@PJL EOJ
+%-12345X

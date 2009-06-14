@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="date last modified" content="July 25 2008">
+<meta name="help ID" content="Security.security.compatibility.ntrealmconfig.title">
+<title>Windows NT Realm: Configuration</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Windows NT Realm: Configuration</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>The Windows NT security realm uses account information defined for a
+    Windows NT domain to authenticate users and groups. Use this page to
+    define a name for the realm and the computer on which the Windows NT
+    domain is running.</p>
+<p>When using the Windows NT security realm, you must configure a Caching
+    realm. When configuring the Caching realm, select the Windows NT security
+    realm as the Basic realm. The Basic attribute defines the association
+    between the Caching realm and the Windows NT security realm.</p>
+<p>To use the Windows NT security realm, you need to use Compatibility
+    security. The use of the Windows NT security realm is deprecated in this
+    release of WebLogic Server.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.ntrealmconfig.name.label">Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getName"></a><a name="Name"></a>
+<p>The user-specified name of this MBean instance.</p>
+<p>This name is included as one of the key properties in the 
+MBean's <code>javax.management.ObjectName</code>:<br> 
+ 
+<code>Name=<i>user-specified-name</i></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.ntrealmconfig.primarydomain.label">Primary Domain</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getPrimaryDomain"></a><a name="PrimaryDomain"></a>
+<p>The host name of the Windows NT Primary Domain Controller where 
+users and groups are defined for the domain.</p>
+<p>If entering multiple sets of host and port numbers, delimit them 
+with commas. If the local computer(where WebLogic Server executes) 
+is the Primary Controller, you set the attribute to period 
+(".").</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.ntrealmconfig.realmclassname.label">Realm Class Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRealmClassName"></a><a name="RealmClassName"></a>
+<p>Gets the realmClassName attribute of the BasicRealmMBean 
+object</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.ConfigureWindowsNTSecurityRealms">Configure Windows NT
+  security realms</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.ConfigureCachingRealms">Configure Caching
+  realms</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.SetUpCompatibilitySecurity">Set up Compatibility
+  security</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://edocs.bea.com/wls/docs103/secmanage/compat.html">Using Compatibility
+    Security</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

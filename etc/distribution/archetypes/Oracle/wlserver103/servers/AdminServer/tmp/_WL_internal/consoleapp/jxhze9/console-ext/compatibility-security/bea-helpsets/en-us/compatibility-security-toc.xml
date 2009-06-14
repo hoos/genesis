@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN" "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<toc xml:lang="en-US" version="2.0" categoryclosedimage="chapter" topicimage="topic">
+  <tocitem text="Compatibility Security Extension" target="intro">
+    <tocitem text="How Do I..." target="blank">
+    
+  <tocitem text="Set up Compatibility security" target="security_compat.SetUpCompatibilitySecurity"/>
+
+  <tocitem text="Configure LDAP V1 security realms" target="security_compat.ConfigureLDAPV1SecurityRealms"><tocitem text="Enable communication between the LDAP Server and WebLogic Server" target="security_compat.EnableLDAPWebLogicServerCommunication"/><tocitem text="Define how to store groups in LDAP V1 security realms" target="security_compat.DefineHowToStoreGroupsInLDAPV1SecurityRealms"/><tocitem text="Define how to store users in LDAP V1 security realms" target="security_compat.DefineHowToStoreUsersInLDAPV1SecurityRealms"/></tocitem>
+
+  <tocitem text="Configure LDAP V2 security realms" target="security_compat.ConfigureLDAPV2SecurityRealms"/>
+
+  <tocitem text="Configure RDBMS security realms" target="security_compat.ConfigureRDBMSSecurityRealms"><tocitem text="Define RDBMS security realm database attributes" target="security_compat.DefineRDBMSSecurityRealmDatabaseAttributes"/><tocitem text="Define RDBMS security realm database schema" target="security_compat.DefineRDBMSSecurityRealmDatabaseSchema"/></tocitem>
+
+  <tocitem text="Configure Windows NT security realms" target="security_compat.ConfigureWindowsNTSecurityRealms"/>
+
+  <tocitem text="Configure wlauth for UNIX security realms" target="security_compat.ConfigureWlauthForUNIXSecurityRealms"/>
+
+  <tocitem text="Configure UNIX security realms" target="security_compat.ConfiguringUNIXSecurityRealms"/>
+
+  <tocitem text="Configure custom security realms" target="security_compat.ConfigureCustomSecurityRealms"/>
+
+  <tocitem text="Configure Caching realms" target="security_compat.ConfigureCachingRealms"><tocitem text="Enable the ACL cache" target="security_compat.EnableTheACLCache"/><tocitem text="Enable the Authentication cache" target="security_compat.EnableTheAuthenticationCache"/><tocitem text="Enable the Group cache" target="security_compat.EnableTheGroupCache"/><tocitem text="Enable the User cache" target="security_compat.EnableTheUserCache"/><tocitem text="Enable the Permission cache" target="security_compat.EnableThePermissionCache"/></tocitem>
+
+  <tocitem text="Configure the File realm" target="security_compat.ConfigureFileRealms"/>
+
+  <tocitem text="Enable the Identity Assertion provider" target="security_compat.ConfigureAnIdentityAssertionProvider"/>
+
+  <tocitem text="Configure a Realm Adapter Auditing provider" target="security_compat.ConfigureARealmAdapterAuditingProvider"/>
+
+  <tocitem text="Define ACLs" target="security_compat.DefineACLs"/>
+
+  <tocitem text="Define groups" target="security_compat.DefineGroups"/>
+
+  <tocitem text="Delete groups" target="security_compat.DeleteGroups"/>
+
+  <tocitem text="Define users" target="security_compat.DefineUsers"/>
+
+  <tocitem text="Delete users" target="security_compat.DeleteUsers"/>
+
+  <tocitem text="Change user passwords" target="security_compat.ChangeUserPasswords"/>
+
+  <tocitem text="Change the system password" target="security_compat.ChangeTheSystemPassword"/>
+
+  <tocitem text="Disable the Guest user" target="security_compat.DisableTheGuestUser"/>
+
+  <tocitem text="Protect user accounts" target="security_compat.ProtectUserAccounts"/>
+
+  <tocitem text="Unlock user accounts" target="security_compat.UnlockUserAccounts"/>
+
+  <tocitem text="Update user permissions in Windows NT and 2000" target="security_compat.UpdateUserPermissionsInWindowsNTAnd2000"/>
+
+  </tocitem>
+
+    <tocitem text="Compatibility Security Reference" target="blank">
+      
+  <tocitem text="Compatibility Security" target="blank">
+    <tocitem text="Compatibility Security: Basic Realm" target="Securitysecuritycompatibilitybasicrealmtitle"><tocitem text="Compatibility Security: Create Basic Realm" target="Securitysecuritycompatibilitycreatebasicrealmpagetitle"/><tocitem text="Compatibility Security: Delete Realm" target="Securitysecuritycompatibilitydeletebasicrealmpagetitle"/><tocitem text="LDAP Security Realm: General" target="Securitysecuritycompatibilityldaprealmconfiggeneraltitle"/><tocitem text="LDAP Security Realm: LDAP Server" target="Securitysecuritycompatibilityldaprealmconfigldaptitle"/><tocitem text="LDAP Security Realm: Users" target="Securitysecuritycompatibilityldaprealmconfiguserstitle"/><tocitem text="LDAP Security Realm: Groups" target="Securitysecuritycompatibilityldaprealmconfiggroupstitle"/><tocitem text="LDAP Realm: Notes" target="Securitysecuritycompatibilityldaprealmnotestitle"/><tocitem text="Windows NT Realm: Configuration" target="Securitysecuritycompatibilityntrealmconfigtitle"/><tocitem text="Windows NT Realm: Notes" target="Securitysecuritycompatibilityntrealmnotestitle"/><tocitem text="RDBMS Realm: Database" target="Securitysecuritycompatibilityrdbmsrealmconfigdatabasetitle"/><tocitem text="RDBMS Realm: General" target="Securitysecuritycompatibilityrdbmsrealmconfiggeneraltitle"/><tocitem text="RDBMS Realm: Schema" target="Securitysecuritycompatibilityrdbmsrealmconfigschematitle"/><tocitem text="RDBMS Realm: Notes" target="Securitysecuritycompatibilityrdbmsrealmnotestitle"/><tocitem text="Unix Realm: Configuration" target="Securitysecuritycompatibilityunixrealmconfigtitle"/><tocitem text="Unix Realm: Notes" target="Securitysecuritycompatibilityunixrealmnotestitle"/><tocitem text="Custom Realm: Configuration" target="Securitysecuritycompatibilitycustomrealmconfigtitle"/><tocitem text="Custom Realm: Notes" target="Securitysecuritycompatibilitycustomrealmnotestitle"/></tocitem>
+
+    <tocitem text="Compatibility Security: Caching Realms" target="Securitysecuritycompatibilitycachingrealmtitle"><tocitem text="Compatibility Security: Create a Caching Realm" target="Securitysecuritycompatibilitycreatecachingrealmpagetitle"/><tocitem text="Compatibility Security : Delete Groups" target="Securitysecuritycompatibilitydeletecachingrealmpagetitle"/><tocitem text="Caching Realm: General" target="Securitysecuritycompatibilitycachingrealmconfiggeneraltitle"/><tocitem text="Caching Realm: ACL" target="Securitysecuritycompatibilitycachingrealmconfigacltitle"/><tocitem text="Caching Realm: Authentication" target="Securitysecuritycompatibilitycachingrealmconfigauthenticationtitle"/><tocitem text="Caching Realm: Groups" target="Securitysecuritycompatibilitycachingrealmconfiggroupstitle"/><tocitem text="Caching Realm: Users" target="Securitysecuritycompatibilitycachingrealmconfiguserstitle"/><tocitem text="Caching Realm: Permissions" target="Securitysecuritycompatibilitycachingrealmconfigpermissionstitle"/><tocitem text="Caching Realm: Notes" target="Securitysecuritycompatibilitycachingrealmnotestitle"/></tocitem>
+
+    <tocitem text="Compatibility Security: Users" target="Securitysecuritycompatibilityuserstitle"><tocitem text="Create a User" target="Securitysecuritycompatibilitycreateuserpagetitle"/><tocitem text="Security Compatibility : Delete Users" target="Securitysecuritycompatibilitydeleteuserpagetitle"/><tocitem text="Compatibility Security: Users: Change Password" target="Securitysecuritycompatibilityuserchangepasswordtitle"/></tocitem>
+
+    <tocitem text="Compatibility Security: Groups" target="Securitysecuritycompatibilitygroupstitle"><tocitem text="Create a Group" target="Securitysecuritycompatibilitycreategrouppagetitle"/><tocitem text="Compatibility Security : Delete Groups" target="Securitysecuritycompatibilitydeletegrouppagetitle"/><tocitem text="Compatibility Security: Groups: Membership" target="Securitysecuritycompatibilitygroupsconfigmembershiptitle"/></tocitem>
+
+    <tocitem text="Compatibility Security: Access Control Lists" target="Securitysecuritycompatibilityacltitle"><tocitem text="Create an ACL" target="Securitysecuritycompatibilitycreateaclpagetitle"/><tocitem text="Compatibility Security : Delete ACLs" target="Securitysecuritycompatibilitydeleteaclpagetitle"/></tocitem>
+
+    <tocitem text="Access Control Lists: Grantees" target="Securitysecuritycompatibilityaclpermissiongranteestitle"><tocitem text="Create an ACL Grantee" target="Securitysecuritycompatibilityaclpermsissioncreategranteepagetitle"/><tocitem text="Add a user or group to an ACL permission" target="Securitysecuritycompatibilityaclpermissionaddgranteepagetitle"/><tocitem text="Remove a user or group from an ACL permission" target="Securitysecuritycompatibilityaclpermissiondeletegranteepagetitle"/></tocitem>
+
+  </tocitem>
+
+
+      
+  <tocitem text="Security Domain" target="blank">
+    <tocitem text="Domain: Compatibility Security: General" target="Securitysecuritydomaindomaincompatibilitygeneraltitle"/>
+
+    <tocitem text="Domain: Compatibility Security: Advanced" target="Securitysecuritydomaindomaincompatibilityadvancedtitle"/>
+
+    <tocitem text="Domain: Compatibility Security: File Realm" target="Securitysecuritydomaindomaincompatibilityfilerealmtitle"/>
+
+    <tocitem text="Domain: Compatibility Security: Passwords" target="Securitysecuritydomaindomaincompatibilitypasswordstitle"/>
+  </tocitem>
+
+  </tocitem>
+  </tocitem>
+</toc>

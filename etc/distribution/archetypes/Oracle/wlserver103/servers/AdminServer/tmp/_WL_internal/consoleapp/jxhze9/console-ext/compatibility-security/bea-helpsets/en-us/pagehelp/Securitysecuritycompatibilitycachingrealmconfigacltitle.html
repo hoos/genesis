@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="date last modified" content="July 25 2008">
+<meta name="help ID" content="Security.security.compatibility.cachingrealmconfigacl.title">
+<title>Caching Realm: ACL</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Caching Realm: ACL</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to configure and enable the ACL cache for the Caching
+    realm. To use the Caching realm, you need to use Compatibility security.
+    The use of the Caching realm is deprecated in this release of WebLogic
+    Server.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.cachingrealmconfigacl.aclcacheenable.label">Enable ACL Cache</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>Specifies whether the ACL cache should be enabled. By default,the
+        ACL cache is enabled.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.cachingrealmconfigacl.aclcachesize.label">ACL Cache Size</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The maximum number of ACL lookups (between 17 and 65537) that
+        should be cached. This attribute should be a prime number for best
+        lookup performance.</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.cachingrealmconfigacl.aclcachettlpositive.label">ACL Cache Positive TTL</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The number of seconds (between 1 and a positive 32-bit integer) to
+        retain the results of a successful ACL lookup.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.cachingrealmconfigacl.aclcachettlnegative.label">ACL Cache Negative TTL</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The number of seconds (between 1 and a positive 32-bit integer) to
+        retain the results of an unsuccessful ACL lookup.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.ConfigureCachingRealms">Configure Caching
+  realms</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.EnableTheACLCache">Enable the ACL
+  cache</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.EnableTheAuthenticationCache">Enable the
+  Authentication cache</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.EnableTheUserCache">Enable the User
+  cache</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.EnableThePermissionCache">Enable the Permission
+  cache</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://edocs.bea.com/wls/docs103/secmanage/compat.html">Using Compatibility
+    Security</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

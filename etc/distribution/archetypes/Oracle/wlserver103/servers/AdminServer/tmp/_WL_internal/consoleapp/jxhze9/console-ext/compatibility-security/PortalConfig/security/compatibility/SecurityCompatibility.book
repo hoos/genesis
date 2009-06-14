@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+             xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+             xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd"><!-- Definition file for the pages in the security.compatibility subsystem   of the WebLogic Server administration console                    Copyright (c) 2003 by BEA Systems, Inc. All Rights Reserved.  -->
+    <netuix:book definitionLabel="SecurityCompatibility" title="book.title" markupName="book"
+               markupType="Book"
+               presentationClass="invisible">
+      <netuix:content>
+      <netuix:book definitionLabel="SecurityCompatibilityBook" title="book.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+
+            <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityCachingRealmPages"
+                       title="not.used"
+                       hidden="true">
+              <netuix:content>
+                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                    <netuix:book markupName="book" markupType="Book"
+                               definitionLabel="SecurityCompatibilityCachingRealBook"
+                               title="SecurityCompatibilityCachingRealmBook">
+                      <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                      <netuix:content>
+                        <!-- Definition for the config tab -->
+                        <netuix:book markupName="book" markupType="Book"
+                                   definitionLabel="SecurityCompatibilityCachingRealmConfigTabBook"
+                                   title="tab.config.label">
+                          <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                          <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                          <netuix:content>
+                            <!-- Definition for the general tab -->
+                            <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="SecurityCompatibilityCachingRealmGeneralTabPage"
+                                       title="tab.general.label">
+                              <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                              <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.cachingrealmconfiggeneral.title;compatibility-security"/>
+                              <netuix:content>
+                                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                    <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityCachingRealmConfigGeneralPortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/CachingRealmConfigGeneral.portlet"/>
+                                  </netuix:placeholder>
+                                </netuix:layout>
+                              </netuix:content>
+                            </netuix:page>
+                            <!-- Definition for the acl tab -->
+                            <netuix:page markupName="page" markupType="Page" definitionLabel="CachingRealmaclTabPage"
+                                       title="tab.acl.label">
+                              <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                              <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.cachingrealmconfigacl.title;compatibility-security"/>
+                              <netuix:content>
+                                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                    <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityCachingRealmConfigAclPortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/CachingRealmConfigAcl.portlet"/>
+                                  </netuix:placeholder>
+                                </netuix:layout>
+                              </netuix:content>
+                            </netuix:page>
+                            <!-- Definition for the authentication tab -->
+                            <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="CachingRealmauthenticationTabPage"
+                                       title="tab.authentication.label">
+                              <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                              <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.cachingrealmconfigauthentication.title;compatibility-security"/>
+                              <netuix:content>
+                                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                    <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityCachingRealmConfigAuthenticationPortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/CachingRealmConfigAuthentication.portlet"/>
+                                  </netuix:placeholder>
+                                </netuix:layout>
+                              </netuix:content>
+                            </netuix:page>
+                            <!-- Definition for the groups tab -->
+                            <netuix:page markupName="page" markupType="Page" definitionLabel="CachingRealmgroupsTabPage"
+                                       title="tab.groups.label">
+                              <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                              <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.cachingrealmconfiggroups.title;compatibility-security"/>
+                              <netuix:content>
+                                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                    <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityCachingRealmConfigGroupsPortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/CachingRealmConfigGroups.portlet"/>
+                                   </netuix:placeholder>
+                                 </netuix:layout>
+                              </netuix:content>
+                            </netuix:page>
+                            <!-- Definition for the users tab -->
+                            <netuix:page markupName="page" markupType="Page" definitionLabel="CachingRealmusersTabPage"
+                                       title="tab.users.label">
+                              <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                              <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.cachingrealmconfigusers.title;compatibility-security"/>
+                              <netuix:content>
+                                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                    <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityCachingRealmConfigUsersPortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/CachingRealmConfigUsers.portlet"/>
+                                   </netuix:placeholder>
+                                 </netuix:layout>
+                               </netuix:content>
+                            </netuix:page>
+                            <!-- Definition for the permissions tab -->
+                            <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="CachingRealmpermissionsTabPage"
+                                       title="tab.permissions.label">
+                              <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                              <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.cachingrealmconfigpermissions.title;compatibility-security"/>
+                              <netuix:content>
+                                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                    <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityCachingRealmConfigPermissionsPortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/CachingRealmConfigPermissions.portlet"/>
+                                  </netuix:placeholder>
+                                </netuix:layout>
+                              </netuix:content>
+                            </netuix:page>
+                          </netuix:content>
+                        </netuix:book>
+                        <!-- Definition for the notes tab -->
+                        <netuix:page markupName="page" markupType="Page" definitionLabel="CachingRealmnotesTabPage"
+                                   title="tab.notes.label">
+                          <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                          <netuix:meta name="helpid"
+                                     content="Security.security.compatibility.cachingrealmnotes.title;compatibility-security"/>
+                          <netuix:content>
+                            <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                              <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                <netuix:portletInstance markupType="Portlet"
+                                                      instanceLabel="SecurityCompatibilityCachingRealmNotesPortlet"
+                                                      contentUri="/PortalConfig/security/compatibility/CachingRealmNotes.portlet"/>
+                              </netuix:placeholder>
+                            </netuix:layout>
+                          </netuix:content>
+                        </netuix:page>
+                      </netuix:content>
+                    </netuix:book>
+                  </netuix:placeholder>
+                </netuix:layout>
+              </netuix:content>
+            </netuix:page>
+
+            <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityCustomRealmPages"
+                       title="not.used"
+                       hidden="true">
+              <netuix:content>
+                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                    <netuix:book markupName="book" markupType="Book"
+                               definitionLabel="SecurityCompatibilityCustomRealmBook"
+                               title="SecurityCompatibilityCustomRealmBook">
+                      <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                      <netuix:content>
+                        <!-- Definition for the config tab -->
+                        <netuix:page markupName="page" markupType="Page" definitionLabel="CustomRealmconfigTabPage"
+                                   title="tab.config.label">
+                          <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                          <netuix:meta name="helpid"
+                                     content="Security.security.compatibility.customrealmconfig.title;compatibility-security"/>
+                          <netuix:meta name="configuration-page" content="CustomRealm"/>
+                          <netuix:content>
+                            <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                              <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                <netuix:portletInstance markupType="Portlet"
+                                                      instanceLabel="SecurityCompatibilityCustomRealmConfigPortlet"
+                                                      contentUri="/PortalConfig/security/compatibility/CustomRealmConfig.portlet"/>
+                              </netuix:placeholder>
+                            </netuix:layout>
+                          </netuix:content>
+                        </netuix:page>
+                        <!-- Definition for the notes tab -->
+                        <netuix:page markupName="page" markupType="Page" definitionLabel="CustomRealmnotesTabPage"
+                                   title="tab.notes.label">
+                          <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                          <netuix:meta name="helpid"
+                                     content="Security.security.compatibility.customrealmnotes.title;compatibility-security"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet"
+                                                      instanceLabel="SecurityCompatibilityCustomRealmNotesPortlet"
+                                                      contentUri="/PortalConfig/security/compatibility/CustomRealmNotes.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                    </netuix:placeholder>
+                  </netuix:layout>
+                </netuix:content>
+            </netuix:page>
+            <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityLDAPPages"
+                       title="not.used"
+                       hidden="true">
+              <netuix:content>
+                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                    <netuix:book markupName="book" markupType="Book"
+                               definitionLabel="SecurityCompatibilityLDAPBook"
+                               title="SecurityCompatibilityLDAPBook">
+                      <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                      <netuix:content>
+                      <!-- Definition for the config tab -->
+                      <netuix:book markupName="book" markupType="Book" definitionLabel="LDAPRealmconfigTabPage"
+                                   title="tab.config.label">
+                        <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                        <netuix:content>
+                          <!-- Definition for the general tab -->
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="LDAPRealmgeneralTabPage"
+                                       title="tab.general.label">
+                            <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                            <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.ldaprealmconfiggeneral.title;compatibility-security"/>
+                            <netuix:meta name="configuration-page" content="LDAPRealm"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityLDAPRealmConfigGeneralPortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/LDAPRealmConfigGeneral.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the ldap tab -->
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="LDAPRealmldapTabPage"
+                                       title="tab.ldap.label">
+                            <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                            <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.ldaprealmconfigldap.title;compatibility-security"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityLDAPRealmConfigLdapPortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/LDAPRealmConfigLdap.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the users tab -->
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="LDAPRealmusersTabPage"
+                                       title="tab.users.label">
+                            <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                            <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.ldaprealmconfigusers.title;compatibility-security"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityLDAPRealmConfigUsersPortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/LDAPRealmConfigUsers.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the groups tab -->
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="LDAPRealmgroupsTabPage"
+                                       title="tab.groups.label">
+                            <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                            <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.ldaprealmconfiggroups.title;compatibility-security"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityLDAPRealmConfigGroupsPortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/LDAPRealmConfigGroups.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+
+                      <!-- Definition for the notes tab -->
+                      <netuix:page markupName="page" markupType="Page" definitionLabel="LDAPRealmnotesTabPage"
+                                   title="tab.notes.label">
+                        <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                        <netuix:meta name="helpid"
+                                     content="Security.security.compatibility.ldaprealmnotes.title;compatibility-security"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityLDAPRealmNotesPortlet"
+                                                      contentUri="/PortalConfig/security/compatibility/LDAPRealmNotes.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityNTRealmPages"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book"
+                               definitionLabel="SecurityCompatibilityNTRealmBook"
+                               title="SecurityCompatibilityNTRealmBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <!-- Definition for the config tab -->
+                      <netuix:page markupName="page" markupType="Page" definitionLabel="NTRealmconfigTabPage"
+                                   title="tab.config.label">
+                        <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                        <netuix:meta name="helpid"
+                                     content="Security.security.compatibility.ntrealmconfig.title;compatibility-security"/>
+                        <netuix:meta name="configuration-page" content="NTRealm"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityNTRealmConfigPortlet"
+                                                      contentUri="/PortalConfig/security/compatibility/NTRealmConfig.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      <!-- Definition for the notes tab -->
+                      <netuix:page markupName="page" markupType="Page" definitionLabel="NTRealmnotesTabPage"
+                                   title="tab.notes.label">
+                        <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                        <netuix:meta name="helpid"
+                                     content="Security.security.compatibility.ntrealmnotes.title;compatibility-security"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityNTRealmNotesPortlet"
+                                                      contentUri="/PortalConfig/security/compatibility/NTRealmNotes.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+
+            <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityRDBMSRealmPages"
+                       title="not.used"
+                       hidden="true">
+              <netuix:content>
+                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                    <netuix:book markupName="book" markupType="Book"
+                               definitionLabel="SecurityCompatibilityRDBMSRealmBook"
+                               title="SecurityCompatibilityRDBMSRealmBook">
+                      <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                      <netuix:content>
+                        <!-- Definition for the config tab -->
+                        <netuix:book markupName="book" markupType="Book" definitionLabel="RDBMSRealmconfigTabPage"
+                                   title="tab.config.label">
+                          <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                          <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                          <netuix:content>
+                            <!-- Definition for the general tab -->
+                            <netuix:page markupName="page" markupType="Page" definitionLabel="RDBMSRealmgeneralTabPage"
+                                       title="tab.general.label">
+                              <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                              <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.rdbmsrealmconfiggeneral.title;compatibility-security"/>
+                              <netuix:meta name="configuration-page" content="RDBMSRealm"/>
+                              <netuix:content>
+                                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                    <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityRDBMSRealmConfigGeneralPortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/RDBMSRealmConfigGeneral.portlet"/>
+                                  </netuix:placeholder>
+                                </netuix:layout>
+                              </netuix:content>
+                            </netuix:page>
+                            <!-- Definition for the database tab -->
+                            <netuix:page markupName="page" markupType="Page" definitionLabel="RDBMSRealmdatabaseTabPage"
+                                       title="tab.database.label">
+                              <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                              <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.rdbmsrealmconfigdatabase.title;compatibility-security"/>
+                              <netuix:content>
+                                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                    <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityRDBMSRealmConfigDatabasePortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/RDBMSRealmConfigDatabase.portlet"/>
+                                  </netuix:placeholder>
+                                </netuix:layout>
+                              </netuix:content>
+                            </netuix:page>
+                            <!-- Definition for the schema tab -->
+                            <netuix:page markupName="page" markupType="Page" definitionLabel="RDBMSRealmschemaTabPage"
+                                       title="tab.schema.label">
+                              <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                              <netuix:meta name="helpid"
+                                         content="Security.security.compatibility.rdbmsrealmconfigschema.title;compatibility-security"/>
+                              <netuix:content>
+                                <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                  <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                    <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="SecurityCompatibilityRDBMSRealmConfigSchemaPortlet"
+                                                          contentUri="/PortalConfig/security/compatibility/RDBMSRealmConfigSchema.portlet"/>
+                                  </netuix:placeholder>
+                                </netuix:layout>
+                              </netuix:content>
+                            </netuix:page>
+                          </netuix:content>
+                        </netuix:book>
+
+                        <!-- Definition for the notes tab -->
+                        <netuix:page markupName="page" markupType="Page" definitionLabel="RDBMSRealmnotesTabPage"
+                                   title="tab.notes.label">
+                          <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                          <netuix:meta name="helpid"
+                                     content="Security.security.compatibility.rdbmsrealmnotes.title;compatibility-security"/>
+                          <netuix:content>
+                            <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                              <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                <netuix:portletInstance markupType="Portlet"
+                                                      instanceLabel="SecurityCompatibilityRDBMSRealmNotesPortlet"
+                                                      contentUri="/PortalConfig/security/compatibility/RDBMSRealmNotes.portlet"/>
+                              </netuix:placeholder>
+                            </netuix:layout>
+                          </netuix:content>
+                        </netuix:page>
+                      </netuix:content>
+                    </netuix:book>
+                  </netuix:placeholder>
+                </netuix:layout>
+              </netuix:content>
+            </netuix:page>
+
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityUnixRealmPages"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book"
+                               definitionLabel="SecurityCompatibilityUnixRealmBook"
+                               title="SecurityCompatibilityUnixRealmBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <!-- Definition for the config tab -->
+                      <netuix:page markupName="page" markupType="Page" definitionLabel="UnixRealmconfigTabPage"
+                                   title="tab.config.label">
+                        <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                        <netuix:meta name="helpid"
+                                     content="Security.security.compatibility.unixrealmconfig.title;compatibility-security"/>
+                        <netuix:meta name="configuration-page" content="UnixRealm"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet"
+                                                      instanceLabel="SecurityCompatibilityUnixRealmConfigPortlet"
+                                                      contentUri="/PortalConfig/security/compatibility/UnixRealmConfig.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      <!-- Definition for the notes tab -->
+                      <netuix:page markupName="page" markupType="Page" definitionLabel="UnixRealmnotesTabPage"
+                                   title="tab.notes.label">
+                        <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                        <netuix:meta name="helpid"
+                                     content="Security.security.compatibility.unixrealmnotes.title;compatibility-security"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityUnixRealmNotesPortlet"
+                                                      contentUri="/PortalConfig/security/compatibility/UnixRealmNotes.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+
+
+          <!-- Definition for the Security Compatibility User Change Passwords page -->
+  			<netuix:book definitionLabel="SecurityCompatibilityUserChangePasswordBook"
+                       title="SecurityCompatibilityUserChangePasswordBook"
+                       markupName="book"
+                       markupType="Book"
+                       backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile">
+  				      <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+            <netuix:content>
+    			       <netuix:page markupName="page" markupType="Page"
+                           definitionLabel="SecurityCompatibilityUserChangePasswordPage"
+                           title="tab.passwords.label"
+                           presentationClass="page-table">
+                <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                <netuix:meta name="helpid"
+                             content="Security.security.compatibility.user.changepassword.title;compatibility-security"/>
+                <netuix:content>
+                  <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                    <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                      <netuix:portletInstance markupType="Portlet"
+                                              instanceLabel="SecurityCompatibilityUserChangePasswordPortlet"
+                                              contentUri="/PortalConfig/security/compatibility/UserChangePassword.portlet"/>
+          			       </netuix:placeholder>
+        			       </netuix:layout>
+      			       </netuix:content>
+              </netuix:page>
+            </netuix:content>
+  			     </netuix:book>
+
+  			     <!-- Definition for the Group membership tab -->
+  			<netuix:book definitionLabel="SecurityCompatibilityGroupMembershipBook"
+                       title="SecurityCompatibilityGroupMembershipBook"
+                       markupName="book"
+                       markupType="Book"
+                       backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile">
+  				      <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+            <netuix:content>
+              <netuix:page markupName="page" markupType="Page"
+                           definitionLabel="SecurityCompatibilityGroupConfigMembershipPage"
+                           title="tab.membership.label"
+                           presentationClass="page-content">
+                <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+                <netuix:meta name="helpid"
+                             content="Security.security.compatibility.groups.config.membership.title;compatibility-security"/>
+                <netuix:content>
+                  <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                    <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                      <netuix:portletInstance markupType="Portlet"
+                                              instanceLabel="SecurityCompatibilityGroupConfigMembershipPortlet"
+                                              contentUri="/PortalConfig/security/compatibility/GroupMembership.portlet"/>
+                   </netuix:placeholder>
+                 </netuix:layout>
+                </netuix:content>
+              </netuix:page>
+            </netuix:content>
+  			     </netuix:book>
+
+
+
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the Security Compatibility Users table page -->
+    <netuix:book definitionLabel="SecurityCompatibilityUsersTableBook"
+                   title="security.compatibility.users.table.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+    	   <netuix:titlebar/>
+        <netuix:content>
+    			   <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityUsersTablePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-table">
+            <netuix:meta name="helpid" content="Security.security.compatibility.users.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityUsersTablePortlet"
+                                          contentUri="/PortalConfig/security/compatibility/UsersTable.portlet"/>
+          		    </netuix:placeholder>
+        	     </netuix:layout>
+      		    </netuix:content>
+          </netuix:page>
+        </netuix:content>
+  	   </netuix:book>
+
+  	   <!-- Definition for the User creation assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityCreateUserBook"
+                   title="assistant.create.user.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityCreateUser"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.createuser.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityCreateUserPortlet"
+                                          contentUri="/PortalConfig/security/compatibility/CreateUser.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the User deletion assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityDeleteUserBook"
+                   title="assistant.delete.user.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityDeleteUser"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.deleteuser.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityDeleteUserPortlet"
+                                          contentUri="/PortalConfig/security/compatibility/DeleteUser.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the Security Compatibility Groups table page -->
+    <netuix:book definitionLabel="SecurityCompatibilityGroupsTableBook"
+                   title="security.compatibility.groups.table.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+    	   <netuix:titlebar/>
+        <netuix:content>
+    	     <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityGroupsTablePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-table">
+            <netuix:meta name="helpid" content="Security.security.compatibility.groups.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityGroupsTablePortlet"
+                                          contentUri="/PortalConfig/security/compatibility/GroupsTable.portlet"/>
+          		    </netuix:placeholder>
+        		    </netuix:layout>
+      		    </netuix:content>
+          </netuix:page>
+        </netuix:content>
+  	   </netuix:book>
+
+      <!-- Definition for the Group creation assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityCreateGroupBook"
+                   title="assistant.create.group.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityCreateGroup"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.creategroup.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityCreateGroupPortlet"
+                                          contentUri="/PortalConfig/security/compatibility/CreateGroup.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the Group deletion assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityDeleteGroupBook"
+                   title="assistant.delete.group.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityDeleteGroup"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.deletegroup.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityDeleteGroupPortlet"
+                                          contentUri="/PortalConfig/security/compatibility/DeleteGroup.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the CachingRealm table page -->
+    <netuix:book definitionLabel="SecurityCompatibilityCachingRealmsTableBook"
+                   title="security.compatibility.cachingrealm.table.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityCachingRealmsTablePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-table">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.cachingrealm.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityCachingRealmTablePortlet"
+                                          contentUri="/PortalConfig/security/compatibility/CachingRealmTable.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the Caching Realm creation assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityCreateCachingRealmBook"
+                   title="assistant.create.cachingrealm.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityCreateCachingRealm"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.createcachingrealm.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityCreateCachingRealmPortlet"
+                                          contentUri="/PortalConfig/security/compatibility/CreateCachingRealm.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the CachingRealm deletion assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityDeleteCachingRealmBook"
+                   title="assistant.delete.cachingrealm.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityDeleteCachingRealm"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.deletecachingrealm.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityDeleteCachingRealmPortlet"
+                                          contentUri="/PortalConfig/security/compatibility/DeleteCachingRealm.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the BasicRealms table page -->
+    <netuix:book definitionLabel="SecurityCompatibilityBasicRealmsTableBook"
+                   title="security.compatibility.basicrealm.table.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityRealmsTablePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-table">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.basicrealm.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityBasicRealmTablePortlet"
+                                          contentUri="/PortalConfig/security/compatibility/BasicRealmTable.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the Basic Realm creation assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityCreateBasicRealmBook"
+                   title="assistant.create.basicrealm.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityCreateBasicRealm"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.createbasicrealm.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityCreateBasicRealmPortlet"
+                                          contentUri="/PortalConfig/security/compatibility/CreateBasicRealm.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+     <!-- Definition for the Basic Realm deletion assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityDeleteBasicRealmBook"
+                   title="assistant.delete.basicrealm.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityDeleteBasicRealm"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.deletebasicrealm.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityDeleteBasicRealmPortlet"
+                                          contentUri="/PortalConfig/security/compatibility/DeleteBasicRealm.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the Acl table page -->
+    <netuix:book definitionLabel="SecurityCompatibilityAclsTableBook"
+                   title="security.compatibility.acl.table.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityAclsTablePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-table">
+            <netuix:meta name="helpid" content="Security.security.compatibility.acl.title;compatibility-security"/>
+            <netuix:meta name="configuration-page" content="Acl"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityAclTablePortlet"
+                                          contentUri="/PortalConfig/security/compatibility/AclTable.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+  	   </netuix:book>
+
+      <!-- Definition for the ACL creation assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityCreateAclBook"
+                   title="assistant.create.acl.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityCreateAcl"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.createacl.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityCreateAclPortlet"
+                                          contentUri="/PortalConfig/security/compatibility/CreateAcl.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the Acl deletion assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityDeleteAclBook"
+                   title="assistant.delete.acl.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityDeleteAcl"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.deleteacl.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="SecurityCompatibilityDeleteAclPortlet"
+                                          contentUri="/PortalConfig/security/compatibility/DeleteAcl.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the Acl Permissions table page -->
+    <netuix:book definitionLabel="SecurityCompatibilityAclPermissionsTableBook"
+                   title="security.compatibility.acl.permissions.table.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityAclPermissionsTablePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-table">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.acl.permission.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityAclPermissionsTablePortlet"
+                                          contentUri="/PortalConfig/security/compatibility/AclPermissionsTable.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+  	   </netuix:book>
+
+  	   <!-- Definition for the ACL Permission creation assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityCreateAclPermissionBook"
+                   title="assistant.create.acl.permission.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityCreateAclPermission"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.acl.createpermission.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityCreateAclPermissionPortlet"
+                                          contentUri="/PortalConfig/security/compatibility/CreateAclPermission.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the AclPermission deletion assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityDeleteAclPermissionBook"
+                   title="assistant.delete.acl.permission.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityDeleteAclPermissions"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.acl.deletepermission.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityDeleteAclPermissionsPortlet"
+                                          contentUri="/PortalConfig/security/compatibility/DeleteAclPermissions.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+  	   <!-- Definition for the Acl Grantees table page -->
+    <netuix:book definitionLabel="SecurityCompatibilityAclGranteesTableBook"
+                   title="security.compatibility.acl.permission.grantees.table.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityAclGranteesTablePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-table">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.acl.permission.grantees.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityAclGranteesTablePortlet"
+                                          contentUri="/PortalConfig/security/compatibility/AclGranteesTable.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+  	   </netuix:book>
+
+  	   <!-- Definition for the ACL Permission Grantee creation assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityCreateAclPermissionGranteeBook"
+                   title="assistant.create.acl.permission.grantee.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityCreateAclPermissionGrantee"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.acl.permsission.creategrantee.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityCreateAclPermissionGranteePortlet"
+                                          contentUri="/PortalConfig/security/compatibility/CreateAclPermissionGrantee.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the add Grantee assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityAddAclPermissionGranteeBook"
+                   title="assistant.add.acl.permission.grantee.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityAddAclPermissionGrantee"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.acl.permission.addgrantee.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityAddAclPermissionGranteePortlet"
+                                          contentUri="/PortalConfig/security/compatibility/AddAclPermissionGrantee.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <!-- Definition for the delete Grantee assistant page -->
+    <netuix:book markupName="book" markupType="Book"
+                   definitionLabel="SecurityCompatibilityDeleteAclPermissionGranteeBook"
+                   title="assistant.delete.acl.permission.grantee.title"
+                   backingFile="com.bea.console.utils.CompatSecurityGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="SecurityCompatibilityDeleteAclPermissionGrantee"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid"
+                         content="Security.security.compatibility.acl.permission.deletegrantee.page.title;compatibility-security"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet"
+                                          instanceLabel="SecurityCompatibilityDeleteAclPermissionGranteePortlet"
+                                          contentUri="/PortalConfig/security/compatibility/DeleteAclPermissionGrantee.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+    </netuix:content>
+  </netuix:book>
+</portal:root>

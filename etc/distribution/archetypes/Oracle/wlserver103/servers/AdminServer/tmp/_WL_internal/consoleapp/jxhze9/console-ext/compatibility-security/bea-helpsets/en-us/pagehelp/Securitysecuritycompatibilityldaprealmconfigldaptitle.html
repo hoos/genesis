@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="date last modified" content="July 25 2008">
+<meta name="help ID" content="Security.security.compatibility.ldaprealmconfigldap.title">
+<title>LDAP Security Realm: LDAP Server</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">LDAP Security Realm: LDAP Server</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to configure the LDAP server used by the LDAP
+    Compatibility security realm.</p>
+<p>To use the LDAP security realm, you need to use Compatibility security.
+    The use of the LDAP security realm is deprecated in this release of
+    WebLogic Server.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.ldaprealmconfigldap.ldapurl.label">LDAPURL</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The location of the LDAP server.</p>
+<p>Change the URL to the name of the computer on which the LDAP server
+        is running and the number of the port at which the LDAP server is
+        listening. If you want WebLogic Server to connect to the LDAP server
+        using the SSL protocol, use the SSL port of the LDAP server in the
+        server URL.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.ldaprealmconfigldap.principal.label">Principal</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The distinguished name of the LDAP user that WebLogic Server uses
+        to connect to the LDAP server.</p>
+<p>This user must be able to list LDAP users and groups.</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.ldaprealmconfigldap.credential.label">Credential</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The password that authenticates the LDAP user defined in the
+        Principal field.</p>
+<p>This password is automatically encrypted.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.ldaprealmconfigldap.sslenable.label">Enable SSL</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>Specifies whether the SSL protocol is used to protect
+        communications between the LDAP server and WebLogic Server.</p>
+<p>Keep in mind the following:</p>
+<ul>
+          
+<li>Disable this attribute if the LDAP server is not configured to
+          use the SSL protocol.</li>
+          
+<li>If you set the User Authentication attribute to external, this
+          attribute must be enabled.</li>
+        
+</ul>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.ldaprealmconfigldap.authprotocol.label">Auth Protocol</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The type of authentication used to authenticate the LDAP
+        server.</p>
+<p>Set the attribute to one of the following:</p>
+<ul>
+          
+<li>None for no authentication.</li>
+          
+<li>Simple for password authentication.</li>
+          
+<li>CRAM-MD5 for certificate authentication.</li>
+        
+</ul>
+<p>Netscape Directory Server supports CRAM-MD5. Microsoft Site Server
+        and Novell NDS support simple.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.ConfigureLDAPV1SecurityRealms">Configure LDAP V1
+  security realms</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.EnableLDAPWebLogicServerCommunication">Enable communication
+  between the LDAP Server and WebLogic Server</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.DefineHowToStoreUsersInLDAPV1SecurityRealms">Define how to store
+  users in LDAP V1 security realms</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.DefineHowToStoreGroupsInLDAPV1SecurityRealms">Define how to store
+  groups in LDAP V1 security realms</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://edocs.bea.com/wls/docs103/secmanage/compat.html">Using Compatibility
+    Security</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

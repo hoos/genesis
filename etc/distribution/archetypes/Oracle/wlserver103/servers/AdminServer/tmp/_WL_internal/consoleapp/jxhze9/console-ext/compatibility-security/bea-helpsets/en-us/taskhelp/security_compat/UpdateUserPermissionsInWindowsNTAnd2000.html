@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="July 25 2008" name="date last modified">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Update user
+  permissions in Windows NT and 2000</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="security_6x1134149"></a>
+
+
+  <h1 class="topictitle1">Update user
+  permissions in Windows NT and 2000</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="security_6x1134149__security_6x1134150"></a>To update the rights in
+      Windows NT:</p>
+    </div>
+
+    <ol>
+      <li>
+        <span><a name="security_6x1134149__security_6x1134151"></a>On the
+        Windows <b>Start </b>menu, select
+        <b>Programs-&gt;Administrative Tools</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134152"></a>Select
+        <span>User Manager</span>.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134153"></a>Under the
+        <b>Policies</b> menu, choose the <b>User
+        Rights</b> option.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134154"></a>Check the
+        <b>Show Advanced Users Rights</b> option.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134155"></a>Give the
+        following rights to the Windows user running WebLogic Server:</span>
+
+        <ol type="a">
+          <li>
+            <span>Act as part of the operating system.</span>
+          </li>
+
+          <li>
+            <span>Create a token object.</span>
+          </li>
+
+          <li>
+            <span>Replace a process level token.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134159"></a>Verify that
+        the Windows user running WebLogic Server is a member of the
+        Administrators group.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134160"></a>Reboot
+        Windows NT to ensure all the modifications take effect.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134161"></a>Verify that
+        the Logon as System Account option is checked. Note that the Allow
+        System to Interact with Desktop option does not need to be checked.
+        Running the Windows NT Security realm under a specific Windows NT user
+        account does not work.</span>
+
+         
+          <p><a name="security_6x1134149__security_6x1134162"></a>To update the rights
+          in Windows 2000:</p>
+        
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134163"></a>On the
+        Windows Start menu, select Programs-&gt;Administrative Tools.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134164"></a>Select Local
+        Security Policy.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134165"></a>Go to Local
+        Policies-&gt;User Rights Assignment.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134166"></a>Give the
+        following rights to the Windows user running WebLogic Server:</span>
+
+        <ol type="a">
+          <li>
+            <span><a name="security_6x1134149__security_6x1134167"></a>Act as
+            part of the operating system</span>
+          </li>
+
+          <li>
+            <span><a name="security_6x1134149__security_6x1134168"></a>Create a
+            token object</span>
+          </li>
+
+          <li>
+            <span><a name="security_6x1134149__security_6x1134169"></a>Replace
+            a process level token</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134170"></a>Verify that
+        the Windows user running WebLogic Server is a member of the
+        Administrators group.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134171"></a>Reboot
+        Windows 2000 to ensure all the modifications take effect.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1134149__security_6x1134172"></a>Verify that
+        the Logon as System Account option is checked. Note that the Allow
+        System to Interact with Desktop option does not need to be checked.
+        Running the Windows NT Security realm under a specific Windows NT user
+        account does not work.</span>
+
+         
+          <div><a name="security_6x1134149__security_6x1134173"></a>The following are
+          common Windows NT error codes that occur when using the Windows NT
+          Security realm:<table border="1">
+              <tr>
+                <th valign="bottom" align="left" id="t1">Error</th>
+
+                <th valign="bottom" align="left" id="t2">Meaning</th>
+              </tr>
+
+              <tr>
+                <td valign="top" align="left" headers="t1">1326</td>
+
+                <td valign="top" align="left" headers="t2">The host machine running the security realm does not
+                have a trust relationship with the primary domain controller.
+                The host machine may not be a member of the domain or the
+                domain may not trust the host machine.</td>
+              </tr>
+
+              <tr>
+                <td valign="top" align="left" headers="t1">53</td>
+
+                <td valign="top" align="left" headers="t2">A network error has indicated that the path to the
+                primary domain controller could not be located. This error can
+                occur if the domain name is misspelled or if the domain name
+                is specified rather than the host name of the primary domain
+                controller.</td>
+              </tr>
+            </table></div>
+        
+      </li>
+
+      <div>
+         
+          <p><a name="security_6x1134149__security_6x1134192"></a>A full explanation of
+          the Windows NT error codes is found in the <code>winerror.h</code> file.</p>
+        
+      <a name="security_6x1134149__security_6x1134191"></a></div>
+    </ol>
+  </div>
+
+
+</body></html>

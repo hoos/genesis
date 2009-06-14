@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="genericTableForm"
+      type="org.apache.struts.action.DynaActionForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="contents" type="java.util.Collection" />
+      <form-property name="chosenContents" type="[Ljava.lang.String;" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="tablePreferences"
+        type="com.bea.console.cvo.preferences.TablePreferences" />
+    </form-bean>
+    <form-bean name="notesForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="interfaceClassName" type="java.lang.String" />
+      <form-property name="notes" type="com.bea.console.cvo.NotesBean" />
+    </form-bean>
+    <form-bean name="cachingRealmConfigGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="cachingRealmConfigGeneral"
+        type="com.bea.console.cvo.security.compatibility.CachingRealmConfigGeneralBean" />
+    </form-bean>
+    <form-bean name="cachingRealmConfigAclForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="cachingRealmConfigAcl"
+        type="com.bea.console.cvo.security.compatibility.CachingRealmConfigAclBean" />
+    </form-bean>
+    <form-bean name="cachingRealmConfigAuthenticationForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="cachingRealmConfigAuthentication"
+        type="com.bea.console.cvo.security.compatibility.CachingRealmConfigAuthenticationBean" />
+    </form-bean>
+    <form-bean name="cachingRealmConfigGroupsForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="cachingRealmConfigGroups"
+        type="com.bea.console.cvo.security.compatibility.CachingRealmConfigGroupsBean" />
+    </form-bean>
+    <form-bean name="cachingRealmConfigUsersForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="cachingRealmConfigUsers"
+        type="com.bea.console.cvo.security.compatibility.CachingRealmConfigUsersBean" />
+    </form-bean>
+    <form-bean name="cachingRealmConfigPermissionsForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="cachingRealmConfigPermissions"
+        type="com.bea.console.cvo.security.compatibility.CachingRealmConfigPermissionsBean" />
+    </form-bean>
+    <form-bean name="customRealmConfigForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="customRealmConfig"
+        type="com.bea.console.cvo.security.compatibility.CustomRealmConfigBean" />
+    </form-bean>
+    <form-bean name="lDAPRealmConfigGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="lDAPRealmConfigGeneral"
+        type="com.bea.console.cvo.security.compatibility.LDAPRealmConfigGeneralBean" />
+    </form-bean>
+    <form-bean name="lDAPRealmConfigLdapForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="lDAPRealmConfigLdap"
+        type="com.bea.console.cvo.security.compatibility.LDAPRealmConfigLdapBean" />
+    </form-bean>
+    <form-bean name="lDAPRealmConfigUsersForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="lDAPRealmConfigUsers"
+        type="com.bea.console.cvo.security.compatibility.LDAPRealmConfigUsersBean" />
+    </form-bean>
+    <form-bean name="lDAPRealmConfigGroupsForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="lDAPRealmConfigGroups"
+        type="com.bea.console.cvo.security.compatibility.LDAPRealmConfigGroupsBean" />
+    </form-bean>
+    <form-bean name="nTRealmConfigForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="nTRealmConfig"
+        type="com.bea.console.cvo.security.compatibility.NTRealmConfigBean" />
+    </form-bean>
+    <form-bean name="rDBMSRealmConfigGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="rDBMSRealmConfigGeneral"
+        type="com.bea.console.cvo.security.compatibility.RDBMSRealmConfigGeneralBean" />
+    </form-bean>
+    <form-bean name="rDBMSRealmConfigDatabaseForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="rDBMSRealmConfigDatabase"
+        type="com.bea.console.cvo.security.compatibility.RDBMSRealmConfigDatabaseBean" />
+    </form-bean>
+    <form-bean name="rDBMSRealmConfigSchemaForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="rDBMSRealmConfigSchema"
+        type="com.bea.console.cvo.security.compatibility.RDBMSRealmConfigSchemaBean" />
+    </form-bean>
+    <form-bean name="unixRealmConfigForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="unixRealmConfig"
+        type="com.bea.console.cvo.security.compatibility.UnixRealmConfigBean" />
+    </form-bean>
+    <form-bean name="userChangePasswordForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="userChangePassword"
+        type="com.bea.console.cvo.security.compatibility.UserChangePasswordBean" />
+    </form-bean>
+    <form-bean name="groupMembershipForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="groupMembership"
+        type="com.bea.console.cvo.security.compatibility.GroupMembershipBean" />
+    </form-bean>
+    <form-bean name="customizedForm"
+      type="com.bea.console.actionforms.CustomizerForm">
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="tablePrefererences"
+        type="com.bea.console.cvo.preferences.TablePreferences" />
+    </form-bean>
+    <form-bean name="domainCompatibilityGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="domainCompatibilityGeneral"
+        type="com.bea.console.cvo.security.domain.DomainCompatibilityGeneralBean" />
+    </form-bean>
+    <form-bean name="domainCompatibilityFilerealmForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="domainCompatibilityFilerealm"
+        type="com.bea.console.cvo.security.domain.DomainCompatibilityFilerealmBean" />
+    </form-bean>
+    <form-bean name="domainCompatibilityPasswordsForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="domainCompatibilityPasswords"
+        type="com.bea.console.cvo.security.domain.DomainCompatibilityPasswordsBean" />
+    </form-bean>
+    <form-bean name="domainCompatibilityAdvancedForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="domainCompatibilityAdvanced"
+        type="com.bea.console.cvo.security.domain.DomainCompatibilityAdvancedBean" />
+    </form-bean>    
+  </form-beans>
+  <!-- Global Exception Handlers for this module -->
+  <global-exceptions>
+    <exception key="global" type="java.lang.Exception"
+      handler="com.bea.console.utils.UnexpectedExceptionHandler" />
+  </global-exceptions>
+  <action-mappings>
+    <action path="/TablePreferencesUpdatedAction"
+      type="com.bea.console.actions.preferences.TablePreferencesUpdatedAction"
+      scope="request" validate="false" name="customizedForm">
+    </action>
+    <action path="/SecurityCompatibilityAclTable"
+      type="com.bea.console.actions.security.compatibility.AclTableAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/AclTable.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityAclPermissionsTable"
+      type="com.bea.console.actions.security.compatibility.AclPermissionsTableAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/AclPermissionsTable.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityAclGranteesTable"
+      type="com.bea.console.actions.security.compatibility.AclGranteesTableAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/AclGranteesTable.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityBasicRealmTable"
+      type="com.bea.console.actions.security.compatibility.BasicRealmTableAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/BasicRealmTable.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmConfigGeneral"
+      type="com.bea.console.actions.security.compatibility.CachingRealmConfigGeneralAction"
+      name="cachingRealmConfigGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/CachingRealmConfigGeneralForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmConfigGeneralUpdated"
+      type="com.bea.console.actions.security.compatibility.CachingRealmConfigGeneralUpdatedAction"
+      name="cachingRealmConfigGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityCachingRealmConfigGeneral.do" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmConfigAcl"
+      type="com.bea.console.actions.security.compatibility.CachingRealmConfigAclAction"
+      name="cachingRealmConfigAclForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/CachingRealmConfigAclForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmConfigAclUpdated"
+      type="com.bea.console.actions.security.compatibility.CachingRealmConfigAclUpdatedAction"
+      name="cachingRealmConfigAclForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityCachingRealmConfigAcl.do" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmConfigAuthentication"
+      type="com.bea.console.actions.security.compatibility.CachingRealmConfigAuthenticationAction"
+      name="cachingRealmConfigAuthenticationForm" scope="request"
+      validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/CachingRealmConfigAuthenticationForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmConfigAuthenticationUpdated"
+      type="com.bea.console.actions.security.compatibility.CachingRealmConfigAuthenticationUpdatedAction"
+      name="cachingRealmConfigAuthenticationForm" scope="request"
+      validate="false" input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityCachingRealmConfigAuthentication.do" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmConfigGroups"
+      type="com.bea.console.actions.security.compatibility.CachingRealmConfigGroupsAction"
+      name="cachingRealmConfigGroupsForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/CachingRealmConfigGroupsForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmConfigGroupsUpdated"
+      type="com.bea.console.actions.security.compatibility.CachingRealmConfigGroupsUpdatedAction"
+      name="cachingRealmConfigGroupsForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityCachingRealmConfigGroups.do" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmConfigUsers"
+      type="com.bea.console.actions.security.compatibility.CachingRealmConfigUsersAction"
+      name="cachingRealmConfigUsersForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/CachingRealmConfigUsersForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmConfigUsersUpdated"
+      type="com.bea.console.actions.security.compatibility.CachingRealmConfigUsersUpdatedAction"
+      name="cachingRealmConfigUsersForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityCachingRealmConfigUsers.do" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmConfigPermissions"
+      type="com.bea.console.actions.security.compatibility.CachingRealmConfigPermissionsAction"
+      name="cachingRealmConfigPermissionsForm" scope="request"
+      validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/CachingRealmConfigPermissionsForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmConfigPermissionsUpdated"
+      type="com.bea.console.actions.security.compatibility.CachingRealmConfigPermissionsUpdatedAction"
+      name="cachingRealmConfigPermissionsForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityCachingRealmConfigPermissions.do" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmNotes"
+      type="com.bea.console.actions.NotesAction" name="notesForm"
+      scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/CachingRealmNotesForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmNotesUpdated"
+      type="com.bea.console.actions.NotesUpdatedAction" name="notesForm"
+      scope="request" validate="false" input="success">
+      <forward name="success" path="/SecurityCompatibilityCachingRealmNotes.do" />
+    </action>
+    <action path="/SecurityCompatibilityCachingRealmTable"
+      type="com.bea.console.actions.security.compatibility.CachingRealmTableAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/CachingRealmTable.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityCustomRealmConfig"
+      type="com.bea.console.actions.security.compatibility.CustomRealmConfigAction"
+      name="customRealmConfigForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/CustomRealmConfigForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityCustomRealmConfigUpdated"
+      type="com.bea.console.actions.security.compatibility.CustomRealmConfigUpdatedAction"
+      name="customRealmConfigForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/SecurityCompatibilityCustomRealmConfig.do" />
+    </action>
+    <action path="/SecurityCompatibilityCustomRealmNotes"
+      type="com.bea.console.actions.NotesAction" name="notesForm"
+      scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/CustomRealmNotesForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityCustomRealmNotesUpdated"
+      type="com.bea.console.actions.NotesUpdatedAction" name="notesForm"
+      scope="request" validate="false" input="success">
+      <forward name="success" path="/SecurityCompatibilityCustomRealmNotes.do" />
+    </action>
+    <action path="/SecurityCompatibilityLDAPRealmConfigGeneral"
+      type="com.bea.console.actions.security.compatibility.LDAPRealmConfigGeneralAction"
+      name="lDAPRealmConfigGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/LDAPRealmConfigGeneralForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityLDAPRealmConfigGeneralUpdated"
+      type="com.bea.console.actions.security.compatibility.LDAPRealmConfigGeneralUpdatedAction"
+      name="lDAPRealmConfigGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityLDAPRealmConfigGeneral.do" />
+    </action>
+    <action path="/SecurityCompatibilityLDAPRealmConfigLdap"
+      type="com.bea.console.actions.security.compatibility.LDAPRealmConfigLdapAction"
+      name="lDAPRealmConfigLdapForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/LDAPRealmConfigLdapForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityLDAPRealmConfigLdapUpdated"
+      type="com.bea.console.actions.security.compatibility.LDAPRealmConfigLdapUpdatedAction"
+      name="lDAPRealmConfigLdapForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityLDAPRealmConfigLdap.do" />
+    </action>
+    <action path="/SecurityCompatibilityLDAPRealmConfigUsers"
+      type="com.bea.console.actions.security.compatibility.LDAPRealmConfigUsersAction"
+      name="lDAPRealmConfigUsersForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/LDAPRealmConfigUsersForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityLDAPRealmConfigUsersUpdated"
+      type="com.bea.console.actions.security.compatibility.LDAPRealmConfigUsersUpdatedAction"
+      name="lDAPRealmConfigUsersForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityLDAPRealmConfigUsers.do" />
+    </action>
+    <action path="/SecurityCompatibilityLDAPRealmConfigGroups"
+      type="com.bea.console.actions.security.compatibility.LDAPRealmConfigGroupsAction"
+      name="lDAPRealmConfigGroupsForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/LDAPRealmConfigGroupsForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityLDAPRealmConfigGroupsUpdated"
+      type="com.bea.console.actions.security.compatibility.LDAPRealmConfigGroupsUpdatedAction"
+      name="lDAPRealmConfigGroupsForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityLDAPRealmConfigGroups.do" />
+    </action>
+    <action path="/SecurityCompatibilityLDAPRealmNotes"
+      type="com.bea.console.actions.NotesAction" name="notesForm"
+      scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/LDAPRealmNotesForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityLDAPRealmNotesUpdated"
+      type="com.bea.console.actions.NotesUpdatedAction" name="notesForm"
+      scope="request" validate="false" input="success">
+      <forward name="success" path="/SecurityCompatibilityLDAPRealmNotes.do" />
+    </action>
+    <action path="/SecurityCompatibilityNTRealmConfig"
+      type="com.bea.console.actions.security.compatibility.NTRealmConfigAction"
+      name="nTRealmConfigForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/NTRealmConfigForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityNTRealmConfigUpdated"
+      type="com.bea.console.actions.security.compatibility.NTRealmConfigUpdatedAction"
+      name="nTRealmConfigForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/SecurityCompatibilityNTRealmConfig.do" />
+    </action>
+    <action path="/SecurityCompatibilityNTRealmNotes"
+      type="com.bea.console.actions.NotesAction" name="notesForm"
+      scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/NTRealmNotesForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityNTRealmNotesUpdated"
+      type="com.bea.console.actions.NotesUpdatedAction" name="notesForm"
+      scope="request" validate="false" input="success">
+      <forward name="success" path="/SecurityCompatibilityNTRealmNotes.do" />
+    </action>
+    <action path="/SecurityCompatibilityRDBMSRealmConfigGeneral"
+      type="com.bea.console.actions.security.compatibility.RDBMSRealmConfigGeneralAction"
+      name="rDBMSRealmConfigGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/RDBMSRealmConfigGeneralForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityRDBMSRealmConfigGeneralUpdated"
+      type="com.bea.console.actions.security.compatibility.RDBMSRealmConfigGeneralUpdatedAction"
+      name="rDBMSRealmConfigGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityRDBMSRealmConfigGeneral.do" />
+    </action>
+    <action path="/SecurityCompatibilityRDBMSRealmConfigDatabase"
+      type="com.bea.console.actions.security.compatibility.RDBMSRealmConfigDatabaseAction"
+      name="rDBMSRealmConfigDatabaseForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/RDBMSRealmConfigDatabaseForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityRDBMSRealmConfigDatabaseUpdated"
+      type="com.bea.console.actions.security.compatibility.RDBMSRealmConfigDatabaseUpdatedAction"
+      name="rDBMSRealmConfigDatabaseForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityRDBMSRealmConfigDatabase.do" />
+    </action>
+    <action path="/SecurityCompatibilityRDBMSRealmConfigSchema"
+      type="com.bea.console.actions.security.compatibility.RDBMSRealmConfigSchemaAction"
+      name="rDBMSRealmConfigSchemaForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/RDBMSRealmConfigSchemaForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityRDBMSRealmConfigSchemaUpdated"
+      type="com.bea.console.actions.security.compatibility.RDBMSRealmConfigSchemaUpdatedAction"
+      name="rDBMSRealmConfigSchemaForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityRDBMSRealmConfigSchema.do" />
+    </action>
+    <action path="/SecurityCompatibilityRDBMSRealmNotes"
+      type="com.bea.console.actions.NotesAction" name="notesForm"
+      scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/RDBMSRealmNotesForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityRDBMSRealmNotesUpdated"
+      type="com.bea.console.actions.NotesUpdatedAction" name="notesForm"
+      scope="request" validate="false" input="success">
+      <forward name="success" path="/SecurityCompatibilityRDBMSRealmNotes.do" />
+    </action>
+    <action path="/SecurityCompatibilityUnixRealmConfig"
+      type="com.bea.console.actions.security.compatibility.UnixRealmConfigAction"
+      name="unixRealmConfigForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/UnixRealmConfigForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityUnixRealmConfigUpdated"
+      type="com.bea.console.actions.security.compatibility.UnixRealmConfigUpdatedAction"
+      name="unixRealmConfigForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/SecurityCompatibilityUnixRealmConfig.do" />
+    </action>
+    <action path="/SecurityCompatibilityUnixRealmNotes"
+      type="com.bea.console.actions.NotesAction" name="notesForm"
+      scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/UnixRealmNotesForm.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityUnixRealmNotesUpdated"
+      type="com.bea.console.actions.NotesUpdatedAction" name="notesForm"
+      scope="request" validate="false" input="success">
+      <forward name="success" path="/SecurityCompatibilityUnixRealmNotes.do" />
+    </action>
+    <action path="/SecurityCompatibilityUsersTableAction"
+      type="com.bea.console.actions.security.compatibility.UsersTableAction"
+      scope="request" validate="false" name="genericTableForm">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/UsersTable.jsp" />
+    </action>
+    <!-- User config change password actions -->
+    <action path="/SecurityCompatibilityUserChangePasswordAction"
+      type="com.bea.console.actions.security.compatibility.UserChangePasswordAction"
+      name="userChangePasswordForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/UserChangePassword.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityUserChangePasswordUpdatedAction"
+      type="com.bea.console.actions.security.compatibility.UserChangePasswordUpdatedAction"
+      name="userChangePasswordForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityCompatibilityUserChangePasswordAction.do" />
+    </action>
+    <action path="/SecurityCompatibilityGroupsTableAction"
+      type="com.bea.console.actions.security.compatibility.GroupsTableAction"
+      scope="request" validate="false" name="genericTableForm">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/GroupsTable.jsp" />
+    </action>
+    <!-- Group config membership actions -->
+    <action path="/SecurityCompatibilityGroupConfigMembership"
+      type="com.bea.console.actions.security.compatibility.GroupMembershipAction"
+      name="groupMembershipForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/compatibility/GroupMembership.jsp" />
+    </action>
+    <action path="/SecurityCompatibilityGroupConfigMembershipUpdated"
+      type="com.bea.console.actions.security.compatibility.GroupMembershipUpdatedAction"
+      name="groupMembershipForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry"
+        path="/SecurityCompatibilityGroupConfigMembership.do" />
+      <forward name="success"
+        path="/SecurityCompatibilityGroupConfigMembership.do" />
+    </action>
+    <action path="/SecurityDomainDomainCompatibilityGeneral"
+      type="com.bea.console.actions.security.domain.DomainCompatibilityGeneralAction"
+      name="domainCompatibilityGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/domain/DomainCompatibilityGeneralForm.jsp" />
+    </action>
+    <action path="/SecurityDomainDomainCompatibilityGeneralUpdated"
+      type="com.bea.console.actions.security.domain.DomainCompatibilityGeneralUpdatedAction"
+      name="domainCompatibilityGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityDomainDomainCompatibilityGeneral.do" />
+    </action>
+    <action path="/SecurityDomainDomainCompatibilityFilerealm"
+      type="com.bea.console.actions.security.domain.DomainCompatibilityFilerealmAction"
+      name="domainCompatibilityFilerealmForm" scope="request"
+      validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/domain/DomainCompatibilityFilerealmForm.jsp" />
+    </action>
+    <action path="/SecurityDomainDomainCompatibilityFilerealmUpdated"
+      type="com.bea.console.actions.security.domain.DomainCompatibilityFilerealmUpdatedAction"
+      name="domainCompatibilityFilerealmForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityDomainDomainCompatibilityFilerealm.do" />
+    </action>
+    <action path="/SecurityDomainDomainCompatibilityPasswords"
+      type="com.bea.console.actions.security.domain.DomainCompatibilityPasswordsAction"
+      name="domainCompatibilityPasswordsForm" scope="request"
+      validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/domain/DomainCompatibilityPasswordsForm.jsp" />
+    </action>
+    <action path="/SecurityDomainDomainCompatibilityPasswordsUpdated"
+      type="com.bea.console.actions.security.domain.DomainCompatibilityPasswordsUpdatedAction"
+      name="domainCompatibilityPasswordsForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityDomainDomainCompatibilityPasswords.do" />
+    </action>
+    <action path="/SecurityDomainDomainCompatibilityAdvanced"
+      type="com.bea.console.actions.security.domain.DomainCompatibilityAdvancedAction"
+      name="domainCompatibilityAdvancedForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/security/domain/DomainCompatibilityAdvancedForm.jsp" />
+    </action>
+    <action path="/SecurityDomainDomainCompatibilityAdvancedUpdated"
+      type="com.bea.console.actions.security.domain.DomainCompatibilityAdvancedUpdatedAction"
+      name="domainCompatibilityAdvancedForm" scope="request" validate="false"
+      input="success">
+      <forward name="success"
+        path="/SecurityDomainDomainCompatibilityAdvanced.do" />
+    </action>
+  </action-mappings>
+  <controller
+    processorClass="com.bea.console.internal.ConsolePageFlowRequestProcessor">
+    <set-property property="nocache" value="true" />
+    <set-property property="contentType" value="text/html;charset=UTF-8" />
+  </controller>
+</struts-config>
