@@ -35,7 +35,7 @@
             <echo file="@{workdir}/rpmbuild" append="true"  message="files: @{files}${line.separator}" />
             <echo file="@{workdir}/rpmbuild" append="true"  message="defattr: @{build}${line.separator}" />                                    
         </sequential>
-    </macrodef>
+    </macrodef> 
 
   <!-- Define the solaris pkginfo macro -->
     <macrodef name="pkginfo">
