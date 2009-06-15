@@ -1,289 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Genesis Enterprise Network Engineering & Systems Installation Solution.
-  
-  Genesis build.xml for WebLogic Server 10.3
-  Author Mike Mochan
- -->
-
 <!-- 
-  Build fragment to be used for instantiating the WebLogic10.3 archetype.
-  
+  Build fragment to be used for instantiating the Oracle archetype.
   
   Required properties:
-    basedir: Should point to the current directory
-    outputdir: Should point to the location where instantiated weblogic archetypes should be placed
-    genesisxml: Should point to the location of the genesis xml file.
-    servername: The name of the server being built.
-    serverid: The fully qualified id of the server being built.
+    basedir: Should point to the current directory.
+    build.dir: Should point to the location where generated archetypes should be placed.
+    genesis.xml: Should point to the location of the genesis xml file.
+    nodename: The name of the node being built.
+    nodeid: The fully qualified id (Genesis path) of the node being built.
     envname: The name of the environment being built.
     envid: The fully qualified id of the environment being built.
- -->
-<project name="build" default="package">
-	
+-->
+<project name="build" default="build">
   <!--
     Parameter Validation.
-   -->
+  -->
   <target name="validate-parameters">
-    <fail unless="build.dir" message="Must specify build.dir" />
-    <fail unless="genesis-xml" message="Must specify genesis-xml" />
-    <fail unless="projectname" message="Must specify projectname" />
-    <fail unless="projectid" message="Must specify projectid" />
-    <fail unless="servername" message="Must specify servername" />
-    <fail unless="serverid" message="Must specify serverid" />
-    <fail unless="envname" message="Must specify envid" />
-    <fail unless="envid" message="Must specify envid" />
+    <fail unless="build.dir" message="Must specify the build directory" />
+    <fail unless="genesis.xml" message="Must specify the genesis.xml" />
+    <fail unless="enterprise_name" message="Must specify an enterprise name" />
+    <fail unless="enterprise_id" message="Must specify an enterprise id name" />
+    <fail unless="service_name" message="Must specify a service name" />
+    <fail unless="service_id" message="Must specify a service id" />
+    <fail unless="environment_name" message="Must specify an environment name" />
+    <fail unless="environment_id" message="Must specify an environment id" />
+    <fail unless="application_name" message="Must specify an application name" />
+    <fail unless="application_id" message="Must specify an application id" />
+    <fail unless="datacentre_name" message="Must specify a datacentre name" />
+    <fail unless="datacentre_id" message="Must specify a datacentre id" />
+    <fail unless="rack_name" message="Must specify a rack name" />
+    <fail unless="rack_id" message="Must specify a rack id" />
+    <fail unless="node_name" message="Must specify a node name" />
+    <fail unless="node_id" message="Must specify a node id" />
   </target>  
 
-  
-  <!-- Calculate our derived properties   -->
-  <property name="server.build.dir" value="${build.dir}/weblogic923/${servername}-${Global.Environment.Name}" />
-  <property name="server.weblogic.dir" value="${server.build.dir}/${Global.Environment.Name}/wlserver923/domain" />
-  <property name="server.package.dir" value="${server.build.dir}-pkg" />
-  <property name="jumpstart.package.dir" value="/export/jumpstart/packages/middleware" />
-  <mkdir dir="${server.build.dir}" />
-  <mkdir dir="${server.weblogic.dir}" />
-  <mkdir dir="${server.package.dir}" />
-	
-  <!--
-    Main target.
-   -->
-  <target name="build" depends="validate-parameters, clean">	
-  	
-    <echo message="${test.Server.Supplier.Contact.Name}" />
-  	
+  <!-- Calculate our derived properties -->
+  <target name="calculate-paths" depends="validate-parameters">  
+    <property name="node.build.dir" value="${build.dir}/${enterprise_name}/${service_name}/${environment_name}/${datacentre_name}/${rack_name}/${node_name}/${application_name}/" />
+    <property name="node.package.dir" value="${build.dir}/${enterprise_name}/${service_name}/${environment_name}/${datacentre_name}/${rack_name}/${node_name}/${application_name}/" />
+  </target>
+
+  <target name="build" depends="calculate-paths">
     <!-- Build the filter set that we want -->
-    <createfiltersetusingobjects genesisxml="${genesis-xml}" filtersetid="genesis.filter.properties">
-      <object type="/Organisation/Datacentre/Rack/Server" name="${serverid}" />
-      <object type="/Organisation/Project/Environment" name="${envid}" />
-      <object type="/Organisation/Project" name="${projectid}" />
+    <createfiltersetusingobjects genesisxml="${genesis.xml}" filtersetid="genesis.filter.properties">
+      <object type="/Enterprise" name="${enterprise_id}" />
+      <object type="/Enterprise/Datacentre" name="${datacentre_id}" />
+      <object type="/Enterprise/Datacentre/Rack" name="${rack_id}" />
+      <object type="/Enterprise/Datacentre/Rack/Node" name="${node_id}" />
+      <object type="/Enterprise/Service" name="${service_id}" />
+      <object type="/Enterprise/Service/Environment" name="${environment_id}" />
+      <object type="/Enterprise/Service/Environment/Application" name="${application_id}" />
     </createfiltersetusingobjects>
-
-    <retrieveobjectproperties filtername="genesis.filter.properties" 
-      prefix="Global.">
-    </retrieveobjectproperties>
-
-    <!-- Override ${envname} for production / DR environment names -->    	
-    <!-- Calculate our derived properties -->
-    <property name="server.build.dir" value="${build.dir}/weblogic923/${servername}-${Global.Environment.Name}" />
-    <property name="server.weblogic.dir" value="${server.build.dir}/${Global.Environment.Name}/wlserver923/domain" />
-    <property name="server.package.dir" value="${server.build.dir}-pkg" />
-    <property name="jumpstart.package.dir" value="/export/jumpstart/packages/middleware" />
-    <mkdir dir="${server.build.dir}" />
-    <mkdir dir="${server.weblogic.dir}" />
-    <mkdir dir="${server.package.dir}" />
-  	
-  	
-   <!-- Generate random passwords for given properties -->
-   <pwdgen property="Environment.Weblogic923.Admin.Password" 
-     length="9"	filtername="genesis.filter.properties"/>
-   <pwdgen property="Environment.Weblogic923.Admin.Credential"
-     length="9"	filtername="genesis.filter.properties"/>
-   <pwdgen property="Environment.Weblogic923.NodeMgr.Password"
-     length="9"	filtername="genesis.filter.properties"/>
-   <pwdgen property="Environment.Weblogic923.Embedded-LDAP.Credential"
-     length="9"	filtername="genesis.filter.properties"/>
-
- 	
-    <!-- Generate SHA1 password - Only required for portal -->
-     <sha1gen sourcepwd="Environment.Weblogic923.Admin.Password" 
-			property="Environment.Server.SHA1.Password" 
-			filtername="genesis.filter.properties" />
-  	
-    <!-- Generate SSHA password - Required for DefaultAuthenticatorInit.ldift encryption-->
-     <sshagen sourcepwd="Environment.Weblogic923.Admin.Password" 
-			property="Environment.Server.SSHA.Password" 
-			filtername="genesis.filter.properties" />  	
-  
-    <!-- 3Des encrypt and set the properties 		-->  	
-    <tripledes encryptionservice="./archetypes/Oracle/wlserver103/security" filtername="genesis.filter.properties">
-      <match pattern=".*KeyStorePassPhrase" />
-      <match pattern=".*jdbc-data-source\\.password" />
-      <match pattern=".*KeyPassPhrase" />
-      <match pattern=".*Environment.Weblogic923.Admin.UserName" />
-      <match pattern=".*Environment.Weblogic923.Admin.Password" />
-      <match pattern=".*Environment.Weblogic923.Admin.Credential"/>
-      <match pattern=".*Environment.Weblogic923.Embedded-LDAP.Credential"/>
-      <match pattern=".*Environment.Weblogic923.NodeMgr.Password"/>
-      <match pattern=".*Source.Password"/>     	
-    </tripledes>  	
-
-   <!-- Copy Keystores to build dir -->
-   <mkdir dir="${server.weblogic.dir}/keystores"/>
-   <keystorecopy filtername="genesis.filter.properties" 
-      srcfile="${resources.dir}/keystores" 
-      destfile="${server.weblogic.dir}/keystores">
-      <match pattern="Environment.Weblogic923\.(.*)Server.CustomTrustKeyStoreFileName" />
-      <match pattern="Environment.Weblogic923\.(.*)Server\.(.*)\.CustomTrustKeyStoreFileName" />
-      <!-- <match pattern="Environment.Weblogic923\.(.*)Server\.(.*)\.CustomIdentityKeyStoreFileName" /> -->
-      <match pattern=".*NodeManagerCustomIdentityKeyStoreFile" />
-      <match pattern=".*CustomIdentityKeyStoreFileName" />	  		
-   </keystorecopy>
-  	
-   <!-- Copy the base wls configuration files into place -->
-   <copy todir="${server.weblogic.dir}" encoding="UTF-8" overwrite="true">
-     <filterset refid="genesis.filter.properties"/>
-     
-     <!--
-       filterset>
-       <filter token="Project.WebLogic.BeaHome" value="${Global.Project.BeaHome}" />
-       <filter token="Project.DomainHome" value="${Global.Project.DomainHome}" />
-     </filterset
-     -->
-
-     <!-- Base files -->
-     <fileset dir="${basedir}">
-       <exclude name="environments/**" />
-       <exclude name="build-weblogic923.xml" />
-       <exclude name="**/SerializedSystemIni.dat" />
-       <exclude name="lib/**"/>
-     </fileset>
-   </copy>
-
-   <!-- Copy the wls resource configuration files into place (if they exist) -->
-   <copy todir="${server.weblogic.dir}" failonerror="No" overwrite="true">
-     <!-- Resource configuration files -->
-     <filterset refid="genesis.filter.properties" />
-     <fileset dir="${resources.dir}/${Global.Project.Name}/weblogic">
-       <include name="config/**"/>
-     </fileset>
-   </copy> 
-  	
-   <!-- Copy the base wls binary files into place -->
-   <copy todir="${server.weblogic.dir}" overwrite="true">
-     <fileset dir="${basedir}">
-       <include name="**/SerializedSystemIni.dat" />
-       <include name="lib/**"/>
-       <include name="lib/mbeantypes/**"/>
-       <exclude name="config/**"/>
-     </fileset>
-   </copy>
-
-   <!-- Copy the wls resource binary files into place (if they exist) -->
-   <copy todir="${server.weblogic.dir}" failonerror="No" overwrite="true">
-     <!-- Resource binary files -->
-     <fileset dir="${resources.dir}/${Global.Project.Name}/weblogic">
-       <include name="lib/**"/>
-       <exclude name="config/**"/>
-     </fileset>
-   </copy>   	
-
-   <chmod perm="u+x">
-     <fileset dir="${server.weblogic.dir}/bin">
-       <include name="*"/>
-     </fileset>
-   </chmod> 
-
-   <findtokens>
-     <fileset dir="${server.build.dir}">
-       <include name="**/*.xml" />
-       <!-- 
-         <include name="**/*.ldift" />
-         <include name="**/*.conf" /> 
-        -->
-       <include name="pre*"/>
-       <include name="post*"/>
-       <include name="checkinstall"/>
-       <include name="depend"/>
-       <include name="**/*.sh" /> 
-       <include name="**/*install" /> 
-       <include name="**/*.py" /> 
-       <include name="**/*.properties" />
-     </fileset>
-   </findtokens>
-	  	
-   </target>
-		
-		
-    <target name="package" depends="build,build-wlserver103-solaris-package,build-wlserver103-rpm-package" />
-      <echo message="package weblogic" />
-      
-      <!-- Builds the wlserver103 RPM package -->
-      <target name="build-wlserver103-rpm-package" depends="build,os-check" if="isDarwin">  
-        <echo message="Checking for Linux Platform"  
-        <rpmspec 
-          Summary="${Summary}"
-          Name="${Name}"
-          Version="${Version}"
-          Release="${Release}"
-          Source0="${Source0}"
-          License="${License}"
-          Group="${Group}"
-          description="${description}"
-          prep="${prep}"
-          setup="${setup}"
-          build="${build}"
-          install="${install}"
-          files="${files}"
-          defattr="${defattr}"/>  
-          
-          <rpmbuild
-            name="WLSConfig-${Global.Environment.Name}-${servername}"
-            workdir="${server.package.dir}"
-            pkgname="${pkgname}" />          
-            
-      </target>
-
-
-
-      <!-- Builds the wlserver103 solaris package -->
-      <target name="build-wlserver103-solaris-package" depends="build,os-check" if="isSolaris">
-      <property name="pkgname" 
-        value="WebLogicConfiguration.10.3.${Global.Server.Architecture.Name}.${Global.Environment.Name}.${Global.Server.PlatformGroup.Name}.${Global.Server.HostName.nodename.Name}"/>  	
-      <echo message="${pkgname}"/>
-      <pkginfo
-        workdir="${server.package.dir}"
-        name="WLSConfig-${Global.Environment.Name}-${servername}"
-        architecture="${Global.Server.Architecture.Name}"
-        longname="WebLogic Server10.3 Configuration for ${servername}"
-        version="10.3"
-        vendor="VocaLink"
-        pstamp="14thJune1009"
-        email="mmochan@mac.com"
-        basedir="/" />
-
-     <!-- Copy pre, post and checkinstall scripts to the package directory. -->
-     <copy todir="${server.package.dir}">
-       <fileset dir="${server.weblogic.dir}/bin">
-         <include name="pre*"/>
-         <include name="post*"/>
-         <include name="checkinstall"/>
-         <include name="depend"/>
-       </fileset>
-     </copy>
-
-     <!-- Build the base package prototype -->
-     <pkgproto
-       srcdir="${server.build.dir}" workdir="${server.package.dir}"
-       pkginstallbase="/fs01/app" />
-
-     <!-- wlserver103 specific protoype changes -->
-     <exec dir="${server.package.dir}" executable="sed" input="${server.package.dir}/prototype.home" output="${server.package.dir}/prototype.genesis">
-       <arg value="s/genesis genesis/bea mwadmin/g" />
-     </exec>
-     <exec dir="${server.package.dir}" executable="sed" input="${server.package.dir}/prototype.genesis" output="${server.package.dir}/prototype">
-         <arg value="s/\/fs01\/app 0755 bea mwadmin/\/fs01\/app 0755 root other/g" />
-     </exec>
-
-     <pkgmk
-       name="WLSConfig-${Global.Environment.Name}-${servername}"
-       workdir="${server.package.dir}"
-       pkgname="${pkgname}" />
     
-     <move file="${server.package.dir}/${pkgname}.pkg" todir="${jumpstart.package.dir}"/>
-          
-  </target>
-	
-  <target name="os-check">
-    <condition property="isSolaris">
-      <os name="SunOS" />
-    </condition>
-    <condition property="isDarwin">
-      <os name="Darwin" />
-    </condition>    
-  </target>
+    <!-- Copy the base configuration files into place -->
+    <mkdir dir="${node.build.dir}" />
+    <copy todir="${node.build.dir}">
+      <filterset refid="genesis.filter.properties" />
 
-  <target name="clean">
-    <delete dir="${server.build.dir}" />
+      <!-- Base files -->
+      <fileset dir="${basedir}">
+        <exclude name="build-MyApplication.xml" />
+      </fileset>
+    </copy>
   </target>
 </project>

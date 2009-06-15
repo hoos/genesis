@@ -25,7 +25,7 @@
         </model:object>
     </model>
     <archetypes>
-      <archetype name="weblogic103" buildfile="archetypes/Oracle/weblogic103/build.xml">
+      <archetype name="weblogic103" buildfile="archetypes/Oracle/wlserver103/build.xml">
           <operation name="build" target="build" />
           <operation name="package" target="package" />
           <requires type="/Enterprise" qnameproperty="enterprise_id" nameproperty="enterprise_name" />
