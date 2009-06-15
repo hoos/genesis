@@ -20,7 +20,7 @@
         <object type="/Enterprise/Datacentre/Rack" name="/${enterprise}/${datacentre}/${rack}" if="enterprise,datacentre,rack" />
         <object type="/Enterprise/Datacentre/Rack/Node" name="/${enterprise}/${datacentre}/${rack}/${node}" if="enterprise,datacentre,rack,node" />
     </definegenesisarchetypes>
-
+Ì
   <!--
    Initialise.
    -->
