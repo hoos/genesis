@@ -62,10 +62,10 @@
       </fileset>
     </copy>
   </target>
-      <target name="package-wlserver103" depends="build,build-wlserver103-solaris-package,build-wlserver103-rpm-package " />
+      <target name="package" depends="build,build-wlserver103-solaris-package,build-wlserver103-rpm-package " />
 
 
-        <!-- Builds the weblogic923 solaris package -->
+        <!-- Builds the wlserver103 solaris package -->
         <target name="build-wlserver103-rpm-package" depends="build,os-check" if="isDarwin">        
           <echo message="found a MAC" />
         </target>
