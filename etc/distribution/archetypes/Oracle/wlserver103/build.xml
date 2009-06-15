@@ -9,6 +9,7 @@
 <!-- 
   Build fragment to be used for instantiating the WebLogic10.3 archetype.
   
+  
   Required properties:
     basedir: Should point to the current directory
     outputdir: Should point to the location where instantiated weblogic archetypes should be placed
