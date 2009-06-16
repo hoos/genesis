@@ -23,8 +23,8 @@ IF NOT "%1" == "" ( goto :RUN )
 
 
 :RUN
-    echo %1 %2 %3 %4 %5 %6 %7
-    ant -Denterprise=%1  -Ddatacentre=%2 -Drack=%3 -Dnode=%4 -Dservice=%5 -Denvironment=%6 -Dapplication=%7 %7:build
+    rem # echo %1 %2 %3 %4 %5 %6 %7 %8 %9 %10 %11 %12 %13 %14 %15 %16
+    ant -Denterprise=%2  -Ddatacentre=%4 -Drack=%6 -Dnode=%8 -Dservice=%10 -Denvironment=%12 -Dapplication=%14 %14:%16
 
 :END
 
