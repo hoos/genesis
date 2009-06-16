@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="July 25 2008" name="date last modified">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Configure wlauth for
+  UNIX security realms</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="security_6x1126427"></a>
+
+
+  <h1 class="topictitle1">Configure wlauth for
+  UNIX security realms</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="security_6x1126427__security_6x1126428"></a>The <code>wlauth</code> program runs
+      <code>setuid root</code>. You need root permissions to modify the
+      ownership and file attributes on the <code>wlauth</code> program and to set up
+      the PAM configuration file for <code>wlauth</code>.</p>
+
+      <p><a name="security_6x1126427__security_6x1126429"></a>To set up the <code>wlauth</code> program for the UNIX
+      security realm:</p>
+    </div>
+
+    <ol>
+      <li>
+        <span><a name="security_6x1126427__security_6x1126430"></a>If WebLogic
+        Server is installed on a network drive, copy the
+        <code>wlauth</code> file to a file system on the computer that
+        executes WebLogic Server, for example, the <code>/usr/sbin</code>
+        directory. The <code>wlauth</code> file is in the
+        <code>weblogic/server/native/solaris/sparc</code> directory.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1126427__security_6x1126431"></a>As the root
+        user, run the following commands to change the <code>wlauth</code>
+        owner and permissions:</span>
+
+         
+          <p><code># chown root wlauth</code></p>
+        
+
+         
+          <p><code># chmod +xs wlauth</code></p>
+        
+      </li>
+
+      <li>
+        <span><a name="security_6x1126427__security_6x1126433"></a>Set up the
+        PAM configuration for <code>wlauth.</code></span>
+
+         
+          <p><a name="security_6x1126427__security_6x1126434"></a>On Solaris, add the
+          following lines to your <code>/etc/pam.conf</code> file:</p>
+
+          <pre># Setup for WebLogic authentication on Solaris machines</pre>
+
+          <pre>#</pre>
+
+          <pre>wlauth auth required      /usr/lib/security/pam_unix.so.1</pre>
+
+          <pre>wlauth password required  /usr/lib/security/pam_unix.so.1</pre>
+
+          <pre>wlauth account required   /usr/lib/security/pam_unix.so.1</pre>
+        
+
+         
+          <p><a name="security_6x1126427__security_6x1126436"></a>On Linux, create a
+          file called <code>/etc/pam.d/wlauth</code>
+          containing the following:</p>
+
+          <pre>#%PAM-1.0</pre>
+
+          <pre>#</pre>
+
+          <pre># File name:</pre>
+
+          <pre>#</pre>
+
+          <pre>/etc/pam.d/wlauth </pre>
+
+          <pre>#</pre>
+
+          <pre># If you do not use shadow passwords, delete "shadow".</pre>
+
+          <pre>auth required     /lib/security/pam_pwdb.so shadow</pre>
+
+          <pre>account required  /lib/security/pam_pwdb.so</pre>
+        
+
+         
+          <p><a name="security_6x1126427__security_6x1126438"></a><b>Note: </b>Omit<code>
+          <kbd>shadow</kbd></code> if you are not using shadow
+          passwords.</p>
+        
+
+         
+          <p><a name="security_6x1126427__security_6x1126439"></a>If <code>wlauth</code> is not in the
+          WebLogic Server path or if you have given the program a name other
+          than <code>wlauth</code>, you
+          must add a Java command-line property when you start WebLogic
+          Server. Edit the script you use to start WebLogic Server and add the
+          following option after the <code>java</code> command:</p>
+
+          <p><code>-Dweblogic.security.unixrealm.authProgram=wlauth_prog</code></p>
+        
+
+         
+          <p><a name="security_6x1126427__security_6x1126444"></a>Replace <code>wlauth_prog</code> with the name
+          of the <code>wlauth</code>
+          program, including the full path if the program is not in the search
+          path. Start WebLogic Server. If the <code>wlauth</code> program is in the
+          WebLogic Server path and is named <code>wlauth</code>, this step is not
+          needed.</p>
+        
+      </li>
+    </ol>
+  </div>
+
+
+</body></html>

@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="date last modified" content="July 25 2008">
+<meta name="help ID" content="Security.security.domain.domaincompatibilityfilerealm.title">
+<title>Domain: Compatibility Security: File Realm</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Domain: Compatibility Security: File Realm</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to define several attributes that govern the use of the
+    File realm</p>
+<p>The File realm stores user and group data for the purpose of
+    authentication. By default, the File realm is set as the default security
+    realm when using Compatibility security. The File realm is deprecated in
+    this release of WebLogic Server.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.domain.domaincompatibilityfilerealm.security.realm.cachingrealm.label">Caching Realm</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getCachingRealm"></a><a name="CachingRealm"></a>
+<p>The name of an alternate security realm to be used in this 
+WebLogic server domain. A value of <tt>(none)</tt> means that only 
+the File realm can be used.</p>
+<p>If a realm other than the File realm is used, the realm is 
+specified by attaching the name of the realm to the CachingRealm 
+MBean. The CachingRealm MBean then attaches to the Realm MBean.</p>
+<p>If the attribute has a value, an alternate security realm is 
+used. If the attribute is null, only the File Realm can be 
+used.</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.domain.domaincompatibilityfilerealm.security.realm.filerealm.maxusers.label">Max Users</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMaxUsers"></a><a name="MaxUsers"></a>
+<p>The maximum number of users supported by the File realm.</p>
+<p>Minimum value: <code>1</code>
+</p>
+<p>Maximum value: <code>10000</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.domain.domaincompatibilityfilerealm.security.realm.filerealm.maxgroups.label">Max Groups</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMaxGroups"></a><a name="MaxGroups"></a>
+<p>The maximum number of groups supported by the File realm.</p>
+<p>Minimum value: <code>1</code>
+</p>
+<p>Maximum value: <code>10000</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.domain.domaincompatibilityfilerealm.security.realm.filerealm.maxacls.label">Max ACLs</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMaxACLs"></a><a name="MaxACLs"></a>
+<p>The maximum number of positive access control lists (ACLs) 
+supported by the File realm. A warning is issued when this number 
+is reached.</p>
+<p>Minimum value: <code>1</code>
+</p>
+<p>Maximum value: <code>10000</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.SetUpCompatibilitySecurity">Set up Compatibility
+  security</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.ConfigureFileRealms">Configure the File
+  realm</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://edocs.bea.com/wls/docs103/secmanage/compat.html">Using Compatibility
+    Security</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

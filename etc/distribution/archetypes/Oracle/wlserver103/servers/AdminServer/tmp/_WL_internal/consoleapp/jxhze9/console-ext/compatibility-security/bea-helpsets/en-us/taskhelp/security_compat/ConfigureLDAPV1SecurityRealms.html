@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="July 25 2008" name="date last modified">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Configure LDAP V1
+  security realms</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="security_6x1105558"></a>
+
+
+  <h1 class="topictitle1">Configure LDAP V1
+  security realms</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="security_6x1105558__security_6x1114570"></a>The Lightweight Directory
+      Access Protocol (LDAP) V1 security realm is an alternative to the File
+      realm. It provides authentication through users and groups stored in an
+      LDAP directory. This server allows you to manage all the users for your
+      organization in one place: the LDAP directory. The LDAP V1 security
+      realm supports Open LDAP, Netscape iPlanet, Microsoft Site Server, and
+      Novell NDS LDAP servers.</p>
+
+      <p><a name="security_6x1105558__security_6x1128986"></a>To use the LDAP V1
+      security realm instead of the File realm:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="security_6x1105558__security_6x1122583"></a>In the left
+        pane, expand <b>Compatibility Security &gt; Realms</b>
+        and click <b>New</b>.</span>
+
+        <span>
+          <p>The <span>Create a New Basic Realm</span> page
+          appears.</p>
+        </span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105558__security_6x1112114"></a>In the
+        <b>Name</b> field, enter a name for the LDAP V1
+        security realm.</span>
+      </li>
+
+      <li>
+        <span>In the <b>Type</b> drop-down list, select
+        <kbd>LDAP Realm V1</kbd>.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105558__security_6x1112589"></a>Click
+        <b>OK</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105558__security_6x1113915"></a>Define
+        attributes for the LDAP directory server and specify how users and
+        groups are located in the LDAP V1 security realm.</span>
+
+         
+           For more information: 
+
+          <ul>
+            <li><a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=security_compat.EnableLDAPWebLogicServerCommunication">Enable communication
+  between the LDAP Server and WebLogic Server</a></li>
+
+            <li><a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=security_compat.DefineHowToStoreUsersInLDAPV1SecurityRealms">Define how to store
+  users in LDAP V1 security realms</a></li>
+
+            <li><a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=security_compat.DefineHowToStoreGroupsInLDAPV1SecurityRealms">Define how to store
+  groups in LDAP V1 security realms</a></li>
+          </ul>
+
+           
+        
+      </li>
+
+      <li>
+        <span><a name="security_6x1105558__security_6x1113814"></a>When you
+        have finished defining all the attributes, reboot WebLogic
+        Server.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105558__security_6x1113817"></a>Configure
+        the Caching realm. For more information, see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=security_compat.ConfigureCachingRealms">Configure Caching
+  realms</a> .</span>
+
+         
+           When configuring the Caching realm, select the 
+
+          <b>LDAP Realm V1</b>
+
+           option from the pull-down menu for the Basic Realm attribute on the 
+
+          <span>Caching Realms: Configuration: General</span>
+
+           page. The Basic Realm attribute defines the association between the Caching realm and the alternate security realm (in this case, the LDAP V1 security realm). 
+        
+      </li>
+
+      <li>
+        <span><a name="security_6x1105558__security_6x1132962"></a>In the left
+        pane, select your domain (for example, mydomain).</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105558__security_6x1132963"></a>Open the
+        <span>Compatibility Security</span>: <span>File
+        Realm</span> page.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105558__security_6x1113822"></a>In the
+        Caching Realm field, choose the name of the Caching realm to be used
+        with the LDAP V1 security realm. A list of configured Caching realms
+        appears on the drop-down menu.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105558__security_6x1113823"></a>Reboot
+        WebLogic Server.</span>
+      </li>
+    </ol>
+  </div>
+
+
+</body></html>

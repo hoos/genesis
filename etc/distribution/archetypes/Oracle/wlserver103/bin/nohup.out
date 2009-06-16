@@ -1,0 +1,252 @@
+./startWebLogic.sh: Don't know how to set the shared library path for Darwin.  
+.
+.
+JAVA Memory arguments: -Xms256m -Xmx512m -XX:CompileThreshold=8000 -XX:PermSize=48m  -XX:MaxPermSize=128m
+.
+WLS Start Mode=Development
+.
+CLASSPATH=:/Users/mikemochan/dev/bea/wls103/patch_wls1030/profiles/default/sys_manifest_classpath/weblogic_patch.jar:/Users/mikemochan/dev/bea/wls103/patch_cie660/profiles/default/sys_manifest_classpath/weblogic_patch.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/lib/tools.jar:/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/weblogic_sp.jar:/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/weblogic.jar:/Users/mikemochan/dev/bea/wls103/modules/features/weblogic.server.modules_10.3.0.0.jar:/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/webservices.jar:/Users/mikemochan/dev/bea/wls103/modules/org.apache.ant_1.6.5/lib/ant-all.jar:/Users/mikemochan/dev/bea/wls103/modules/net.sf.antcontrib_1.0.0.0_1-0b2/lib/ant-contrib.jar::/Users/mikemochan/dev/bea/wls103/wlserver_10.3/common/eval/pointbase/lib/pbclient57.jar:/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/xqrl.jar::
+.
+PATH=/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/bin:/Users/mikemochan/dev/bea/wls103/modules/org.apache.ant_1.6.5/bin:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/bin:/Users/mikemochan/dev/soylatte16-i386-1.0.2/bin:/sw/bin:/sw/sbin:/usr/local/ActivePerl-5.8/site/bin:/usr/local/ActivePerl-5.8/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/usr/X11R6/bin
+.
+***************************************************
+*  To start WebLogic Server, use a username and   *
+*  password assigned to an admin-level user.  For *
+*  server administration, use the WebLogic Server *
+*  console at http://hostname:port/console        *
+***************************************************
+starting weblogic with Java version:
+java version "1.6.0_03-p3"
+Java(TM) SE Runtime Environment (build 1.6.0_03-p3-landonf_03_feb_2008_02_12-b00)
+Java HotSpot(TM) Client VM (build 1.6.0_03-p3-landonf_03_feb_2008_02_12-b00, mixed mode)
+Starting WLS with line:
+/Users/mikemochan/dev/soylatte16-i386-1.0.2/bin/java -client   -Xms256m -Xmx512m -XX:CompileThreshold=8000 -XX:PermSize=48m  -XX:MaxPermSize=128m  -Xverify:none  -da -Dplatform.home=/Users/mikemochan/dev/bea/wls103/wlserver_10.3 -Dwls.home=/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server -Dweblogic.home=/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server   -Dweblogic.management.discover=true  -Dwlw.iterativeDev= -Dwlw.testConsole= -Dwlw.logErrorsToConsole= -Dweblogic.ext.dirs=/Users/mikemochan/dev/bea/wls103/patch_wls1030/profiles/default/sysext_manifest_classpath:/Users/mikemochan/dev/bea/wls103/patch_cie660/profiles/default/sysext_manifest_classpath -Dweblogic.Name=AdminServer -Djava.security.policy=/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/weblogic.policy   weblogic.Server
+<12-Jun-2009 14:27:40 o'clock BST> <Info> <WebLogicServer> <BEA-000377> <Starting WebLogic Server with Java HotSpot(TM) Client VM Version 1.6.0_03-p3-landonf_03_feb_2008_02_12-b00 from Sun Microsystems Inc.> 
+<12-Jun-2009 14:27:41 o'clock BST> <Info> <Management> <BEA-141107> <Version: WebLogic Server 10.3  Fri Jul 25 16:30:05 EDT 2008 1137967 > 
+<12-Jun-2009 14:27:44 o'clock BST> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STARTING> 
+<12-Jun-2009 14:27:44 o'clock BST> <Info> <WorkManager> <BEA-002900> <Initializing self-tuning thread pool> 
+<12-Jun-2009 14:27:44 o'clock BST> <Info> <WebLogicServer> <BEA-000214> <WebLogic Server "AdminServer" version:
+WebLogic Server 10.3  Fri Jul 25 16:30:05 EDT 2008 1137967  (c) 1995, 1996, 1997, 1998 WebLogic, Inc.
+ (c) 1999, 2000, 2001 BEA Systems, Inc.> 
+<12-Jun-2009 14:27:44 o'clock BST> <Notice> <Log Management> <BEA-170019> <The server log file /Users/mikemochan/dev/bea/wls103/user_projects/domains/base_domain/servers/AdminServer/logs/AdminServer.log is opened. All server side log events will be written to this file.> 
+<12-Jun-2009 14:27:44 o'clock BST> <Info> <Log Management> <BEA-170023> <The Server Logging is initialized with Java Logging API implementation.> 
+<12-Jun-2009 14:27:44 o'clock BST> <Info> <Diagnostics> <BEA-320001> <The ServerDebug service initialized successfully.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Store> <BEA-280050> <Persistent store "WLS_DIAGNOSTICS" opened: directory="/Users/mikemochan/dev/bea/wls103/user_projects/domains/base_domain/servers/AdminServer/data/store/diagnostics" writePolicy="Disabled" blockSize=512 directIO=false driver="NIO"> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "t3" is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "t3s" is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "http" is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "https" is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "iiop" is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "iiops" is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "ldap" is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "ldaps" is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "cluster" is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "clusters" is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "snmp" is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "admin" is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002624> <The administration protocol is "t3s" and is now configured.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <RJVM> <BEA-000570> <Network Configuration for Channel "AdminServer"
+ Listen Address		 :7001
+ Public Address		 N/A
+ Http Enabled		 true
+ Tunneling Enabled	 false
+ Outbound Enabled	 false
+ Admin Traffic Enabled	 true> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Server> <BEA-002609> <Channel Service initialized.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Error> <Socket> <BEA-000438> <Unable to load performance pack. Using Java I/O instead. Please ensure that libmuxer library is in :'/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/i386/client:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/i386:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/../lib/i386:/usr/java/packages/lib/i386:/lib:/usr/lib'
+> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <Socket> <BEA-000447> <Native IO Disabled. Using Java IO.> 
+<12-Jun-2009 14:27:45 o'clock BST> <Info> <IIOP> <BEA-002014> <IIOP subsystem enabled.> 
+<12-Jun-2009 14:27:48 o'clock BST> <Info> <Security> <BEA-000000> <Starting OpenJPA 1.1.0> 
+<12-Jun-2009 14:27:48 o'clock BST> <Info> <Security> <BEA-000000> <StoreServiceImpl.initJDO - StoreService is initialized with Id = ldap_cojno8weuM5y4LvMatkzz5AI5QY=> 
+<12-Jun-2009 14:27:48 o'clock BST> <Info> <Security> <BEA-090516> <The Authenticator provider has preexisting LDAP data.> 
+<12-Jun-2009 14:27:48 o'clock BST> <Info> <Security> <BEA-090516> <The Authorizer provider has preexisting LDAP data.> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.Top".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.DomainRealmScope".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.RegistryScope".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.PKITypeScope".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.XACMLTypeScope".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.BEASAMLPartner".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.Credential".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.CredentialMap".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.XACMLEntry".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.BEASAMLAssertingParty".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.BEASAMLRelyingParty".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.PasswordCredential".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.UserPasswordCredential".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.PasswordCredentialMap".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.ResourceMap".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.PKIResourceMap".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.WLSCertRegEntry".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.WLSCredMapCollectionInfo".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.WLSPolicyCollectionInfo".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.WLSRoleCollectionInfo".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.XACMLAuthorizationPolicy".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.XACMLRoleAssignmentPolicy".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.Endpoint".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.Partner".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.SPPartner".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.IdPPartner".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.SAML2CacheEntry".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-000000> <Parsing class "com.bea.common.security.store.data.SchemaVersion".> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-090516> <The CredentialMapper provider has preexisting LDAP data.> 
+<12-Jun-2009 14:27:49 o'clock BST> <Info> <Security> <BEA-090516> <The RoleMapper provider has preexisting LDAP data.> 
+<12-Jun-2009 14:27:50 o'clock BST> <Info> <Security> <BEA-090093> <No pre-WLS 8.1 Keystore providers are configured for server AdminServer for security realm myrealm.> 
+<12-Jun-2009 14:27:50 o'clock BST> <Notice> <Security> <BEA-090082> <Security initializing using security realm myrealm.> 
+<12-Jun-2009 14:27:50 o'clock BST> <Info> <Server> <BEA-002622> <The protocol "[snmp, https, t3, cluster-broadcast-secure, ldaps, cluster-broadcast, ldap, http, iiop, admin, t3s, iiops]" is now configured.> 
+<12-Jun-2009 14:27:50 o'clock BST> <Info> <XML> <BEA-130036> <Initializing XMLRegistry.> 
+<12-Jun-2009 14:27:50 o'clock BST> <Info> <messaging.interception> <BEA-400000> <Initializing message interception service> 
+<12-Jun-2009 14:27:51 o'clock BST> <Info> <Store> <BEA-280050> <Persistent store "_WLS_AdminServer" opened: directory="/Users/mikemochan/dev/bea/wls103/user_projects/domains/base_domain/servers/AdminServer/data/store/default" writePolicy="Direct-Write" blockSize=512 directIO=false driver="NIO"> 
+<12-Jun-2009 14:27:51 o'clock BST> <Info> <JDBC> <BEA-001135> <Initializing the JDBC service.> 
+<12-Jun-2009 14:27:51 o'clock BST> <Info> <JDBC> <BEA-001137> <Initialization complete.> 
+<12-Jun-2009 14:27:51 o'clock BST> <Info> <JDBC> <BEA-001138> <Resuming the JDBC service.> 
+<12-Jun-2009 14:27:51 o'clock BST> <Info> <JDBC> <BEA-001140> <Resume complete.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <Connector> <BEA-190000> <Initializing J2EE Connector Service> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <Connector> <BEA-190001> <J2EE Connector Service initialized successfully> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMS> <BEA-040305> <JMS service is initialized and in standby mode.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMS> <BEA-040090> <Deployed 8 default connection factories.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMS> <BEA-040407> <Default connection factory "DefaultXAConnectionFactory2" with its JNDI name "weblogic.jms.XAConnectionFactory2" is started.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMS> <BEA-040407> <Default connection factory "MessageDrivenBeanConnectionFactory" with its JNDI name "weblogic.jms.MessageDrivenBeanConnectionFactory" is started.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMS> <BEA-040407> <Default connection factory "DefaultConnectionFactory" with its JNDI name "weblogic.jms.ConnectionFactory" is started.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMS> <BEA-040407> <Default connection factory "TopicConnectionFactory" with its JNDI name "javax.jms.TopicConnectionFactory" is started.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMS> <BEA-040407> <Default connection factory "DefaultXAConnectionFactory" with its JNDI name "weblogic.jms.XAConnectionFactory" is started.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMS> <BEA-040407> <Default connection factory "DefaultXAConnectionFactory0" with its JNDI name "weblogic.jms.XAConnectionFactory0" is started.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMS> <BEA-040407> <Default connection factory "QueueConnectionFactory" with its JNDI name "javax.jms.QueueConnectionFactory" is started.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMS> <BEA-040407> <Default connection factory "DefaultXAConnectionFactory1" with its JNDI name "weblogic.jms.XAConnectionFactory1" is started.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMS> <BEA-040306> <JMS service is active now.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <HTTP> <BEA-101128> <Initializing HTTP services.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <HTTP> <BEA-101135> <AdminServer is the default Web server.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <HTTP> <BEA-101052> <[HttpServer (defaultWebserver) name: AdminServer] Initialized> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <HTTP> <BEA-101129> <Initializing the Web application container.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <WTC> <BEA-180046> <INFO: Logging service enabled.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <WTC> <BEA-180046> <INFO: TC Configuration Helper instantiated!> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <WTC> <BEA-180046> <INFO: TC Task Manager instantiated!> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <WTC> <BEA-180046> <INFO: TC security service instantiated!> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <WTC> <BEA-180046> <INFO: TC Outbound routing service instantiated!> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <WTC> <BEA-180046> <INFO: TC Transaction service instantiated!> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <WebService> <BEA-220031> <The server does not support reliable SOAP messaging.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <WebService> <BEA-220027> <Web Service reliable agents are started on the server.> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMX> <BEA-149512> <JMX Connector Server started at service:jmx:iiop://10.211.55.7:7001/jndi/weblogic.management.mbeanservers.runtime .> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <JMX> <BEA-149512> <JMX Connector Server started at service:jmx:iiop://10.211.55.7:7001/jndi/weblogic.management.mbeanservers.edit .> 
+<12-Jun-2009 14:27:52 o'clock BST> <Info> <Management> <BEA-141187> <Java system properties are defined as follows: 
+file.encoding = UTF-8
+file.encoding.pkg = sun.io
+file.separator = /
+java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+java.awt.printerjob = sun.print.PSPrinterJob
+java.class.path = :/Users/mikemochan/dev/bea/wls103/patch_wls1030/profiles/default/sys_manifest_classpath/weblogic_patch.jar:/Users/mikemochan/dev/bea/wls103/patch_cie660/profiles/default/sys_manifest_classpath/weblogic_patch.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/lib/tools.jar:/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/weblogic_sp.jar:/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/weblogic.jar:/Users/mikemochan/dev/bea/wls103/modules/features/weblogic.server.modules_10.3.0.0.jar:/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/webservices.jar:/Users/mikemochan/dev/bea/wls103/modules/org.apache.ant_1.6.5/lib/ant-all.jar:/Users/mikemochan/dev/bea/wls103/modules/net.sf.antcontrib_1.0.0.0_1-0b2/lib/ant-contrib.jar::/Users/mikemochan/dev/bea/wls103/wlserver_10.3/common/eval/pointbase/lib/pbclient57.jar:/Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/xqrl.jar::
+java.class.version = 50.0
+java.endorsed.dirs = /Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/endorsed
+java.ext.dirs = /Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/ext:/usr/java/packages/lib/ext
+java.home = /Users/mikemochan/dev/soylatte16-i386-1.0.2/jre
+java.io.tmpdir = /var/tmp/
+java.library.path = /Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/i386/client:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/i386:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/../lib/i386:/usr/java/packages/lib/i386:/lib:/usr/lib
+java.naming.factory.initial = weblogic.jndi.WLInitialContextFactory
+java.naming.factory.url.pkgs = weblogic.jndi.factories:weblogic.corba.j2ee.naming.url:weblogic.jndi.factories:weblogic.corba.j2ee.naming.url
+java.protocol.handler.pkgs = weblogic.net
+java.runtime.name = Java(TM) SE Runtime Environment
+java.runtime.version = 1.6.0_03-p3-landonf_03_feb_2008_02_12-b00
+java.security.policy = /Users/mikemochan/dev/bea/wls103/wlserver_10.3/server/lib/weblogic.policy
+java.specification.name = Java Platform API Specification
+java.specification.vendor = Sun Microsystems Inc.
+java.specification.version = 1.6
+java.vendor = Sun Microsystems Inc.
+java.vendor.url = http://java.sun.com/
+java.vendor.url.bug = http://java.sun.com/cgi-bin/bugreport.cgi
+java.version = 1.6.0_03-p3
+java.vm.info = mixed mode
+java.vm.name = Java HotSpot(TM) Client VM
+java.vm.specification.name = Java Virtual Machine Specification
+java.vm.specification.vendor = Sun Microsystems Inc.
+java.vm.specification.version = 1.0
+java.vm.vendor = Sun Microsystems Inc.
+java.vm.version = 1.6.0_03-p3-landonf_03_feb_2008_02_12-b00
+javax.rmi.CORBA.PortableRemoteObjectClass = weblogic.iiop.PortableRemoteObjectDelegateImpl
+javax.rmi.CORBA.UtilClass = weblogic.iiop.UtilDelegateImpl
+javax.xml.rpc.ServiceFactory = weblogic.webservice.core.rpc.ServiceFactoryImpl
+javax.xml.soap.MessageFactory = weblogic.webservice.core.soap.MessageFactoryImpl
+org.omg.CORBA.ORBClass = weblogic.corba.orb.ORB
+org.omg.CORBA.ORBSingletonClass = weblogic.corba.orb.ORB
+org.xml.sax.driver = weblogic.xml.jaxp.RegistryXMLReader
+org.xml.sax.parser = weblogic.xml.jaxp.RegistryParser
+os.arch = i386
+os.name = Darwin
+os.version = 9.7.0
+path.separator = :
+platform.home = /Users/mikemochan/dev/bea/wls103/wlserver_10.3
+sun.arch.data.model = 32
+sun.boot.class.path = /Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/resources.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/rt.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/sunrsasign.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/jsse.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/jce.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/charsets.jar:/Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/classes
+sun.boot.library.path = /Users/mikemochan/dev/soylatte16-i386-1.0.2/jre/lib/i386
+sun.cpu.endian = little
+sun.io.unicode.encoding = UnicodeBig
+sun.java.launcher = SUN_STANDARD
+sun.jnu.encoding = UTF-8
+sun.management.compiler = HotSpot Client Compiler
+sun.os.patch.level = unknown
+user.country = GB
+user.dir = /Users/mikemochan/dev/bea/wls103/user_projects/domains/base_domain
+user.home = /Users/mikemochan
+user.language = en
+user.name = mikemochan
+user.timezone = Europe/London
+vde.home = /Users/mikemochan/dev/bea/wls103/user_projects/domains/base_domain/servers/AdminServer/data/ldap
+weblogic.Name = AdminServer
+weblogic.classloader.preprocessor = weblogic.diagnostics.instrumentation.DiagnosticClassPreProcessor
+weblogic.ext.dirs = /Users/mikemochan/dev/bea/wls103/patch_wls1030/profiles/default/sysext_manifest_classpath:/Users/mikemochan/dev/bea/wls103/patch_cie660/profiles/default/sysext_manifest_classpath
+weblogic.home = /Users/mikemochan/dev/bea/wls103/wlserver_10.3/server
+weblogic.management.discover = true
+wls.home = /Users/mikemochan/dev/bea/wls103/wlserver_10.3/server
+> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STANDBY> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STARTING> 
+<12-Jun-2009 14:27:55 o'clock BST> <Info> <SAFService> <BEA-281003> <SAF Service has been initialized.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Info> <SAFService> <BEA-281002> <SAF Service has been started.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Info> <Deployer> <BEA-149209> <Resuming.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Info> <Diagnostics> <BEA-320000> <The Diagnostics subsystem is initializing on Server AdminServer.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Info> <Log Management> <BEA-170025> <Initialized Domain Logging. Domain log events will be written to /Users/mikemochan/dev/bea/wls103/user_projects/domains/base_domain/servers/AdminServer/logs/base_domain.log.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <Log Management> <BEA-170027> <The Server has established connection with the Domain level Diagnostic Service successfully.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Info> <Diagnostics> <BEA-320077> <Initialized the Diagnostic Accessor Service.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Info> <JMX> <BEA-149512> <JMX Connector Server started at service:jmx:iiop://10.211.55.7:7001/jndi/weblogic.management.mbeanservers.domainruntime .> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to ADMIN> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to RESUMING> 
+<12-Jun-2009 14:27:55 o'clock BST> <Info> <Management> <BEA-141052> <The auto deployment poller has started.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Info> <Server> <BEA-002610> <Dynamic Listener Service initialized.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <Server> <BEA-002613> <Channel "Default[5]" is now listening on 169.254.86.131:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Warning> <Server> <BEA-002611> <Hostname "10.211.55.7", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 192.168.1.5, 169.254.86.131, 127.0.0.1> 
+<12-Jun-2009 14:27:55 o'clock BST> <Warning> <Server> <BEA-002611> <Hostname "127.0.0.1", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 192.168.1.5, 169.254.86.131, 127.0.0.1> 
+<12-Jun-2009 14:27:55 o'clock BST> <Warning> <Server> <BEA-002611> <Hostname "169.254.86.131", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 192.168.1.5, 169.254.86.131, 127.0.0.1> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <Server> <BEA-002613> <Channel "Default[3]" is now listening on 172.16.39.1:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <Server> <BEA-002613> <Channel "Default[4]" is now listening on 192.168.1.5:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <Server> <BEA-002613> <Channel "Default[1]" is now listening on 10.37.129.3:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <Server> <BEA-002613> <Channel "Default[2]" is now listening on 172.16.145.1:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <Server> <BEA-002613> <Channel "Default[6]" is now listening on 127.0.0.1:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <Server> <BEA-002613> <Channel "Default" is now listening on 10.211.55.7:7001 for protocols iiop, t3, ldap, snmp, http.> 
+<12-Jun-2009 14:27:55 o'clock BST> <Warning> <Server> <BEA-002611> <Hostname "192.168.1.5", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 192.168.1.5, 169.254.86.131, 127.0.0.1> 
+<12-Jun-2009 14:27:55 o'clock BST> <Notice> <WebLogicServer> <BEA-000331> <Started WebLogic Admin Server "AdminServer" for domain "base_domain" running in Development Mode> 
+<12-Jun-2009 14:27:55 o'clock BST> <Warning> <Server> <BEA-002611> <Hostname "172.16.145.1", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 192.168.1.5, 169.254.86.131, 127.0.0.1> 
+<12-Jun-2009 14:27:55 o'clock BST> <Warning> <Server> <BEA-002611> <Hostname "172.16.39.1", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 192.168.1.5, 169.254.86.131, 127.0.0.1> 
+<12-Jun-2009 14:27:55 o'clock BST> <Warning> <Server> <BEA-002611> <Hostname "10.37.129.3", maps to multiple IP addresses: 10.211.55.7, 10.37.129.3, 172.16.145.1, 172.16.39.1, 192.168.1.5, 169.254.86.131, 127.0.0.1> 
+<12-Jun-2009 14:27:56 o'clock BST> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to RUNNING> 
+<12-Jun-2009 14:27:56 o'clock BST> <Notice> <WebLogicServer> <BEA-000360> <Server started in RUNNING mode> 
+<12-Jun-2009 14:27:57 o'clock BST> <Info> <J2EE> <BEA-160151> <Registered library Extension-Name: bea_wls_async_response (JAR).> 
+<12-Jun-2009 14:27:58 o'clock BST> <Info> <EJB> <BEA-010008> <EJB Deploying file: mejb.jar> 
+<12-Jun-2009 14:27:59 o'clock BST> <Info> <WebService> <BEA-220103> <Async web service support is not fully configured. The async response web service /AsyncResponseServiceHttps for this server was not fully deployed because the JMS reliability queue was not defined/deployed: weblogic.wsee.DefaultQueue. The server will periodically retry completing the deploy for the service. This message can usually be ignored unless there are async web service applications. To completely disable async web service support, thus avoiding this message, set -Dweblogic.wsee.skip.async.response=true.> 
+<12-Jun-2009 14:27:59 o'clock BST> <Info> <WebService> <BEA-220103> <Async web service support is not fully configured. The async response web service /AsyncResponseServiceJms for this server was not fully deployed because the JMS reliability queue was not defined/deployed: weblogic.wsee.DefaultQueue. The server will periodically retry completing the deploy for the service. This message can usually be ignored unless there are async web service applications. To completely disable async web service support, thus avoiding this message, set -Dweblogic.wsee.skip.async.response=true.> 
+<12-Jun-2009 14:27:59 o'clock BST> <Info> <WebService> <BEA-220103> <Async web service support is not fully configured. The async response web service /AsyncResponseService for this server was not fully deployed because the JMS reliability queue was not defined/deployed: weblogic.wsee.DefaultQueue. The server will periodically retry completing the deploy for the service. This message can usually be ignored unless there are async web service applications. To completely disable async web service support, thus avoiding this message, set -Dweblogic.wsee.skip.async.response=true.> 
+<12-Jun-2009 14:27:59 o'clock BST> <Info> <WebService> <BEA-220103> <Async web service support is not fully configured. The async response web service /AsyncResponseServiceSoap12Jms for this server was not fully deployed because the JMS reliability queue was not defined/deployed: weblogic.wsee.DefaultQueue. The server will periodically retry completing the deploy for the service. This message can usually be ignored unless there are async web service applications. To completely disable async web service support, thus avoiding this message, set -Dweblogic.wsee.skip.async.response=true.> 
+<12-Jun-2009 14:27:59 o'clock BST> <Info> <WebService> <BEA-220103> <Async web service support is not fully configured. The async response web service /AsyncResponseServiceSoap12 for this server was not fully deployed because the JMS reliability queue was not defined/deployed: weblogic.wsee.DefaultQueue. The server will periodically retry completing the deploy for the service. This message can usually be ignored unless there are async web service applications. To completely disable async web service support, thus avoiding this message, set -Dweblogic.wsee.skip.async.response=true.> 
+<12-Jun-2009 14:27:59 o'clock BST> <Info> <WebService> <BEA-220103> <Async web service support is not fully configured. The async response web service /AsyncResponseServiceSoap12Https for this server was not fully deployed because the JMS reliability queue was not defined/deployed: weblogic.wsee.DefaultQueue. The server will periodically retry completing the deploy for the service. This message can usually be ignored unless there are async web service applications. To completely disable async web service support, thus avoiding this message, set -Dweblogic.wsee.skip.async.response=true.> 
+<12-Jun-2009 14:27:59 o'clock BST> <Info> <EJB> <BEA-010009> <EJB Deployed EJB with JNDI name ejb.mgmt.MEJB.> 
+<12-Jun-2009 14:28:55 o'clock BST> <Info> <Health> <BEA-310002> <87% of the total memory in the server is free> 
+<12-Jun-2009 14:29:33 o'clock BST> <Info> <WorkManager> <BEA-002901> <Creating WorkManager "consoleWorkManager" for module "null" and application "consoleapp"> 
+12-Jun-2009 14:29:38 com.sun.faces.config.ConfigureListener contextInitialized
+INFO: Initializing Sun's JavaServer Faces implementation (1.2_03-b04-FCS) for context '/console'
+12-Jun-2009 14:29:38 com.sun.faces.config.ConfigureListener contextInitialized
+INFO: Completed initializing Sun's JavaServer Faces implementation (1.2_03-b04-FCS) for context '/console'
+<12-Jun-2009 14:29:38 o'clock BST> <Info> <netuix> <BEA-423101> <[console] Initializing the NetUIx container> 
+<12-Jun-2009 14:29:39 o'clock BST> <Info> <netuix> <BEA-423120> <WEB-INF/client-classifications.xml file not found at uri [console//WEB-INF/client-classifications.xml]. Classifications functionality not enabled.> 
+<12-Jun-2009 14:29:40 o'clock BST> <Info> <netuix> <BEA-423101> <[consolehelp] Initializing the NetUIx container> 
+<12-Jun-2009 14:29:40 o'clock BST> <Info> <netuix> <BEA-423120> <WEB-INF/client-classifications.xml file not found at uri [consolehelp//WEB-INF/client-classifications.xml]. Classifications functionality not enabled.> 
+<12-Jun-2009 14:29:41 o'clock BST> <Warning> <Socket> <BEA-000402> <There are: 5 active sockets, but the maximum number of socket reader threads allowed by the configuration is: 4. You may want to alter your configuration.> 
+<12-Jun-2009 14:30:09 o'clock BST> <Warning> <netuix> <BEA-423420> <Redirect is executed in begin or refresh action. Redirect url is /console/console.portal?_nfpb=true&_pageLabel=HomePage1.> 
+<12-Jun-2009 14:45:55 o'clock BST> <Info> <Health> <BEA-310002> <75% of the total memory in the server is free> 

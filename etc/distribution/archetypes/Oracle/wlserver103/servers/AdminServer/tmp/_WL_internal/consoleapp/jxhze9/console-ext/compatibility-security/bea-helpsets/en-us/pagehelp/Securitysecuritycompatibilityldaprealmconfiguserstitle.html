@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="date last modified" content="July 25 2008">
+<meta name="help ID" content="Security.security.compatibility.ldaprealmconfigusers.title">
+<title>LDAP Security Realm: Users</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">LDAP Security Realm: Users</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to define how users are stored in the LDAP server. To use
+    the LDAP security realm, you need to use Compatibility security. The use
+    of the LDAP security realm is deprecated in this release of WebLogic
+    Server.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.ldaprealmconfigusers.userauthentication.label">User Authentication</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The method for allowing or denying a user the right to communicate
+        with WebLogic Server.</p>
+<p>Set this attribute to one of the following values:</p>
+<ul>
+          
+<li>Bind--The LDAP security realm retrieves user data, including the
+          password for the LDAP server, and checks the password in WebLogic
+          Server.</li>
+          
+<li>External--The LDAP security realm authenticates a user by
+          attempting to bind to the LDAP server with the username and password
+          supplied by the WebLogic client.</li>
+          
+<li>Local--The LDAP security realm authenticates a user by looking
+          up the UserPassword attribute in the LDAP directory and checking its
+          value against a set of passwords in WebLogic Server.</li>
+        
+</ul>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.ldaprealmconfigusers.userpasswordattribute.label">User Password Attribute</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>If the User Authentication field is set to <code>local</code>, this
+        attribute finds the attribute in the LDAP user objects that contains
+        the passwords of the LDAP users.</p>
+<p>This attribute finds the attribute in the LDAP user object that
+        contains the passwords of the LDAP users.</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.ldaprealmconfigusers.userdn.label">User DN</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The list of attributes that, when combined with the attribute named
+        in the User Name Attribute field, uniquely identifies a user in the
+        LDAP directory.</p>
+<p>When specifying this attribute, use the following format:
+        <code>ou=Barb.Klock, u=acme.com</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.compatibility.ldaprealmconfigusers.usernameattribute.label">User Name Attribute</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The login name of a user for the LDAP directory.</p>
+<p>The value of this attribute can be the common name of a user in the
+        LDAP directory. However, it is generally an abbreviated string, such
+        as a User ID.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.DefineHowToStoreUsersInLDAPV1SecurityRealms">Define how to store
+  users in LDAP V1 security realms</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.DefineHowToStoreGroupsInLDAPV1SecurityRealms">Define how to store
+  groups in LDAP V1 security realms</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.ConfigureLDAPV1SecurityRealms">Configure LDAP V1
+  security realms</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.EnableLDAPWebLogicServerCommunication">Enable communication
+  between the LDAP Server and WebLogic Server</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://edocs.bea.com/wls/docs103/secmanage/compat.html">Using Compatibility
+    Security</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

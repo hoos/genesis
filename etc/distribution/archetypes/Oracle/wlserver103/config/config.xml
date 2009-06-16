@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<domain xmlns="http://www.bea.com/ns/weblogic/920/domain" xmlns:sec="http://www.bea.com/ns/weblogic/90/security" xmlns:wls="http://www.bea.com/ns/weblogic/90/security/wls" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bea.com/ns/weblogic/90/security/wls http://www.bea.com/ns/weblogic/90/security/wls.xsd http://www.bea.com/ns/weblogic/920/domain http://www.bea.com/ns/weblogic/920/domain.xsd http://www.bea.com/ns/weblogic/90/security/xacml http://www.bea.com/ns/weblogic/90/security/xacml.xsd http://www.bea.com/ns/weblogic/90/security http://www.bea.com/ns/weblogic/90/security.xsd">
+  <name>base_domain</name>
+  <domain-version>10.3.0.0</domain-version>
+  <security-configuration>
+    <name>base_domain</name>
+    <realm>
+      <sec:authentication-provider xsi:type="wls:default-authenticatorType"></sec:authentication-provider>
+      <sec:authentication-provider xsi:type="wls:default-identity-asserterType">
+        <sec:active-type>AuthenticatedUser</sec:active-type>
+      </sec:authentication-provider>
+      <sec:role-mapper xmlns:xac="http://www.bea.com/ns/weblogic/90/security/xacml" xsi:type="xac:xacml-role-mapperType"></sec:role-mapper>
+      <sec:authorizer xmlns:xac="http://www.bea.com/ns/weblogic/90/security/xacml" xsi:type="xac:xacml-authorizerType"></sec:authorizer>
+      <sec:adjudicator xsi:type="wls:default-adjudicatorType"></sec:adjudicator>
+      <sec:credential-mapper xsi:type="wls:default-credential-mapperType"></sec:credential-mapper>
+      <sec:cert-path-provider xsi:type="wls:web-logic-cert-path-providerType"></sec:cert-path-provider>
+      <sec:cert-path-builder>WebLogicCertPathProvider</sec:cert-path-builder>
+      <sec:name>myrealm</sec:name>
+    </realm>
+    <default-realm>myrealm</default-realm>
+    <credential-encrypted>{3DES}p+1dDgNxhKN5VpDVuYILPg786GGdkAdyMIASps3ubkREZs3/TpSA37xD3UVR1lY78U/slX+29cTQMGIGZ0AdQuP2xuLbpsVY</credential-encrypted>
+    <node-manager-username>weblogic</node-manager-username>
+    <node-manager-password-encrypted>{3DES}fxIho8RDoQxaw2gQ0XV5Ww==</node-manager-password-encrypted>
+  </security-configuration>
+  <server>
+    <name>AdminServer</name>
+    <iiop>
+      <default-minor-version>2</default-minor-version>
+      <tx-mechanism>OTS</tx-mechanism>
+      <default-wide-char-codeset>UCS-2</default-wide-char-codeset>
+      <default-char-codeset>US-ASCII</default-char-codeset>
+      <use-full-repository-id-list>false</use-full-repository-id-list>
+      <use-stateful-authentication>true</use-stateful-authentication>
+      <use-serial-format-version2>false</use-serial-format-version2>
+      <system-security>supported</system-security>
+    </iiop>
+    <log>
+      <file-name>logs/AdminServer.log</file-name>
+      <rotation-type>bySize</rotation-type>
+      <number-of-files-limited>true</number-of-files-limited>
+      <file-count>7</file-count>
+      <file-min-size>500</file-min-size>
+      <rotate-log-on-startup>true</rotate-log-on-startup>
+      <logger-severity>Info</logger-severity>
+      <log-file-severity>Debug</log-file-severity>
+      <stdout-severity>Info</stdout-severity>
+      <domain-log-broadcast-severity>Notice</domain-log-broadcast-severity>
+      <memory-buffer-severity>Trace</memory-buffer-severity>
+      <log4j-logging-enabled>false</log4j-logging-enabled>
+      <redirect-stdout-to-server-log-enabled>false</redirect-stdout-to-server-log-enabled>
+      <domain-log-broadcaster-buffer-size>1</domain-log-broadcaster-buffer-size>
+    </log>
+    <iiop-enabled>true</iiop-enabled>
+    <default-iiop-user>iiop</default-iiop-user>
+    <default-iiop-password-encrypted>{3DES}BCyffFuXOv1zLCUr4uqdqw==</default-iiop-password-encrypted>
+    <listen-address></listen-address>
+  </server>
+  <embedded-ldap>
+    <name>base_domain</name>
+    <credential-encrypted>{3DES}GhSPsyk/Bxgpvj+BrHwg4E+3xWkkvPSWMI2zk0JY5h0=</credential-encrypted>
+  </embedded-ldap>
+  <configuration-version>10.3.0.0</configuration-version>
+  <jms-system-resource>
+    <name>SystemModule-0</name>
+    <target>AdminServer</target>
+    <descriptor-file-name>jms/systemmodule-0-jms.xml</descriptor-file-name>
+  </jms-system-resource>
+  <admin-server-name>AdminServer</admin-server-name>
+</domain>

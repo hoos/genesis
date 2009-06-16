@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="July 25 2008" name="date last modified">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Configure RDBMS
+  security realms</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="security_6x1105928"></a>
+
+
+  <h1 class="topictitle1">Configure RDBMS
+  security realms</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="security_6x1105928__security_6x1105929"></a>The RDBMS security realm
+      is an Oracle-provided custom security realm that stores users, groups and
+      ACLs in a relational database.The RDBMS security realm for Compatibility
+      security is an example and is not meant to be used in a production
+      environment.</p>
+
+      <div><a name="security_6x1105928__security_6x1105989"></a><p><b>Note: </b>The
+      RDBMS example does not work with databases that have an autocommit
+      feature enabled. If you use the RDBMS example as a starting point for
+      your RDBMS implmentation, use explicit commit statements in your code
+      and make sure the autocommit feature in the database you are using is
+      disabled.</p></div>
+
+      <p><a name="security_6x1105928__security_6x1134471"></a>If your implementation of
+      the RDBMS security realm uses the <code><code>getActiveDomain()</code>
+      </code>method, you need to edit and recompile your <code><code>RDBMSDelegate</code> </code>class in
+      order to use the RDBMS security realm with Compatibility security.
+      Replace the <code><code>getActiveDomain()</code></code>
+      method with the <code><code>getSecurityConfig()</code></code>
+      method in the <code><code>weblogic.server
+      </code></code>package.</p>
+
+      <p><a name="security_6x1105928__security_6x1129328"></a>To configure an RDBMS
+      security realm:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="security_6x1105928__security_6x1122777"></a>In the left
+        pane, expand <b>Compatibility Security &gt;
+        Realms</b>, then click <b>New</b>.</span>
+
+        <span>
+          <p>The <span>Create a New Basic Realm</span> page
+          appears.</p>
+        </span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1105928__security_6x1112114"></a>In the
+        <b>Name</b> field, enter a name for the RDBMS security
+        realm.</span>
+      </li>
+
+      <li>
+        <span>In the <b>Type</b> drop-down list, select
+        <kbd>RDBMS Realm</kbd>.</span>
+      </li>
+
+      <li>
+        <span>Click <b>OK</b>.</span>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+
+    <div class="postreq"><p class="sectiontitle"><b>
+        After you finish
+      </b></p>
+      <p>Click the name of the RDBMS security realm and define its database
+      schema and attributes, as described in <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=security_compat.DefineRDBMSSecurityRealmDatabaseSchema">Define RDBMS security
+  realm database schema</a>
+      and <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=security_compat.DefineRDBMSSecurityRealmDatabaseAttributes">Define RDBMS security
+  realm database attributes</a>. Configure the Caching realm to associate it with
+      the RDBMS security realm, as described in <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=security_compat.ConfigureCachingRealms">Configure Caching
+  realms</a>.</p>
+    </div>
+  </div>
+
+
+</body></html>

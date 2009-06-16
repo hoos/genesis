@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="July 25 2008" name="date last modified">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Set up Compatibility
+  security</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="security_6x1128314"></a>
+
+
+  <h1 class="topictitle1">Set up Compatibility
+  security</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="security_6x1128314__security_6x1128315"></a>The Compatibility security
+      framework is deprecated in this release of WebLogic Server and will not
+      be supported in future major releases. Oracle encourages users of
+      Compatibility security to migrate their usage forward.</p>
+
+      <p>To set up Compatibility security:</p>
+    </div>
+
+    <ol>
+      <li>
+        <span><a name="security_6x1128314__security_6x1132509"></a>Make a
+        backup copy of your 6.x WebLogic domain (including your <code>config.xml</code> file) before using
+        Compatibility security.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1128314__security_6x1132510"></a>Add the
+        following to the 6.x <code>config.xml</code> file if it does not
+        exist, replacing the domain and realm names with the actual names of
+        your domain and realms:</span>
+
+         
+          <div><pre>&lt;Security Name="<i>mydomain</i>" Realm="<i>mysecurity</i>"/&gt;</pre></div>
+
+          <div><pre>&lt;Realm Name="<i>mysecurity</i>" FileRealm="<i>myrealm</i>"/&gt;</pre></div>
+
+          <div><pre>&lt;FileRealm Name="<i>myrealm</i>"/&gt;</pre></div>
+        
+      </li>
+
+      <li>
+        <span><a name="security_6x1128314__security_6x1132512"></a>Install
+        WebLogic Server in a new directory location. Do not overwrite your
+        existing 6.x installation directory. For more information, see the <i><a href="http://e-docs.bea.com/common/docs91/install/index.html">WebLogic Server Installation Guide</a></i>.</span>
+      </li>
+
+      <li>
+        <span><a name="security_6x1128314__security_6x1132514"></a>Modify the
+        start script for your 6.x server to point to the new WebLogic Server
+        installation. Specifically, you need to modify:</span>
+
+        <ol type="a">
+          <li>
+            <span><a name="security_6x1128314__security_6x1132515"></a>The
+            classpath to point to the <code>weblogic.jar</code> file in the
+            new WebLogic Server installation.</span>
+          </li>
+
+          <li>
+            <span><a name="security_6x1128314__security_6x1132516"></a><code>The JAVA_HOME</code> variable to
+            point to the new WebLogic Server installation.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span><a name="security_6x1128314__security_6x1132517"></a>Use the
+        start script for your 6.x server to boot WebLogic Server.</span>
+      </li>
+    </ol>
+
+    <div class="postreq"><p class="sectiontitle"><b>
+        After you finish
+      </b></p>
+      <p>To verify whether you are correctly running Compatibility security,
+      look for the following message in your domain log:</p>
+
+      <p><code>Security initializing using realm
+      CompatibilityRealm</code></p>
+    </div>
+  </div>
+
+
+</body></html>

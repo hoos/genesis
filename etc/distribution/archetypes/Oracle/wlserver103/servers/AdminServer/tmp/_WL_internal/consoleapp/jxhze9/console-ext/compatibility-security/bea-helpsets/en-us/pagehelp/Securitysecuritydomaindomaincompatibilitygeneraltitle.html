@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="date last modified" content="July 25 2008">
+<meta name="help ID" content="Security.security.domain.domaincompatibilitygeneral.title">
+<title>Domain: Compatibility Security: General</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Domain: Compatibility Security: General</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Compatibility security refers to the capability to run security
+    configurations from WebLogic Server 6.x in this version of WebLogic
+    Server. In Compatibility security, you configure 6.x security realms,
+    define users, groups, and ACLs, manage the protection of user accounts,
+    and install custom auditing providers. The only security realm available
+    in Compatibility security is the CompatibilityRealm. This page allows you
+    to define the general configuration of the CompatibilityRealm for this
+    WebLogic Server domain.</p>
+<p>The Auditing provider installed from this page must be an
+    implementation of the <code>weblogic.security.audit</code> interface. This
+    interface is deprecated in this release of WebLogic Server. The
+    <code>guest </code>user is automatically provided in Compatibility
+    security. When authorization is not required, WebLogic Server assigns the
+    <code>guest </code>identity to an client, thus giving the client access to
+    any resources that are available to the <code>guest</code> user. A client
+    can log in as the <code>guest </code>user by entering <code>guest</code>
+    as the username and password when prompted by a Web browser or in a Java
+    client. By default, the <code>guest</code> account is disabled. For a more
+    secure deployment, Oracle recommends running WebLogic Server with the
+    <code>guest</code> account disabled.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.domain.domaincompatibilitygeneral.security.auditproviderclassname.label">Audit Provider Class</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getAuditProviderClassName"></a><a name="AuditProviderClassName"></a>
+<p>The name of the Java class that implements a 6.x Auditing 
+provider. The Auditing provider must be an implementation of the 
+<tt>weblogic.security.audit.AuditProvider</tt> interface. This 
+interface is only available in Compatibility mode.</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="security.domain.domaincompatibilitygeneral.security.guestdisabled.label">Guest Disabled</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getGuestDisabled"></a><a name="GuestDisabled"></a>
+<p>Indicates whether guest logins can be used to access WebLogic 
+resources in this WebLogic Server domain.</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.SetUpCompatibilitySecurity">Set up Compatibility
+  security</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.DisableTheGuestUser">Disable the Guest
+  user</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=security_compat.ConfigureARealmAdapterAuditingProvider">Configure a Realm
+  Adapter Auditing provider</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://edocs.bea.com/wls/docs103/secmanage/compat.html">Using Compatibility
+    Security</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

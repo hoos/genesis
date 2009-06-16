@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+             xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+             xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd"><!-- Copyright (c) 2003 by BEA Systems, Inc. All Rights Reserved.  -->
+
+<!-- Definition for the CompatibilitySecurity tab -->
+  <netuix:book markupName="book" markupType="Book"
+               definitionLabel="DomainSecurityCompatibilityTabPage"
+               title="tab.compatibilitysecurity.label">
+    <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+    <netuix:content>
+      <!-- Definition for the general tab -->
+      <netuix:page markupName="page" markupType="Page"
+                   definitionLabel="DomainSecuritycompatibilitygeneralTabPage"
+                   title="tab.compatibilitygeneral.label"
+                   presentationClass="page-content">
+        <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+        <netuix:meta name="helpid"
+                     content="Security.security.domain.domaincompatibilitygeneral.title;compatibility-security"/>
+        <netuix:content>
+          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+              <netuix:portletInstance markupType="Portlet"
+                                      instanceLabel="SecurityDomainDomainCompatibilityGeneralPortlet"
+                                      contentUri="/PortalConfig/core/domain/DomainCompatibilityGeneral.portlet"/>
+            </netuix:placeholder>
+          </netuix:layout>
+        </netuix:content>
+      </netuix:page>
+      <!-- Definition for the filerealm tab -->
+      <netuix:page markupName="page" markupType="Page"
+                   definitionLabel="DomainSecurityfilerealmTabPage"
+                   title="tab.filerealm.label"
+                   presentationClass="page-content">
+        <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+        <netuix:meta name="helpid"
+                     content="Security.security.domain.domaincompatibilityfilerealm.title;compatibility-security"/>
+        <netuix:content>
+           <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+             <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+               <netuix:portletInstance markupType="Portlet"
+                                      instanceLabel="SecurityDomainDomainCompatibilityFilerealmPortlet"
+                                      contentUri="/PortalConfig/core/domain/DomainCompatibilityFilerealm.portlet"/>
+             </netuix:placeholder>
+           </netuix:layout>
+        </netuix:content>
+      </netuix:page>
+      <!-- Definition for the passwords tab -->
+      <netuix:page markupName="page" markupType="Page"
+                   definitionLabel="DomainSecuritypasswordsTabPage"
+                   title="tab.passwords.label"
+                   presentationClass="page-content">
+        <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+        <netuix:meta name="helpid"
+                     content="Security.security.domain.domaincompatibilitypasswords.title;compatibility-security"/>
+        <netuix:content>
+          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+              <netuix:portletInstance markupType="Portlet"
+                                      instanceLabel="SecurityDomainDomainCompatibilityPasswordsPortlet"
+                                      contentUri="/PortalConfig/core/domain/DomainCompatibilityPasswords.portlet"/>
+            </netuix:placeholder>
+          </netuix:layout>
+        </netuix:content>
+      </netuix:page>
+      <!-- Definition for the advanced tab -->
+      <netuix:page markupName="page" markupType="Page"
+                   definitionLabel="DomainSecuritycompatibilityadvancedTabPage"
+                   title="tab.compatibilityadvanced.label"
+                   presentationClass="page-content">
+        <netuix:meta name="skeleton-resource-bundle" content="compatibility-security"/>
+        <netuix:meta name="helpid"
+                     content="Security.security.domain.domaincompatibilityadvanced.title;compatibility-security"/>
+        <netuix:content>
+          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+              <netuix:portletInstance markupType="Portlet"
+                                      instanceLabel="SecurityDomainDomainCompatibilityAdvancedPortlet"
+                                      contentUri="/PortalConfig/core/domain/DomainCompatibilityAdvanced.portlet"/>
+            </netuix:placeholder>
+          </netuix:layout>
+        </netuix:content>
+      </netuix:page>
+    </netuix:content>
+  </netuix:book>
+</portal:root>

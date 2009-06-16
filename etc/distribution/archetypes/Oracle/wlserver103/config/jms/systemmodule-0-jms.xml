@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<weblogic-jms xmlns="http://www.bea.com/ns/weblogic/weblogic-jms" xmlns:sec="http://www.bea.com/ns/weblogic/90/security" xmlns:wls="http://www.bea.com/ns/weblogic/90/security/wls" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bea.com/ns/weblogic/weblogic-jms http://www.bea.com/ns/weblogic/weblogic-jms/1.0/weblogic-jms.xsd"></weblogic-jms>
