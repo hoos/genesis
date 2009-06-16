@@ -34,7 +34,7 @@
             <echo file="@{workdir}/rpmspec" append="true"  message="install: @{install}${line.separator}" />
             <echo file="@{workdir}/rpmspec" append="true"  message="files: @{files}${line.separator}" />
             <echo file="@{workdir}/rpmspec" append="true"  message="defattr: @{build}${line.separator}" />                                    
-        </sequential>
+        </sequential> 
     </macrodef> 
     <!-- Define the rpm build macro -->
       <macrodef name="rpmbuild">
