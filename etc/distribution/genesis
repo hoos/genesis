@@ -9,10 +9,17 @@
 
 
 # Environment varibles.
-ANT_HOME=./apache-ant-1.7.1
-CONTRIB_DIR=./contrib
+ANT_HOME="./apache-ant-1.7.1"
+CONFIG_DIR="./config"
+CONTRIB_DIR="./contrib"
 
 USAGE="Usage: `basename $0` [-hv] [-e <enterprise>] [-d <datacentre>] [-r <rack>] [-n <node>] [-s <service>] [-i <environment>] [-a <application>]"
+
+function config_not_found {
+  echo -e "\nError: Missing configuration from Genesis Configuration Hierarchy."
+  echo "Please ensure the " $1 "file or directory exists and is accessible."
+  exit 1
+}
 
 if [ $# -eq 1 ]; then
     continue
@@ -34,16 +41,34 @@ while getopts hv:e:d:r:n:s:i:a: OPT; do
                 exit 0
                 ;;
         e)      ENTERPRISE=$OPTARG
+                if [ ! -d $CONFIG_DIR/$ENTERPRISE ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE"
+                fi
                 ;;
         d)      DATACENTRE=$OPTARG
+                if [ ! -d $CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE"
+                fi
                 ;;
         r)      RACK=$OPTARG
+                if [ ! -d $CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK"
+                fi
                 ;;
         n)      NODE=$OPTARG
+                if [ ! -d $CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK/$NODE ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK/$NODE"
+                fi
                 ;;
         s)      SERVICE=$OPTARG
+                if [ ! -d $CONFIG_DIR/$ENTERPRISE/logical/$SERVICE ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/logical/$SERVICE"
+                fi
                 ;;
         i)      ENVIRONMENT=$OPTARG
+                if [ ! -d $CONFIG_DIR/$ENTERPRISE/logical/$SERVICE/$ENVIRONMENT ]; then
+                  config_not_found "`pwd`/$CONFIG_DIR/$ENTERPRISE/logical/$SERVICE/$ENVIRONMENT"
+                fi
                 ;;
         a)      APPLICATION=$OPTARG
                 ;;
