@@ -1,145 +1,87 @@
 #!/bin/sh
 #
-# genesis       A simple wrapper for ant.
+# genesis       A wrapper for ant.
 #
-# description:  Genesis is an environment provisioning tool capable  \  
+# Description:  Genesis is an environment provisioning tool capable  \  
 #               of configuring the entire enterprise stack.
 #
-#set -x
-# Source environment varibles.
+# Author:       Hussein Badakhchani 
 
-. ./contrib/set_env
 
-if [ $# = 0 ]; then
-	cat $CONTRIB/help.msg
-        echo -e "\n$USAGE"
-        exit 1
-elif [ $# != 8 ]; then
-	echo -e "
-================================================================================
+# Environment varibles.
+ANT_HOME="./apache-ant-1.7.1"
+CONFIG_DIR="./config"
+CONTRIB_DIR="./contrib"
 
-CHECKING COMMAND LINE ARGUMENTS
+USAGE="Usage: `basename $0` [-hv] [-e <enterprise>] [-d <datacentre>] [-r <rack>] [-n <node>] [-s <service>] [-i <environment>] [-a <application>]"
 
-ERROR: INCORRECT NUMBER OF ARGUMENTS!
+function config_not_found {
+  echo -e "\nError: Missing configuration from Genesis Configuration Hierarchy."
+  echo "Please ensure the " $1 "file or directory exists and is accessible."
+  exit 1
+}
 
-Error: ./genesis "$@"
-
-"$USAGE"
-
-================================================================================\n"
-        exit 1
+if [ $# -eq 1 ]; then
+    continue
+elif [ $# -lt 7 ]; then
+    echo -e $USAGE >&2
+    exit 1
 else
-	echo -e "
-================================================================================
+    continue
+fi
 
-			       WELCOME TO GENESIS
-
-================================================================================
-
-"$GENESIS_VERSION"
-
-Release: Light
-License: GPL Version 3
-Website: http://www.genesis.uk.com
-Contact: info@genesis.uk.com
-
-================================================================================\n"
-$CONTRIB/check_env
-echo -e "
-CHECKING TARGETS\n"
-
-GEN_TARGS=($ENT_TARGET $SER_TARGET $ENV_TARGET $DAT_TARGET $RAC_TARGET $NOD_TARGET $APP_TARGET $APP_BUILD)
-
-OPTS="$@"
-	# Strip arguments from command line options and leave targets
-        for TARGS in $OPTS;do
-                TARG=`echo $TARGS | sed -e 's/\([=].*\)//g' -e 's/.*\([:]\)/:/g'`
-                echo -e "$TARG" >> TARGETS
-        done
-
-declare -a CMD_TARGS[]
-
-exec 9<TARGETS
-let COUNT=0
-
-while read LINE <&9; do
-	CMD_TARGS[$COUNT]=$LINE
-    	((COUNT++))
+# parse command line arguments
+while getopts hv:e:d:r:n:s:i:a: OPT; do
+    case "$OPT" in
+        h)      cat $CONTRIB_DIR/help.msg
+                exit 0
+                ;;
+        v)      echo "`basename $0` version 0.35"
+                echo "Clone URL: git://github.com/hoos/genesis.git"
+                exit 0
+                ;;
+        e)      ENTERPRISE=$OPTARG
+                if [ ! -d $CONFIG_DIR/$ENTERPRISE ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE"
+                fi
+                ;;
+        d)      DATACENTRE=$OPTARG
+                if [ ! -d $CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE"
+                fi
+                ;;
+        r)      RACK=$OPTARG
+                if [ ! -d $CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK"
+                fi
+                ;;
+        n)      NODE=$OPTARG
+                if [ ! -d $CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK/$NODE ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK/$NODE"
+                fi
+                ;;
+        s)      SERVICE=$OPTARG
+                if [ ! -d $CONFIG_DIR/$ENTERPRISE/logical/$SERVICE ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/logical/$SERVICE"
+                fi
+                ;;
+        i)      ENVIRONMENT=$OPTARG
+                if [ ! -d $CONFIG_DIR/$ENTERPRISE/logical/$SERVICE/$ENVIRONMENT ]; then
+                  config_not_found "`pwd`/$CONFIG_DIR/$ENTERPRISE/logical/$SERVICE/$ENVIRONMENT"
+                fi
+                ;;
+        a)      APPLICATION=$OPTARG
+                ;;
+        \?)     # getopts issues an error message
+                cat $CONTRIB_DIR/help.msg >&2
+                exit 1
+                ;;
+    esac
 done
 
-rm -rf TARGETS
+shift `expr $OPTIND - 1`
 
-exec 9>&-
+# Run Genesis
+GENESIS_CMD="$ANT_HOME/bin/ant -Denterprise=$ENTERPRISE -Ddatacentre=$DATACENTRE -Drack=$RACK -Dnode=$NODE -Dservice=$SERVICE -Denvironment=$ENVIRONMENT -Dapplication=$APPLICATION $APPLICATION:build"
 
-if [[ "${CMD_TARGS[@]}" != "${GEN_TARGS[@]}" ]] ; then
-        echo -e "FAILURE: TARGET ERROR"
-	RETVAL="1"
-else
-        echo -e "SUCCESS: ALL TARGETS OK\n"
-	echo -e "${CMD_TARGS[@]}"	
-	RETVAL="0"
-fi
-
-			if [ "$RETVAL" != 0 ]; then
-                                echo -e "
-================================================================================
-
-ERROR REPORT:
-
-SYNTAX ERROR - INCORRECT TARGET GIVEN!
-
-Error: "${CMD_TARGS[@]}"
-
-Usage: "${GEN_TARGS[@]}"
-
-================================================================================"
-			else
-echo -e "
-================================================================================"
-echo -e "
-CHECKING ARGUMENTS\n"
-        OPTS="$@"
-		for ARGS in $OPTS;
-		# Strip "Strip the command line options to leave the arguments only.
-		do ARG=`echo $ARGS | sed -e 's/\(.*[=]\)//'g -e s'/\([:].*\)//g'`
-			# Check the argument points to a target direcory in the .config/
-			if [ -n = `find $CONFIG -depth -name $ARG` ] ; then
-				echo -e "FAILURE: ARGUMENT ERROR - "$ARG""
-                                	RETVAL="1"
-			else
-				echo -e "SUCCESS: ARGUMENT OK - "$ARG""
-					RETVAL="0"
-
-			fi
-		done
-
-                	if [ "$RETVAL" != 0 ]; then
-                        	echo -e "
-================================================================================
-
-ERROR REPORT:
-
-SYNTAX ERROR - ARGUMENT DOES NOT EXIST IN THE "$CONFIG" DIRECTORY TREE!
-
-================================================================================"
-                	else
-                       	echo -e "
-================================================================================"
-
-CMD="$GENESIS_HOME/apache-ant-1.7.1/bin/ant $@"
-$CMD
-echo -e "
-================================================================================
-
-GENESIS CONFIGURATION HIERARCHY\n"
-TREE=`which tree`
-	if [ -n $TREE ] ;then
-		"$TREE" "$BUILD"
-	else
-		ls -R "$BUILD"
-	fi
-			echo -e "
-================================================================================"
-                	fi
-fi
-fi
+$GENESIS_CMD
