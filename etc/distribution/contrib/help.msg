@@ -1,33 +1,24 @@
-================================================================================
+Usage: genesis [-options]
+Options are: 
 
-                               WELCOME TO GENESIS
+    -h            this help message
+    -v            prints product version and exists
 
-================================================================================
-VERSION: 0.0.34
+  these options are the names of definition files in
+  the Genesis Configuration Hierarchy:
+    -e            enterprise
+    -d            datacentre
+    -r            rack
+    -n            node
+    -s            service
+    -i            environment
 
-Release: Light
-License: GPL Version 3
-Website: http://www.genesis.uk.com
-Contact: info@genesis.uk.com
+    -a            the application archetype 
 
-================================================================================
-USAGE UNIX
+For example:
+genesis -e MyEnterprise -d MyDatacentre -r MyRack -n MyNode -s MyService -i MyEnvironment -a MyApplication
 
-Usage: genesis [target] [argument] [target2] [argument2] ... [argument8:build]
+Supported Archetypes:
 
-UNIX EXAMPLES
-
-genesis -Denterprise=MyEnterprise -Dservice=MyService -Denvironment=MyEnvironment -Ddatacentre=MyDatacentre -Drack=MyRack -Dnode=MyNode -Dapplication=MyApplication MyApplication:build
-
-genesis -Denterprise=MyEnterprise -Dservice=MyService -Denvironment=MyEnvironment -Ddatacentre=MyDatacentre -Drack=MyRack -Dnode=MyNode -Dapplication=FC9AHS22DB FC9AHS22DB:build
-
-================================================================================
-USAGE WINDOWS
-
-Usage: genesis.cmd [argument] [argument2] ... [argument7] 
-
-WINDOWS EXAMPLES
-
-genesis.cmd MyEnterprise MyDatacentre MyRack MyNode MyService MyEnvironment MyApplication
-
-================================================================================
+    MyApplication - An example application archetype
+    FC9AHS22DB    - Apache HTTP Server default build for Fedora Core 9
