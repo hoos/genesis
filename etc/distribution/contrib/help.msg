@@ -22,3 +22,6 @@ Supported Archetypes:
 
     MyApplication - An example application archetype
     FC9AHS22DB    - Apache HTTP Server default build for Fedora Core 9
+    weblogic103   - Oracle WebLogic Server
+
+
