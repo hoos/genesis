@@ -62,87 +62,38 @@
       </fileset>
     </copy>
   </target>
-      <target name="package" depends="build,build-wlserver103-solaris-package,build-wlserver103-rpm-package,build-wlserver103-linux-package,build-wlserver103-windoze-package" />
+  <target name="package" depends="build,build-wlserver103-solaris-package,build-wlserver103-rpm-package,build-wlserver103-linux-package,build-wlserver103-windoze-package" />
       
-      <echo message="Attempting to determine which os we are running on......." />
-
-
-        <!-- Builds the wlserver103 Mac OS X rpm package -->
-        <target name="build-wlserver103-rpm-package" depends="build,os-check" if="macosx">        
-          <echo message="found a mac os x client" />
-          <rpmspec
-            workdir="package}"
-            Summary=""
-            Name=""
-            Version=""
-            Release=""
-            description=""
-            prep=""
-            setup=""
-            build=""
-            install=""
-            files=""
-            defattr=""
-         />
-        </target>
-        <!-- Builds the wlserver103 Linux rpm package -->        
-        <target name="build-wlserver103-linux-package" depends="build,os-check" if="linux">
-          <echo message="found a linux client" />
-        </target>        
-        <!-- Builds the wlserver103 windoze msi package -->        
-        <target name="build-wlserver103-windoze-package" depends="build,os-check" if="windows">
-          <echo message="found a windoze client" />
-        </target>        
-        <!-- Builds the wlserver103 Salaris pkg package -->                
-        <target name="build-wlserver103-solaris-package" depends="build,os-check" if="solaris">
-          <export name="found a solaris client" />
-        <property name="pkgname" 
-          value="WebLogicConfiguration.9.2.3.${Global.Server.Architecture.Name}.${Global.Environment.Name}.${Global.Server.PlatformGroup.Name}.${Global.Server.HostName.nodename.Name}"/>  	
-        <echo message="${pkgname}"/>
-        <pkginfo
-          workdir="${server.package.dir}"
-          name="WLSConfig-${Global.Environment.Name}-${servername}"
-          architecture="${Global.Server.Architecture.Name}"
-          longname="WebLogic Server 9.2 Configuration for ${servername}"
-          version="9.2"
-          vendor="VocaLink"
-          pstamp="8thSeptember2008"
-          email="middleware.services@vocalink.com"
-          basedir="/" />
-
-       <!-- Copy pre, post and checkinstall scripts to the package directory. -->
-       <copy todir="${server.package.dir}">
-         <fileset dir="${server.weblogic.dir}/bin">
-           <include name="pre*"/>
-           <include name="post*"/>
-           <include name="checkinstall"/>
-           <include name="depend"/>
-         </fileset>
-       </copy>
-
-       <!-- Build the base package prototype -->
-       <pkgproto
-         srcdir="${server.build.dir}" workdir="${server.package.dir}"
-         pkginstallbase="/fs01/app" />
-
-       <!-- weblogic923 specific protoype changes -->
-       <exec dir="${server.package.dir}" executable="sed" input="${server.package.dir}/prototype.home" output="${server.package.dir}/prototype.genesis">
-         <arg value="s/genesis genesis/bea mwadmin/g" />
-  <!--
-         <arg value="s/genesis genesis/bea mwadmin/g" />
-  -->
-       </exec>
-       <exec dir="${server.package.dir}" executable="sed" input="${server.package.dir}/prototype.genesis" output="${server.package.dir}/prototype">
-           <arg value="s/\/fs01\/app 0755 bea mwadmin/\/fs01\/app 0755 root other/g" />
-       </exec>
-
-       <pkgmk
-         name="WLSConfig-${Global.Environment.Name}-${servername}"
-         workdir="${server.package.dir}"
-         pkgname="${pkgname}" />
-
-       <move file="${server.package.dir}/${pkgname}.pkg" todir="${jumpstart.package.dir}"/>
-
+  <echo message="Attempting to determine which os we are running on......." />
+  <!-- Builds the wlserver103 Mac OS X rpm package -->
+  <target name="build-wlserver103-rpm-package" depends="build,os-check" if="macosx">        
+    <echo message="found a mac os x client" />
+    <rpmspec
+      workdir="package"
+      Summary=""
+      Name=""
+      Version=""
+      Release=""
+      description=""
+      prep=""
+      setup=""
+      build=""
+      install=""
+      files=""
+      defattr=""
+    />
+    </target>
+    <!-- Builds the wlserver103 Linux rpm package -->        
+    <target name="build-wlserver103-linux-package" depends="build,os-check" if="linux">
+      <echo message="found a linux client" />
+    </target>        
+    <!-- Builds the wlserver103 windoze msi package -->        
+    <target name="build-wlserver103-windoze-package" depends="build,os-check" if="windows">
+      <echo message="found a windoze client" />
+    </target>        
+    <!-- Builds the wlserver103 Salaris pkg package -->                
+    <target name="build-wlserver103-solaris-package" depends="build,os-check" if="solaris">
+      <export name="found a solaris client" />
     </target>  
     
     <target name="os-check">
