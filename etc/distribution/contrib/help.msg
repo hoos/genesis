@@ -14,9 +14,10 @@ Options are:
     -i            environment
 
     -a            the application archetype 
+    -t            the ant target to execute 
 
 For example:
-genesis -e MyEnterprise -d MyDatacentre -r MyRack -n MyNode -s MyService -i MyEnvironment -a MyApplication
+genesis -e MyEnterprise -d MyDatacentre -r MyRack -n MyNode -s MyService -i MyEnvironment -a MyApplication -t build
 
 Supported Archetypes:
 

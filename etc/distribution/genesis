@@ -13,17 +13,21 @@ ANT_HOME="./apache-ant-1.7.1"
 CONFIG_DIR="./config"
 CONTRIB_DIR="./contrib"
 
-USAGE="Usage: `basename $0` [-hv] [-e <enterprise>] [-d <datacentre>] [-r <rack>] [-n <node>] [-s <service>] [-i <environment>] [-a <application>]"
+USAGE="Usage: `basename $0` [-hv] [-e <enterprise>] [-d <datacentre>] [-r <rack>] [-n <node>] [-s <service>] [-i <environment>] [-a <application>] [-t <target>]"
 
 function config_not_found {
   echo -e "\nError: Missing configuration from Genesis Configuration Hierarchy."
-  echo "Please ensure the " $1 "file or directory exists and is accessible."
+  echo "Please ensure the " $1 "definition exists and is accessible."
   exit 1
+}
+
+function usage {
+  cat $CONTRIB_DIR/help.msg
 }
 
 if [ $# -eq 1 ]; then
     continue
-elif [ $# -lt 7 ]; then
+elif [ $# -lt 8 ]; then
     echo -e $USAGE >&2
     exit 1
 else
@@ -31,9 +35,9 @@ else
 fi
 
 # parse command line arguments
-while getopts hv:e:d:r:n:s:i:a: OPT; do
+while getopts hv:e:d:r:n:s:i:a:t: OPT; do
     case "$OPT" in
-        h)      cat $CONTRIB_DIR/help.msg
+        h)      usage
                 exit 0
                 ;;
         v)      echo "`basename $0` version 0.35"
@@ -44,36 +48,56 @@ while getopts hv:e:d:r:n:s:i:a: OPT; do
                 if [ ! -d $CONFIG_DIR/$ENTERPRISE ]; then
                   config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE"
                 fi
+                if [ ! -f $CONFIG_DIR/$ENTERPRISE/enterprise.xml ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/enterprise.xml"
+                fi
                 ;;
         d)      DATACENTRE=$OPTARG
                 if [ ! -d $CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE ]; then
                   config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE"
+                fi
+                if [ ! -f $CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/datacentre.xml ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/datacentre.xml"
                 fi
                 ;;
         r)      RACK=$OPTARG
                 if [ ! -d $CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK ]; then
                   config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK"
                 fi
+                if [ ! -f $CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK/rack.xml ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK/rack.xml"
+                fi
                 ;;
         n)      NODE=$OPTARG
                 if [ ! -d $CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK/$NODE ]; then
                   config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK/$NODE"
+                fi
+                if [ ! -f $CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK/$NODE/node.xml ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/physical/$DATACENTRE/$RACK/$NODE/node.xml"
                 fi
                 ;;
         s)      SERVICE=$OPTARG
                 if [ ! -d $CONFIG_DIR/$ENTERPRISE/logical/$SERVICE ]; then
                   config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/logical/$SERVICE"
                 fi
+                if [ ! -f $CONFIG_DIR/$ENTERPRISE/logical/$SERVICE/service.xml ]; then
+                  config_not_found "`pwd`$CONFIG_DIR/$ENTERPRISE/logical/$SERVICE/service.xml"
+                fi
                 ;;
         i)      ENVIRONMENT=$OPTARG
                 if [ ! -d $CONFIG_DIR/$ENTERPRISE/logical/$SERVICE/$ENVIRONMENT ]; then
                   config_not_found "`pwd`/$CONFIG_DIR/$ENTERPRISE/logical/$SERVICE/$ENVIRONMENT"
                 fi
+                if [ ! -f $CONFIG_DIR/$ENTERPRISE/logical/$SERVICE/$ENVIRONMENT/environment.xml ]; then
+                  config_not_found "`pwd`/$CONFIG_DIR/$ENTERPRISE/logical/$SERVICE/$ENVIRONMENT/environment.xml"
+                fi
                 ;;
         a)      APPLICATION=$OPTARG
                 ;;
+        t)      TARGET=$OPTARG
+                ;;
         \?)     # getopts issues an error message
-                cat $CONTRIB_DIR/help.msg >&2
+                usage >&2
                 exit 1
                 ;;
     esac
@@ -81,7 +105,22 @@ done
 
 shift `expr $OPTIND - 1`
 
-# Run Genesis
-GENESIS_CMD="$ANT_HOME/bin/ant -Denterprise=$ENTERPRISE -Ddatacentre=$DATACENTRE -Drack=$RACK -Dnode=$NODE -Dservice=$SERVICE -Denvironment=$ENVIRONMENT -Dapplication=$APPLICATION $APPLICATION:build"
+GENESIS_CMD="$ANT_HOME/bin/ant -Denterprise=$ENTERPRISE -Ddatacentre=$DATACENTRE -Drack=$RACK -Dnode=$NODE -Dservice=$SERVICE -Denvironment=$ENVIRONMENT -Dapplication=$APPLICATION $APPLICATION:$TARGET"
 
+#echo $GENESIS_CMD
+
+if [[ -z $ENTERPRISE ]] ||
+   [[ -z $DATACENTRE ]] ||
+   [[ -z $RACK ]] ||
+   [[ -z $NODE ]] ||
+   [[ -z $SERVICE ]] ||
+   [[ -z $ENVIRONMENT ]] ||
+   [[ -z $APPLICATION ]]
+   [[ -z $TARGET ]]
+then
+     usage
+     exit 1
+fi
+
+# Run Genesis
 $GENESIS_CMD
