@@ -70,6 +70,20 @@
         <!-- Builds the wlserver103 Mac OS X rpm package -->
         <target name="build-wlserver103-rpm-package" depends="build,os-check" if="macosx">        
           <echo message="found a mac os x client" />
+          <rpmspec
+            workdir="package}"
+            Summary=""
+            Name=""
+            Version=""
+            Release=""
+            description=""
+            prep=""
+            setup=""
+            build=""
+            install=""
+            files=""
+            defattr=""
+         />
         </target>
         <!-- Builds the wlserver103 Linux rpm package -->        
         <target name="build-wlserver103-linux-package" depends="build,os-check" if="linux">
