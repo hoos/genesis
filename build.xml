@@ -2,7 +2,7 @@
 
 <!-- 
   Ant build file for Genesis.                                            
-  Auther Hussein H Badakhchani.                                         
+  Auther Hussein Hosseini Badakhchani (Hoos).                                         
 -->
 
 <project name="genesis" default="test" basedir=".">
