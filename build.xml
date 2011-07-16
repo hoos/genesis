@@ -147,7 +147,6 @@
           description="  - creates a (dist)ribution package of genesis">
     <copy todir="${project.dir}">
       <fileset dir="${distribution.dir}"/>
-      <fileset dir="${thirdparty.dir}"/>
       <fileset dir="${basedir}" includes="**/thirdparty/**"/>
     </copy>
     <chmod file="${project.dir}/genesis" perm="ugo+rx"/>
