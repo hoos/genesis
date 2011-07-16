@@ -28,10 +28,26 @@
   <property name="distribution.dir" location="${etc.dir}/distribution"/>
 
   <!--
+   Thridparty application locations. 
+   -->
+  <property name="ant.dir" location="${thirdparty.dir}/apache-ant-1.8.2"/>
+  <property name="checkstyle.reports.dir" location="${test.reports.dir}/checkstyle"/>
+  <property name="pmd.dir" location="${thirdparty.dir}/pmd-4.2.5"/>
+  <property name="pmd.reports.dir" location="${test.reports.dir}/pmd"/>
+  <property name="findbugs.dir" location="${thirdparty.dir}/findbugs-1.3.9"/>
+  <property name="findbugs.reports.dir" location="${test.reports.dir}/findbugs"/>
+  <property name="emma.dir" location="${thirdparty.dir}/emma-2.0.5312"/>
+  <property name="emma.reports.dir" location="${test.reports.dir}/emma"/>
+  <property name="grinder.dir" location="${thirdparty.dir}/grinder-3.4"/>
+  <property name="grinder.reports.dir" location="${test.reports.dir}/grinder"/>
+  <property name="analyser.dir" location="${thirdparty.dir}/GrinderAnalyzer.V2.b13"/>
+  <property name="analyser.reports.dir" location="${test.reports.dir}/grinderReports"/>
+  <property name="junit.reports.dir" location="${thirdparty.dir}/junit"/>
+
+  <!--
     Javac compiler options.
   -->
-  <property name="optimize" value="true"/>
-  <property name="debug" value="false"/>
+  <property name="debug" value="true"/>
   <property name="deprecation" value="on"/>
 
   <!-- 
@@ -43,6 +59,58 @@
     </fileset>
     <pathelement location="${engine.dir}/lib/${ant.project.name}.jar"/>
     <pathelement location="${engine.dir}/lib/${ant.project.name}-test.jar"/>
+  </path>
+
+  <!-- 
+   All dependant libraries are located in the project 
+   library directory ${lib.dir}.
+   -->
+  <path id="classpath">
+    <fileset dir="${lib.dir}">
+      <include name="**/*.jar"/>
+    </fileset>
+    <pathelement location="${project.lib.dir}/${ant.project.name}.jar"/>
+    <pathelement location="${project.lib.dir}/${ant.project.name}-test.jar"/>
+  </path>
+
+  <!-- 
+   PMD classpath 
+   -->
+  <path id="pmd.classpath">
+    <fileset dir="${pmd.dir}/lib">
+      <include name="**/*.jar"/>
+    </fileset>
+  </path>
+
+  <!-- 
+   FindBugs classpath 
+   -->
+  <path id="findbugs.classpath">
+    <fileset dir="${findbugs.dir}/lib">
+      <include name="**/*.jar"/>
+    </fileset>
+  </path>
+
+  <!-- 
+   Emma classpath 
+   -->
+  <path id="emma.classpath">
+    <fileset dir="${emma.dir}/lib">
+      <include name="**/*.jar"/>
+    </fileset>
+  </path>
+
+  <!-- 
+   Grinder classpath 
+   -->
+  <path id="grinder.classpath">
+    <path refid="classpath"/>
+    <fileset dir="${grinder.dir}/lib">
+      <include name="**/*.jar"/>
+    </fileset>
+    <fileset dir="${analyser.dir}/lib">
+      <include name="**/*.jar"/>
+    </fileset>
   </path>
 
   <!-- 
@@ -118,7 +186,7 @@
         <path refid="classpath"/>
       </classpath>
       <formatter type="xml"/>
-      <batchtest fork="no" todir="${test.reports.dir}">
+      <batchtest fork="no" todir="${junit.reports.dir}">
         <fileset dir="${build.classes.dir}">
           <include name="**/TripleDesTest.class"/>
         </fileset>
@@ -136,7 +204,7 @@
           <path refid="classpath"/>
         </classpath>
         <formatter type="xml"/>
-        <batchtest fork="no" todir="${test.reports.dir}">
+        <batchtest fork="no" todir="${junit.reports.dir}">
           <fileset dir="${build.classes.dir}">
             <include name="**/*Test*.class"/>
             <exclude name="**/TripleDes*.class"/>
@@ -146,12 +214,155 @@
   </target>
 
   <!--
+   Run checkstyle against the source cocde.
+   -->
+  <target name="checkstyle" 
+          description="  - runs the (checkstyle) source code analyser">
+      <mkdir dir="${checkstyle.reports.dir}"/>
+      <taskdef resource="checkstyletask.properties"
+               classpath="${ant.dir}/lib/checkstyle-5.4-all.jar"/>
+      <checkstyle config="${etc.dir}/sun_checks.xml" failOnViolation="false">
+          <formatter type="xml" tofile="${checkstyle.reports.dir}/checkstyle_report.xml"/>
+          <fileset dir="${src.dir}" includes="**/*.java"/>
+      </checkstyle>
+    <xslt style="${etc.dir}/checkstyle-frames.xsl" 
+          in="${checkstyle.reports.dir}/checkstyle_report.xml" 
+          out="${checkstyle.reports.dir}/checkstyle_report.html" />
+  </target>
+
+  <!--
+   Run PMD against the source cocde.
+   -->
+  <target name="pmd" 
+          description="  - runs the (pmd) source code analyser"> 
+    <taskdef name="pmd" 
+             classname="net.sourceforge.pmd.ant.PMDTask"
+             classpathref="pmd.classpath"/>
+    <mkdir dir="${pmd.reports.dir}"/>
+    <pmd targetjdk="1.6">
+        <ruleset>basic</ruleset>
+        <ruleset>braces</ruleset>
+        <ruleset>imports</ruleset>
+        <ruleset>unusedcode</ruleset>
+        <ruleset>clone</ruleset>
+        <ruleset>codesize</ruleset>
+        <ruleset>coupling</ruleset>
+        <ruleset>design</ruleset>
+        <ruleset>finalizers</ruleset>
+        <ruleset>imports</ruleset>
+        <ruleset>j2ee</ruleset>
+        <ruleset>javabeans</ruleset>
+        <ruleset>junit</ruleset>
+        <ruleset>logging-java</ruleset>
+        <!--ruleset>migrating_to_15</ruleset>
+        <ruleset>migrating_to_junit4</ruleset-->
+        <ruleset>naming</ruleset>
+        <ruleset>optimizations</ruleset>
+        <ruleset>strictexception</ruleset>
+        <ruleset>strings</ruleset>
+        <ruleset>sunsecure</ruleset>
+        <ruleset>typeresolution</ruleset>
+        <ruleset>unusedcode</ruleset>
+        <formatter type="xml" 
+                   toFile="${pmd.reports.dir}/pmd_report.xml" 
+                   showSuppressed="true"
+                   toConsole="fale"/>
+        <fileset dir="${src.dir}">
+            <include name="**/*.java"/>
+        </fileset>
+    </pmd>
+  </target>
+
+  <!--
+   Run FindBugs against the source cocde.
+   -->
+  <target name="findbugs"
+          description="  - runs the (findbugs) source code analyser"> 
+    <taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"/>
+    <mkdir dir="${findbugs.reports.dir}"/>
+    <findbugs home="${findbugs.dir}"
+              reportLevel="low"
+              debug="true"
+              effort="max"
+              output="xml"
+              outputFile="${findbugs.reports.dir}/findbugs.xml">
+      <auxClasspath refid="classpath"/>
+      <sourcePath path="${src.dir}"/>
+      <class location="${dist.dir}/10b/lib/${ant.project.name}.jar"/>
+    </findbugs>
+  </target> 
+
+  <!--
+   Run Emma against the source cocde.
+   -->
+  <target name="emma"
+          description="  - runs the (emma) source code analyser"> 
+    <taskdef resource="emma_ant.properties" classpathref="emma.classpath"/>
+    <mkdir dir="${emma.reports.dir}"/>
+        <emmajava enabled="true" libclasspathref="emma.classpath" 
+                  classname="mobi.hoos.engine.TBEngine" classpathref="classpath">
+        <xml outfile="${emma.reports.dir}/report.xml"/>
+        </emmajava>
+  </target> 
+
+  <!--
+   Run the Grinder test suite and create the Grinder reports.
+   -->
+  <target name="grinder" depends="test" 
+     description="  - runs the Grinder and generates performance reports">
+    <echo>Test run for ${environment}</echo>
+    <mkdir dir="${grinder.reports.dir}"/>
+     <java classname="net.grinder.Grinder"
+           classpathref="grinder.classpath" fork="yes">
+         <jvmarg value="-Xmx256m" />
+         <sysproperty key="java.io.tmpdir" value="${build.dir}/tmp" />
+         <sysproperty key="python.cachedir" value="${build.dir}/tmp" />
+         <sysproperty key="grinder.logDirectory" value="${grinder.reports.dir}" />
+         <sysproperty key="grinder.jvm.arguments" 
+             value="-Djava.io.tmpdir=${build.dir}/tmp 
+                    -Dpython.cachedir=${build.dir}/tmp" />
+         <arg file="${dist.dir}/10b/bin/grinder.properties"/>
+     </java>
+  </target>
+
+  <!--
+   Run the Grinder analyser to generate charts from Grinder reports.
+   -->
+  <target name="analyse" depends="grinder" 
+     description="  - (analyse)s the Grinder reports generating charts.">
+     <!-- 
+      The hostname is used to find the Grinder data and out logs.
+      COMPUTERNAME is also set so this works on WINDOWS OS.
+      -->
+     <property environment="env"/>
+     <property name="env.COMPUTERNAME" value="${env.HOSTNAME}"/>
+     <java classname="org.python.util.jython"
+           classpathref="grinder.classpath" fork="yes" dir="${analyser.dir}">
+       <jvmarg value="-Xmx256m" />
+       <sysproperty key="java.io.tmpdir" value="${build.dir}/tmp" />
+       <sysproperty key="python.cachedir" value="${build.dir}/tmp" />
+       <arg line="${analyser.dir}/analyzer.py 
+                  ${grinder.reports.dir}/data_${env.COMPUTERNAME}-0.log
+                  ${grinder.reports.dir}/out_${env.COMPUTERNAME}-0.log"/>
+     </java>
+     <move file="${analyser.dir}/grinderReport" toFile="${analyser.reports.dir}"/>
+  </target>
+
+
+  <!--
    Clean build       
    -->
   <target name="clean" description="  - (clean)s the build">
     <echo message="${ant.project.name}"/>
     <delete dir="${build.dir}"/>
     <delete dir="${dist.dir}"/>
+  </target>
+
+  <!--
+   Build All. 
+   -->
+  <target name="buildall" description="  - (build)s (all) the targets in the build"
+          depends="test, checkstyle, pmd, findbugs, emma, grinder, analyse">
   </target>
 
 </project>

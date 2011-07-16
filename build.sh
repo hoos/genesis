@@ -9,7 +9,7 @@
 #              are passed on to Ant.
 
 GENESIS_HOME=`/bin/env dirname $0`
-ANT_HOME=$GENESIS_HOME/thirdparty/apache-ant-1.7.1
+ANT_HOME=$GENESIS_HOME/thirdparty/apache-ant-1.8.2
 
 PATH=$ANT_HOME/bin:$PATH
 
