@@ -280,7 +280,7 @@
               outputFile="${findbugs.reports.dir}/findbugs.xml">
       <auxClasspath refid="classpath"/>
       <sourcePath path="${src.dir}"/>
-      <class location="${dist.dir}/10b/lib/${ant.project.name}.jar"/>
+      <class location="${dist.dir}/${ant.project.name}/engine/lib/${ant.project.name}.jar"/>
     </findbugs>
   </target> 
 
@@ -313,7 +313,7 @@
          <sysproperty key="grinder.jvm.arguments" 
              value="-Djava.io.tmpdir=${build.dir}/tmp 
                     -Dpython.cachedir=${build.dir}/tmp" />
-         <arg file="${dist.dir}/10b/bin/grinder.properties"/>
+         <arg file="${dist.dir}/${ant.project.name}/bin/grinder.properties"/>
      </java>
   </target>
 
@@ -354,7 +354,7 @@
    Build All. 
    -->
   <target name="buildall" description="  - (build)s (all) the targets in the build"
-          depends="test, checkstyle, pmd, findbugs, emma, grinder, analyse">
+          depends="test, checkstyle, pmd, findbugs, emma">
   </target>
 
 </project>
