@@ -135,7 +135,7 @@
           description="  - (comp)iles the source code">
     <javac srcdir="${src.dir}" destdir="${build.classes.dir}"
            optimize="${optimize}" debug="${debug}"  deprecation="${deprecation}"
-           bootclasspath="${bootclasspath}" classpathref="classpath">
+           bootclasspath="${bootclasspath}" includeantruntime="true" classpathref="classpath">
       <exclude name="**/weblogic/*"/>
     </javac>
   </target>
