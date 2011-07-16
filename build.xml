@@ -23,8 +23,9 @@
   <property name="thirdparty.dir" location="${basedir}/thirdparty"/>
   <property name="build.classes.dir" location="${build.dir}/classes"/>
   <property name="test.reports.dir" location="${build.dir}/reports"/>
-  <property name="genesis.dir" location="${dist.dir}/genesis"/>
-  <property name="engine.dir" location="${genesis.dir}/engine"/>
+  <property name="project.dir" location="${dist.dir}/${ant.project.name}"/>
+  <property name="project.lib.dir" location="${project.dir}/engine/lib"/>
+  <property name="engine.dir" location="${project.dir}/engine"/>
   <property name="distribution.dir" location="${etc.dir}/distribution"/>
 
   <!--
@@ -42,24 +43,13 @@
   <property name="grinder.reports.dir" location="${test.reports.dir}/grinder"/>
   <property name="analyser.dir" location="${thirdparty.dir}/GrinderAnalyzer.V2.b13"/>
   <property name="analyser.reports.dir" location="${test.reports.dir}/grinderReports"/>
-  <property name="junit.reports.dir" location="${thirdparty.dir}/junit"/>
+  <property name="junit.reports.dir" location="${test.reports.dir}/junit"/>
 
   <!--
     Javac compiler options.
   -->
   <property name="debug" value="true"/>
   <property name="deprecation" value="on"/>
-
-  <!-- 
-   All dependant libraries are located in the project library directory ${lib.dir}
-  -->
-  <path id="classpath">
-    <fileset dir="${lib.dir}">
-      <include name="**/*.jar"/>
-    </fileset>
-    <pathelement location="${engine.dir}/lib/${ant.project.name}.jar"/>
-    <pathelement location="${engine.dir}/lib/${ant.project.name}-test.jar"/>
-  </path>
 
   <!-- 
    All dependant libraries are located in the project 
@@ -119,7 +109,7 @@
   <target name="init">
     <tstamp/>
     <mkdir dir="${dist.dir}"/>
-    <mkdir dir="${genesis.dir}"/>
+    <mkdir dir="${project.dir}"/>
     <mkdir dir="${engine.dir}/lib"/>
     <mkdir dir="${build.classes.dir}"/>
     <mkdir dir="${test.reports.dir}"/>
@@ -155,14 +145,15 @@
    -->
   <target name="dist" depends="comp"
           description="  - creates a (dist)ribution package of genesis">
-    <copy todir="${genesis.dir}">
+    <copy todir="${project.dir}">
       <fileset dir="${distribution.dir}"/>
       <fileset dir="${thirdparty.dir}"/>
+      <fileset dir="${basedir}" includes="**/thirdparty/**"/>
     </copy>
-    <chmod file="${genesis.dir}/genesis" perm="ugo+rx"/>
-    <chmod dir="${genesis.dir}/apache-ant-1.7.1/bin" 
+    <chmod file="${project.dir}/genesis" perm="ugo+rx"/>
+    <chmod dir="${project.dir}/thirdparty/apache-ant-1.8.2/bin" 
            includes="*" perm="ug+rx"/>
-    <chmod dir="${genesis.dir}/contrib" 
+    <chmod dir="${project.dir}/contrib" 
            includes="*env" perm="ug+rx"/>
     <jar basedir="${build.classes.dir}"
          jarfile="${engine.dir}/lib/${ant.project.name}.jar"
@@ -181,6 +172,7 @@
    -->
   <target name="test-weblogic" depends="dist" if="weblogic"
           description="  - (test) the (webogic) package">
+    <mkdir dir="${junit.reports.dir}"/>
     <junit printsummary="yes" haltonfailure="yes">
       <classpath>
         <path refid="classpath"/>
@@ -199,6 +191,7 @@
    -->
   <target name="test" depends="test-weblogic, dist" 
           description="  - (test)s the genesis distribution">
+      <mkdir dir="${junit.reports.dir}"/>
       <junit printsummary="yes" haltonfailure="yes">
         <classpath>
           <path refid="classpath"/>
