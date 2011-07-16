@@ -1,0 +1,22 @@
+1. All classes have javadoc comments for main class.
+   At the moment javadoc comments for methods and fields
+   are not completed yet.
+
+2. Dedication added for release version. Current and first
+   final version is dedicated to Cameron Shorter the man
+   who introduced me to Open Source Community.
+
+3. Fixed bug with test code generating when there is no 
+   default constructor and all tests generated 
+   NullPointerException. At the moment test code is put to
+   method but it is commented out.
+
+4. Added dummy test method which should be useful for
+   classes which doesn't contain any method so no test
+   method is generated.
+
+5. If some object opens dialog window during initialization
+   or some methods, tests may hang. So I added awt.EventListener
+   to dispose all windows opened during tests. This allow to
+   process test without any troubles.
+

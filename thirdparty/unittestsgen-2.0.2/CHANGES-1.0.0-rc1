@@ -1,0 +1,18 @@
+1. Support for choosing directory where test classes must be stored.
+   You can use it with command line parameter and all created test
+   classes will e saved in given directory.
+
+2. Support for choosing test class naming convention. With command
+   line parameter you can set pattern for names of test classes.
+   You can decide that all test classes should have name of teh form:
+   Test(...).java or (...)Test.java or (...)TestCase.java or something
+   different.
+
+3. First hints for test code are added. At the moment there is support
+   only for few hints for set/get methods. Some piece of code is 
+   generated for simple tests and some comments are added in particular
+   situations.
+
+4. A lot of minor changes, improvments and bug fixes like corrected
+   xml code for ant, some mistakes in docummentation, up to date
+   README files and so on.  

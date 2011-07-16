@@ -1,0 +1,18 @@
+1. Major changes in design. That is reason for so strong change in
+   version number. At the moment job parameters are _not_ pased to
+   main processing methods as arguments. All parameters are stored
+   in global property system and all parameters can be accessed by 
+   all modules. It allow to very easy add new job parameters with out
+   changing code of main module.
+
+2. Added support for generating JUnit warnings in new created test methods.
+   It can help developers to find test methods not covered by real test code.
+
+3. Added support for ANT. From this version this tool can be used as ANT
+   task and can be run every time during build process.
+
+4. Added 'update' parameter. It allow unit tests generator to modify
+   existing test classes if update is needed. Previous 'force' parameter
+   was danger because it allow also overwriting existing test classes
+   when compiled version was not found. It could cause to lost your
+   existing test classes.

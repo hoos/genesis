@@ -1,0 +1,8 @@
+1. The main change and new feature is posibility of updating code in
+   Test(...) classes when source classes changed. At the moment no old
+   code is removed but test generator only adds code for new created
+   methods.
+
+2. -v command line option causes to display version info and exit application.
+
+3. Added comments to all '}' brackets to inform what expresion is ended

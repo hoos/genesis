@@ -1,0 +1,97 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="templates/analyzer.css">
+  <script src="templates/sorttable.js"></script>
+</head>
+
+<body>
+<img src="All_Transactions.perf.png">
+  <![if !IE]>
+     <script src="templates/wz_tooltip.js"></script>
+  <![endif]>
+
+<table class="sortable">
+<thead>
+  <tr>
+     <th>Transaction Name</th>
+     #foreach ($header in $analyzer.columnNames)
+      <th>$header</th>
+    #end
+  </tr>
+</thead>
+<tbody>
+#foreach ( $row in $analyzer.dataRows )
+#set ($perfGraphDiv = $row.safeTxName + "_perf")
+#set ($perfGraphFile = $row.safeTxName + ".perf.png")
+  <tr>
+    <td><a href="$perfGraphFile"
+           onmouseover="TagToTip('$perfGraphDiv')">
+           $row.txName
+         </a></td>
+    #foreach ( $column in $analyzer.columnNames)
+		#set ($graphType = $analyzer.getColumnGraph($column))
+		#if($graphType == "")
+    <td>$row.getColumnData($column)</td>
+	#else
+		#set ($graphFile = $row.safeTxName + "." + $graphType + ".png")
+		#set ($graphDiv = $row.safeTxName + "_" + $graphType)
+		<td><a href="$graphFile" onmouseover="TagToTip('$graphDiv')">$row.getColumnData($column)</a></td>
+	#end	
+    #end
+  </tr>
+#end
+</tbody>
+<tfoot>
+#set ($row = $analyzer.totalsRow)
+#set ($totalsRowGraph = "All_Transactions")
+#set ($perfGraphDiv = $totalsRowGraph + "_perf")
+#set ($perfGraphFile = $totalsRowGraph + ".perf.png")
+  <tr>
+    <td><a href="$perfGraphFile"
+           onmouseover="TagToTip('$perfGraphDiv')">
+           $row.txName
+         </a></td>
+    #foreach ( $column in $analyzer.columnNames)
+		#set ($graphType = $analyzer.getColumnGraph($column))
+		#if($graphType == "")
+    <td>$row.getColumnData($column)</td>
+	#else
+		#set ($graphFile = $totalsRowGraph + "." + $graphType + ".png")
+		#set ($graphDiv = $totalsRowGraph + "_" + $graphType)
+		<td><a href="$graphFile" onmouseover="TagToTip('$graphDiv')">$row.getColumnData($column)</a></td>
+	#end	
+    #end
+  </tr>
+</tfoot>
+</table>
+
+<!-- tooltips.  Normally invisible  -->
+#foreach ( $row in $analyzer.dataRows )
+#set ($perfGraph = $row.safeTxName + ".perf.png")
+#set ($bwGraph = $row.safeTxName + ".bandwidth.png")
+#set ($rtGraph = $row.safeTxName + ".rtime.png")
+#set ($perfId = $row.safeTxName + "_perf")
+#set ($bwId = $row.safeTxName + "_bandwidth")
+#set ($rtId = $row.safeTxName + "_rtime")
+<span id="$perfId">
+   <img src="$perfGraph">
+</span>
+<span id="$bwId">
+   <img src="$bwGraph">
+</span>
+<span id="$rtId">
+   <img src="$rtGraph">
+</span>
+#end
+<span id="All_Transactions_perf">
+   <img src="All_Transactions.perf.png">
+</span>
+<span id="All_Transactions_rtime">
+   <img src="All_Transactions.rtime.png">
+</span>
+<span id="All_Transactions_bandwidth">
+   <img src="All_Transactions.bandwidth.png">
+</span>
+</body>
+
+</html>

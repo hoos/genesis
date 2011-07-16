@@ -1,0 +1,241 @@
+
+
+
+  WTTOOLS--Home
+  
+
+
+ 
+<IMG src="http://sourceforge.net/sflogo.php?group_id=31579" 
+width="88" height="31" border="0" alt="SourceForge Logo">
+Unit Tests Generator
+
+Unit Tests Generator team:&nbsp;&nbsp;
+Artur Hefczyc&nbsp;&nbsp;
+API documentation:&nbsp;&nbsp;
+Here
+WTTools site:&nbsp;&nbsp;
+More WTTools
+
+What for?
+ Lets assume you started developing your application some weeks ago or
+some months ago or even some years ago. I am sure that testing your code was one
+of major problems. You thought about automating such process. And than you heard
+about Unit Testing. So you would like to start use it. However how to
+introduce Unit Testing for large number of source files. There is too
+much of stupid code to write in all places again.
+ Here comes this package. His main goal is save you from wasting time for
+creating test classes for your all source files. It takes as an argument sources
+directory and than performs some actions which, result with test classes.
+
+ Searching in given directory for all source files. You can put as a parameter
+  file mask which, can improve finding source files.
+ Parsing sources to structures which, can be processed later.
+ Generates test files for each given source.
+
+ What now? 
+At the moment I have ready to use source parser and code generator for Java language
+and JUnit package. There are many extensions I can see in this version but at the
+moment it is ready to use for simple test generating. 
+But it is very modular application and it very easy to use code parsers and generator
+for other languages and unit test systems. It is necessary only to create class which,
+performs proper actions and returns results. Using different parsers and generators
+is very easy only by passing class name as a parameter to command line arguments. 
+If you are interested in other languages support please let me know. If you are
+interested in creating pasrsers or generators for other languages and unit tests please
+let me know or join my project.
+ How can I use it? 
+  Although by default it doesn't overwriting existing files remember that it is test
+version of application and always make backup of you project before use it.  
+unittestsgen.jar ommits all files which, name beggining with 'Test'
+string or which, are extending TestCase class from JUnit package.
+All new classes are stored in files named TestSrcOriginalName.java. 
+If you run application with no arguments it display short description of all available
+parameters:
+
+[user] $ java -jar unittestsgen.jar
+
+The most common options are:
+
+-cf config_file -- file name which contains startup parameters. You can put there all
+command line parameters to prevent writing them every time you use this tool. See content
+of 'gentest.cfg' sample config file given with package.
+-i directory -- input directory where are placed your source files, 'src/' is
+  default.
+-o directory -- output directory where test classes shoul be stored, 'test-src/' is
+  default.
+-n pattern -- pattern for test class naming convention. The most common conventions
+  are to put 'Test' string at the beginning of test class name or at the end of name,
+  default patterns is '*TestCase' what means: append 'TestCase' string to the end
+  of base source name class for each created test class.
+-cp classpath -- because if you run application java -jar jarfile.jar
+  and there is no way to pass CLASSPATH in standard way I provided option to add classpath
+  through programm interface. Here you should put path to junit.jar your
+  classes compiled version or if you have also test classes you should put here jar file
+  which contain compiled versions of your test classes. It allow to update code in your
+  existing test classes.
+-f -- force overwriting existing files. Hoever it is not save. You can lost your
+  test files you created your own but if you use Unit Test Gen some times
+  it is not very comfortable to remove all Test classes before generating them again.
+  So you can use this option. And again remember to set proper destination path and
+  classpath to allow properly parse your existsing test classes, 'false' is default.
+
+Run unittestsgen.jar with no arguments and check defaults values. They are 
+designed to be useful for most cases, so the most commonly you should use application 
+in the following way:
+On unix like systems:
+
+[user] $ java -jar jar/unittestsgen.jar -cp "yourjarfile.jar:libs.jar:junit.jar"
+
+In MS windows like systems:
+
+D:\projects\yourproject> java -jar unittestsgen.jar -cp "yourjarfile.jar;libs.jar:junit.jar"
+
+Where libs.jar contains all necessary libraries used by your application.
+Of course if you use many libraries from many jar files you should put all necessary jar
+files in '-cp' class path parameter or you will be unable to generate test classes.
+
+
+More info you can find in GenerateTests class
+documentation.
+
+ I have some test classes and what? 
+If you have ready to use test classes (classes which, can be compiled with no problems)
+you can start unit testing. It can be done in many ways, however preferred are:
+
+Run tests for one class only, for example for one choosen class you can run tests 
+  with command:
+  On unix like systems:
+  
+  [user] $ java -cp "yourjarfile.jar:libs.jar:junit.jar" full.class.Name
+  
+  In MS windows like systems:
+  
+   D:\projects\yourproject> java -cp "yourjarfile.jar;libs.jar;junit.jar" full.class.Name
+  
+  File 'yourjarfile.jar' must contain compiled both your project classes and
+  of course all generated 'Test' classes. And 'libs.jar' must contain
+  all necessary by your application libraries. Of course you can put there many jar files
+  instead of single 'libs.jar'.
+
+Run tests for all classes in one command call. Code generator creates also 
+  TestAll.class which, runs all available tests:
+  On unix like systems:
+  
+  [user] $ java -cp "yourjarfile.jar:libs.jar:junit.jar" TestAll
+  
+  In MS windows like systems:
+  
+    java -cp "yourjarfile.jar;libs.jar;junit.jar" TestAll
+  
+  File 'yourjarfile.jar' must contain compiled both your project classes and
+  of course all generated 'Test' classes. And 'libs.jar' must contain
+  all necessary by your application libraries. Of course you can put there many jar files
+  instead of single 'libs.jar'.
+
+But the most preferred way is to run all tests from Ant just after
+  compilation process finished.
+  To do it. You need:
+  
+    Ant package from Ant
+    JUnit package from JUnit
+    Put some code in your build.xml file to tell Ant how to test 
+      your package. Sample code for Ant's build.xml you can find in 
+      created file: sample-junit-build.xml. And remember to have
+      junit.jar in CLASSPATH before you run Ant.
+      To generate reports by ant you must have xalan.jar in your 
+      'ANT_HOME/lib/' directory.
+  
+
+
+And again improve your work with ANT
+
+Although running 'unittestsgen.jar' from command line is very simple and easy
+it is not very efficient way for hard developing process. In current version it is
+possible to use this tool as ANT task. If you prepare your 'build.xml'
+file correctly your test classes will be updated permanently every time you start
+build process. So you can have your test classes up to date all time during your development
+process.
+
+In my projects I use to run unit tests generator every time I build JAR file.
+In particular after successfully building JAR file. Below you can find
+complete sample 'build.xml file for using unit tests generator during your
+development.
+
+
+To use it in your developing process you must define new task in your
+build.xml. To do this put in the beggining of your build file such lines:
+
+    &lt;taskdef name="unitgen"
+             classpath="some_dir/unittestsgen.jar"
+             classname="testsgen.taskant.UnitTestsGen"/&gt;
+
+Where, of course, 'some_dir' is directory where 'unittestsgen.jar'
+file exists.
+Since we already defined new task we can use it at any time we need it. Of course
+it can be used in many ways depends of particular case. I recomend very simple but
+effective use. Look below to see almost complete very simple build.xml
+sample.
+
+&lt;project name="UnitTestsGen" default="dist" basedir="."&gt;
+    &lt;taskdef name="unitgen" classname="testsgen.taskant.UnitTestsGen"/&gt;
+    &lt;property name="src" value="src"/&gt;
+    &lt;property name="test-src" value="test-src"/&gt;
+    &lt;property name="build" value="build"/&gt;
+
+    &lt;target name="compile" description="Compile sources in ${tmpsrc} directory"&gt;
+        &lt;mkdir dir="${build}"/&gt;
+        &lt;javac srcdir="${src};${test-src}" destdir="${build}"
+               debug="on" deprecation="off"&gt;
+            &lt;classpath&gt;
+                &lt;pathelement location="${libs}/junit.jar"/&gt;
+            &lt;/classpath&gt;
+        &lt;/javac&gt;
+    &lt;/target&gt;
+    &lt;target name="jar" depends="compile"&gt;
+        &lt;jar jarfile="jar/${jarfile}.jar" manifest="MANIFEST.MF" basedir="${build}"&gt;
+            &lt;exclude name="** /*TestCase*.*"/&gt;
+            &lt;exclude name="TestAll.*"/&gt;
+        &lt;/jar&gt;
+        &lt;unitgen update="true" classpath="${build};${libs}/junit.jar"
+                 imput="${src}" output="${test-src}"/&gt;
+    &lt;/target&gt;
+&lt;/project&gt;
+
+After excecuting command 'ant jar' you should see similar output:
+
+compile:
+    [javac] Compiling 36 source files to /home/kobit/projects/unittestsgen/build
+jar:
+      [jar] Building jar: /home/kobit/projects/unittestsgen/jar/unittestsgen.jar
+  [unitgen] Finished work: files 21, sources 14, new classes 3, new methods 7
+
+BUILD SUCCESSFUL
+
+Every time you will be building jar file all your source classes will be checked
+against changes made and test classes will be updated if necessary.
+In above sample 'unitteg' task found 21 files in given directory and
+14 files with source code which can be tested. So it generated 3 new test classes
+and added 7 new methods to existing test classes.
+
+More info you can find in UnitTestsGen
+class documentation.
+
+
+ Need more info? 
+
+More info about using this package you can find in javadoc api documentation in particular
+I recomend documentations for these two classes:
+UnitTestsGen and
+GenerateTests.
+
+ If you have any problems with this application or you found any bugs or you have
+any ideas about extending this package, want to join to project or you simply need
+to contact me please send e-mail to addres: 
+Artur Hefczyc kobit@users.sf.net 
+
+This is part of Web Test Tools project.
+
+
+
+

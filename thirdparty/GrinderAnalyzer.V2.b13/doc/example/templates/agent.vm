@@ -1,0 +1,93 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="templates/analyzer.css">
+  <script src="templates/sorttable.js"></script>
+</head>
+
+<body>
+<img src="All_Transactions.perf.png">
+<script src="templates/wz_tooltip.js"></script>
+<table class="sortable">
+<thead>
+  <tr>
+    #foreach ($header in $analyzer.columnNames)
+      <th>$header</th>
+    #end
+  </tr>
+</thead>
+
+<tbody>
+#foreach ( $row in $analyzer.dataRows )
+#set ($perfGraph = $row.safeTxName + ".perf.png")
+#set ($bwGraph = $row.safeTxName + ".bandwidth.png")
+#set ($perfId = $row.safeTxName + "_perf")
+#set ($bwId = $row.safeTxName + "_bandwidth")
+  <tr>
+    <td><a href="$perfGraph"
+           onmouseover="TagToTip('$perfId')">
+           $row.txName
+         </a></td>
+    <td>$row.tests</td>
+    <td>$row.errors</td>
+    <td>$row.passRate</td>
+    <td>$row.meanTestTime</td>
+    <td>$row.testTimeStandardDev</td>
+    <td>$row.meanResponseLength</td>
+    <td><a href="$bwGraph"
+           onmouseover="TagToTip('$bwId')">
+           $row.bytesPerSec
+        </a></td>
+    <td>$row.meanTimeResolveHost</td>
+    <td>$row.meanTimeConnection</td>
+    <td>$row.meanTimeFirstByte</td>
+  </tr>
+#end
+</tbody>
+
+<tfoot>
+#set ($row = $analyzer.totalsRow)
+  <tr>
+    <td><a href="All_Transactions.perf.png"
+           onmouseover="TagToTip('All_Transactions_perf')">
+           $row.txName
+         </a></td>
+    <td>$row.tests</td>
+    <td>$row.errors</td>
+    <td>$row.passRate</td>
+    <td>$row.meanTestTime</td>
+    <td>$row.testTimeStandardDev</td>
+    <td>$row.meanResponseLength</td>
+    <td><a href="All_Transactions.bandwidth.png"
+           onmouseover="TagToTip('All_Transactions_bandwidth')">
+           $row.bytesPerSec
+       </a></td>
+    <td>$row.meanTimeResolveHost</td>
+    <td>$row.meanTimeConnection</td>
+    <td>$row.meanTimeFirstByte</td>
+  </tr>
+</tfoot>
+</table>
+
+<!-- tooltips.  Normally invisible  -->
+#foreach ( $row in $analyzer.dataRows )
+#set ($perfGraph = $row.safeTxName + ".perf.png")
+#set ($bwGraph = $row.safeTxName + ".bandwidth.png")
+#set ($perfId = $row.safeTxName + "_perf")
+#set ($bwId = $row.safeTxName + "_bandwidth")
+<span id="$perfId">
+   <img src="$perfGraph">
+</span>
+<span id="$bwId">
+   <img src="$bwGraph">
+</span>
+#end
+<span id="All_Transactions_perf">
+   <img src="All_Transactions.perf.png">
+</span>
+<span id="All_Transactions_bandwidth">
+   <img src="All_Transactions.bandwidth.png">
+</span>
+</body>
+
+</html>

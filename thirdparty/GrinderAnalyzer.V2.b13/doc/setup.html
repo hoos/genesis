@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>Instalation and Setup</title>
+  <link rel="stylesheet" type="text/css" href="doc.css">
+</head>
+<body>
+<div id="header"><h1>SETUP</h1></div>
+<div id="container">
+<div id="wrapper">
+<div id="content">
+
+<p>
+<pre>
+
+PACKAGE CONTENTS
+
+  * lib
+       directory containing the jfreechart and velocity libraries used
+       by the analyzer tool.
+
+  * doc
+       directory containing all available documentation on the analyzer
+       tool.
+
+  * conf
+       directory containing optional analyzer configs.
+
+  * analyzer.py
+       script that runs the Grinder Analyzer.
+
+
+PREREQUISITES
+
+  * Jython 2.2.1 or later
+  * Sun Java 1.5 or later
+
+The graphing tool is a command-line script written in Jython.
+Therefore, you must have a Jython (and Java) correctly installed on
+your system, and available in the default path.  Installing and
+configuring Jython are not covered here; the jython web page is:
+
+    http://www.jython.org/Project/index.html
+
+If you are analyzing tests with very large numbers ( > 500 ) of
+transaction types, you may need to increase the amount of memory
+jython gets at startup.  Edit your jython shell script or your
+jython.bat file, so that the java command has -Xms and -Xms
+arguments.  On my system, it looks like this:
+
+"/usr/local/jdk1.5.0_16/jre/bin/java" -Xms256m -Xmx256m -Dpython.home="/usr/local/jython2.2.1_J15" -classpath "$CP" org.python.util.jython "$@"
+
+Use of Sun's JDK is required when running the precompiled Grinder
+Analyzer as there are known issues when running against IBM's JDK.
+
+
+INSTALLING
+
+Installing grinder analyzer is as simple as downloading the 
+analyzer tar file and extracting it onto your files system.
+If you are on Linux, OS X, or some other Unix-like system, run
+this command:
+
+   tar -zxpf grinderAnalyzer.&#60;version&#62;.tar.gz
+
+Then move the grinder analyzer directory wherever you like.
+
+
+</pre>
+</div><!--content-->
+</div>  <!--wrapper-->
+
+
+
+<div id="navigation">
+<p><a href="analyzer.html">About</a></p>
+<p><a href="https://sourceforge.net/project/showfiles.php?group_id=160220" target="download">Download</a></p>
+<p><a href="setup.html">Setup</a></p>
+<p><a href="usingAnalyzer.html">Analyzer Use</a></p>
+<!--<p><a href="usingDifftool.html">Diff Use</a></p>-->
+<p><a href="example/report.html" target="example">Sample Output</a></p>
+<p><a href="license.html">License</a></p>
+
+<br>
+<!--
+<hr>
+<p>Other Tools</p><hr>
+<p><a href="http://track.sourceforge.net/GrinderScripts">Grinder Scripts</a></p>
+-->
+</div> <!--navigation-->
+</div> <!--container-->
+
+<div id="footer"><p>Copyright (C) 2007-2011, Travis Bear
+All rights reserved</p></div>
+</body>
+</html>

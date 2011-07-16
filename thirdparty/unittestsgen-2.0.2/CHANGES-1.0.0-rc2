@@ -1,0 +1,18 @@
+1. Added code generation for wrapper classes for primitive
+   types like Double, Float, Integer, and so on...
+   It solved problem with compiling test classes which
+   contained test code for get/set methods with wrapper
+   classes as parameters.
+
+2. For long type code generation added leading 'l' to
+   values which solved problems with compiling test
+   classes which contained code for get/set methods with
+   long as parameter.
+
+3. Added catching exceptions during get/set methods call
+   for methods which require it. It solved problem with
+   compiling test classes which called methods throwing
+   exceptions.
+
+4. Added catching exception during creating instance of
+   tested class for constructors which throwing exceptions.
