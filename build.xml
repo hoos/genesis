@@ -354,7 +354,7 @@
    Build All. 
    -->
   <target name="buildall" description="  - (build)s (all) the targets in the build"
-          depends="test, checkstyle, pmd, findbugs, emma">
+          depends="test, checkstyle, pmd, findbugs, emma, grinder, analyse">
   </target>
 
 </project>
