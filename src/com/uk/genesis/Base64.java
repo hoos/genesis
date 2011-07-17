@@ -387,7 +387,7 @@ public class Base64
      * in which case one of them will be picked, though there is
      * no guarantee as to which one will be picked.
      */
-    private final static byte[] getAlphabet( int options ) {
+    private final static byte[] getAlphabet(final int options) {
         if ((options & URL_SAFE) == URL_SAFE) {
             return _URL_SAFE_ALPHABET;
         } else if ((options & ORDERED) == ORDERED) {
@@ -405,7 +405,7 @@ public class Base64
      * in which case one of them will be picked, though there is
      * no guarantee as to which one will be picked.
      */
-    private final static byte[] getDecodabet( int options ) {
+    private final static byte[] getDecodabet(final int options) {
         if( (options & URL_SAFE) == URL_SAFE) {
             return _URL_SAFE_DECODABET;
         } else if ((options & ORDERED) == ORDERED) {
@@ -441,7 +441,7 @@ public class Base64
      * @return four byte array in Base64 notation.
      * @since 1.5.1
      */
-    private static byte[] encode3to4( byte[] b4, byte[] threeBytes, int numSigBytes, int options ) {
+    private static byte[] encode3to4(final byte[] b4, final byte[] threeBytes, final int numSigBytes, final int options ) {
         encode3to4( threeBytes, 0, numSigBytes, b4, 0, options );
         return b4;
     }   // end encode3to4
