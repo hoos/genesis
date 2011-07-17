@@ -24,22 +24,23 @@ import com.uk.genesis.model.ModelReader;
 
 /**
  * Loader for accessing the Genesis object model.
- * 
+ *
  * @author paul.jones
+ * @author hussein.badakhchani
  */
 public class GenesisLoader {
 	private ModelReader mReader;
 	private ArchetypeFactory mActionFactory;
-	
+
 	public GenesisLoader() {
 	}
-	
+
 	/**
 	 * Requests that the loader parse the given genesisXml file.
-	 * 
+	 *
 	 * @param genesisXml the genesis.xml file to load.
 	 */
-	public void load(String genesisXml) 
+	public void load(String genesisXml)
 			throws IOException, InvalidGenesisConfigurationException {
 		try {
 			// Load the XML
@@ -47,14 +48,14 @@ public class GenesisLoader {
 	        domFactory.setNamespaceAware(true); // Enable name space support
 	        DocumentBuilder builder = domFactory.newDocumentBuilder();
 	        Document doc = builder.parse(genesisXml);
-	    
+
 			// Work out where our root is
 			File root = new File(genesisXml).getAbsoluteFile().getParentFile().getAbsoluteFile();
-			
+
 			// Find the various XML elements we need to parse
 			Element model = findModelDeclaration(doc);
 			Element archetypes = findArchetypesDeclaration(doc);
-			
+
 			// Parse the model and actions
 			GenesisEnvironment env = new GenesisEnvironment(root, model, archetypes);
 			parseModel(env);
@@ -67,7 +68,7 @@ public class GenesisLoader {
 			throw new InvalidGenesisConfigurationException("Failed to parse XML", ex);
 		}
 	}
-	
+
 	/**
 	 * Retrieves the ModelReader instance. This requires the load call to have
 	 * previously succeeded.
@@ -76,7 +77,7 @@ public class GenesisLoader {
 	public ModelReader getModelReader() {
 		return mReader;
 	}
-	
+
 	/**
 	 * Retrieves the ArchetypeFactory instance. This provides access to the archetypes defined
 	 * in the genesis configuration.
@@ -85,34 +86,34 @@ public class GenesisLoader {
 	public ArchetypeFactory getArchetypeFactory() {
 		return mActionFactory;
 	}
-	
-	private Element findModelDeclaration(Document doc) 
+
+	private Element findModelDeclaration(Document doc)
 			throws XPathExpressionException {
 		GenesisNamespaceContext nsCtx = new GenesisNamespaceContext();
 		nsCtx.addNamespace("genesis", "http://genesis.uk.com/schemas/1.0/genesis-root");
-		
+
 		XPathFactory factory = XPathFactory.newInstance();
     XPath xpath = factory.newXPath();
     xpath.setNamespaceContext(nsCtx);
     XPathExpression expr = xpath.compile("/genesis:genesis/genesis:model");
-		
+
 		return (Element) expr.evaluate(doc, XPathConstants.NODE);
 	}
-	
-	private Element findArchetypesDeclaration(Document doc) 
+
+	private Element findArchetypesDeclaration(Document doc)
 			throws XPathExpressionException {
 		GenesisNamespaceContext nsCtx = new GenesisNamespaceContext();
 		nsCtx.addNamespace("genesis", "http://genesis.uk.com/schemas/1.0/genesis-root");
-		
+
 		XPathFactory factory = XPathFactory.newInstance();
 		XPath xpath = factory.newXPath();
 		xpath.setNamespaceContext(nsCtx);
 		XPathExpression expr = xpath.compile("/genesis:genesis/genesis:archetypes");
-		
+
 		return (Element) expr.evaluate(doc, XPathConstants.NODE);
 	}
-	
-	private void parseModel(GenesisEnvironment env) 
+
+	private void parseModel(GenesisEnvironment env)
 			throws InvalidGenesisConfigurationException {
 		String reader = env.getGenesisModel().getAttribute("reader");
 		if (reader == null || reader.length() == 0) {
@@ -123,12 +124,12 @@ public class GenesisLoader {
 			if (!ModelReader.class.isAssignableFrom(modelClass)) {
 				throw new InvalidModelReaderException("Specified reader does not implement ModelReader");
 			}
-			
+
 			mReader = (ModelReader) modelClass.newInstance();
-			
+
 			if (mReader instanceof ConfigurableModelReader) {
 				ConfigurableModelReader configurable = (ConfigurableModelReader) mReader;
-				
+
 				configurable.configure(env);
 			}
 		} catch (ClassNotFoundException ex) {
@@ -139,8 +140,8 @@ public class GenesisLoader {
 			throw new InvalidModelReaderException("Cannot instantiate reader", ex);
 		}
 	}
-	
-	private void parseActions(GenesisEnvironment env) 
+
+	private void parseActions(GenesisEnvironment env)
 			throws InvalidGenesisConfigurationException {
 		mActionFactory = new ArchetypeFactoryImpl(env, mReader);
 	}
