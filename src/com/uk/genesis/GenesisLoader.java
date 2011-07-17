@@ -44,20 +44,20 @@ public class GenesisLoader {
 			throws IOException, InvalidGenesisConfigurationException {
 		try {
 			// Load the XML
-			DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
-	        domFactory.setNamespaceAware(true); // Enable name space support
-	        DocumentBuilder builder = domFactory.newDocumentBuilder();
-	        Document doc = builder.parse(genesisXml);
+			final DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
+	                domFactory.setNamespaceAware(true); // Enable name space support
+	                final DocumentBuilder builder = domFactory.newDocumentBuilder();
+	                final Document doc = builder.parse(genesisXml);
 
 			// Work out where our root is
-			File root = new File(genesisXml).getAbsoluteFile().getParentFile().getAbsoluteFile();
+			final File root = new File(genesisXml).getAbsoluteFile().getParentFile().getAbsoluteFile();
 
 			// Find the various XML elements we need to parse
-			Element model = findModelDeclaration(doc);
-			Element archetypes = findArchetypesDeclaration(doc);
+			final Element model = findModelDeclaration(doc);
+			final Element archetypes = findArchetypesDeclaration(doc);
 
 			// Parse the model and actions
-			GenesisEnvironment env = new GenesisEnvironment(root, model, archetypes);
+			final GenesisEnvironment env = new GenesisEnvironment(root, model, archetypes);
 			parseModel(env);
 			parseActions(env);
 		} catch (XPathExpressionException ex) {
@@ -89,38 +89,38 @@ public class GenesisLoader {
 
 	private Element findModelDeclaration(Document doc)
 			throws XPathExpressionException {
-		GenesisNamespaceContext nsCtx = new GenesisNamespaceContext();
+		final GenesisNamespaceContext nsCtx = new GenesisNamespaceContext();
 		nsCtx.addNamespace("genesis", "http://genesis.uk.com/schemas/1.0/genesis-root");
 
-		XPathFactory factory = XPathFactory.newInstance();
-    XPath xpath = factory.newXPath();
-    xpath.setNamespaceContext(nsCtx);
-    XPathExpression expr = xpath.compile("/genesis:genesis/genesis:model");
+		final XPathFactory factory = XPathFactory.newInstance();
+                XPath xpath = factory.newXPath();
+                xpath.setNamespaceContext(nsCtx);
+                final XPathExpression expr = xpath.compile("/genesis:genesis/genesis:model");
 
 		return (Element) expr.evaluate(doc, XPathConstants.NODE);
 	}
 
 	private Element findArchetypesDeclaration(Document doc)
 			throws XPathExpressionException {
-		GenesisNamespaceContext nsCtx = new GenesisNamespaceContext();
+		final GenesisNamespaceContext nsCtx = new GenesisNamespaceContext();
 		nsCtx.addNamespace("genesis", "http://genesis.uk.com/schemas/1.0/genesis-root");
 
-		XPathFactory factory = XPathFactory.newInstance();
-		XPath xpath = factory.newXPath();
+		final XPathFactory factory = XPathFactory.newInstance();
+		final XPath xpath = factory.newXPath();
 		xpath.setNamespaceContext(nsCtx);
-		XPathExpression expr = xpath.compile("/genesis:genesis/genesis:archetypes");
+		final XPathExpression expr = xpath.compile("/genesis:genesis/genesis:archetypes");
 
 		return (Element) expr.evaluate(doc, XPathConstants.NODE);
 	}
 
 	private void parseModel(GenesisEnvironment env)
 			throws InvalidGenesisConfigurationException {
-		String reader = env.getGenesisModel().getAttribute("reader");
+		final String reader = env.getGenesisModel().getAttribute("reader");
 		if (reader == null || reader.length() == 0) {
 			throw new InvalidGenesisConfigurationException("No reader attribute specified on model");
 		}
 		try {
-			Class<?> modelClass = this.getClass().getClassLoader().loadClass(reader);
+			final Class<?> modelClass = this.getClass().getClassLoader().loadClass(reader);
 			if (!ModelReader.class.isAssignableFrom(modelClass)) {
 				throw new InvalidModelReaderException("Specified reader does not implement ModelReader");
 			}
@@ -128,7 +128,7 @@ public class GenesisLoader {
 			mReader = (ModelReader) modelClass.newInstance();
 
 			if (mReader instanceof ConfigurableModelReader) {
-				ConfigurableModelReader configurable = (ConfigurableModelReader) mReader;
+				final ConfigurableModelReader configurable = (ConfigurableModelReader) mReader;
 
 				configurable.configure(env);
 			}
