@@ -292,7 +292,7 @@
     <taskdef resource="emma_ant.properties" classpathref="emma.classpath"/>
     <mkdir dir="${emma.reports.dir}"/>
         <emmajava enabled="true" libclasspathref="emma.classpath" 
-                  classname="mobi.hoos.engine.TBEngine" classpathref="classpath">
+                  classname="com.uk.genesis.GenesisLoader" classpathref="classpath">
         <xml outfile="${emma.reports.dir}/report.xml"/>
         </emmajava>
   </target> 
