@@ -197,7 +197,7 @@ public class Base64
 
     /** The 64 valid Base64 values. */
     /* Host platform me be something funny like EBCDIC, so we hardcode these values. */
-    private static final byte[] _STANDARD_ALPHABET = {
+    private static final byte[] STANDARD_ALPHABET = {
         (byte) 'A', (byte) 'B', (byte) 'C', (byte) 'D', (byte) 'E', (byte) 'F', (byte) 'G',
         (byte) 'H', (byte) 'I', (byte) 'J', (byte) 'K', (byte) 'L', (byte) 'M', (byte) 'N',
         (byte) 'O', (byte) 'P', (byte) 'Q', (byte) 'R', (byte) 'S', (byte) 'T', (byte) 'U',
@@ -215,7 +215,7 @@ public class Base64
      * Translates a Base64 value to either its 6-bit reconstruction value
      * or a negative number indicating some other meaning.
      **/
-    private static final byte[] _STANDARD_DECODABET = {
+    private static final byte[] STANDARD_DECODABET = {
         -9, -9, -9, -9, -9, -9, -9, -9, -9,          // Decimal  0 -  8
         -5, -5,                                      // Whitespace: Tab and Linefeed
         -9, -9,                                      // Decimal 11 - 12
@@ -257,7 +257,7 @@ public class Base64
      * <a href="http://www.faqs.org/rfcs/rfc3548.html">http://www.faqs.org/rfcs/rfc3548.html</a>.
      * Notice that the last two bytes become "hyphen" and "underscore" instead of "plus" and "slash."
      */
-    private static final byte[] _URL_SAFE_ALPHABET = {
+    private static final byte[] URL_SAFE_ALPHABET = {
       (byte) 'A', (byte) 'B', (byte) 'C', (byte) 'D', (byte) 'E', (byte) 'F', (byte) 'G',
       (byte) 'H', (byte) 'I', (byte) 'J', (byte) 'K', (byte) 'L', (byte) 'M', (byte) 'N',
       (byte) 'O', (byte) 'P', (byte) 'Q', (byte) 'R', (byte) 'S', (byte) 'T', (byte) 'U',
@@ -273,7 +273,7 @@ public class Base64
     /**
      * Used in decoding URL- and Filename-safe dialects of Base64.
      */
-    private static final byte[] _URL_SAFE_DECODABET = {
+    private static final byte[] URL_SAFE_DECODABET = {
       -9, -9, -9, -9, -9, -9, -9, -9, -9,         // Decimal  0 -  8
       -5, -5,                                     // Whitespace: Tab and Linefeed
       -9, -9,                                     // Decimal 11 - 12
@@ -320,7 +320,7 @@ public class Base64
      * and it is described here:
      * <a href="http://www.faqs.org/qa/rfcc-1940.html">http://www.faqs.org/qa/rfcc-1940.html</a>.
      */
-    private static final byte[] _ORDERED_ALPHABET = {
+    private static final byte[] ORDERED_ALPHABET = {
       (byte) '-',
       (byte) '0', (byte) '1', (byte) '2', (byte) '3', (byte) '4',
       (byte) '5', (byte) '6', (byte) '7', (byte) '8', (byte) '9',
@@ -338,7 +338,7 @@ public class Base64
     /**
      * Used in decoding the "ordered" dialect of Base64.
      */
-    private static final byte[] _ORDERED_DECODABET = {
+    private static final byte[] ORDERED_DECODABET = {
       -9, -9, -9, -9, -9, -9, -9, -9, -9,         // Decimal  0 -  8
       -5, -5,                                     // Whitespace: Tab and Linefeed
       -9, -9,                                     // Decimal 11 - 12
@@ -389,11 +389,11 @@ public class Base64
      */
     private static byte[] getAlphabet(final int options) {
         if ((options & URL_SAFE) == URL_SAFE) {
-            return _URL_SAFE_ALPHABET;
+            return URL_SAFE_ALPHABET;
         } else if ((options & ORDERED) == ORDERED) {
-            return _ORDERED_ALPHABET;
+            return ORDERED_ALPHABET;
         } else {
-            return _STANDARD_ALPHABET;
+            return STANDARD_ALPHABET;
         }
     }	// end getAlphabet
 
@@ -407,11 +407,11 @@ public class Base64
      */
     private static byte[] getDecodabet(final int options) {
         if ((options & URL_SAFE) == URL_SAFE) {
-            return _URL_SAFE_DECODABET;
+            return URL_SAFE_DECODABET;
         } else if ((options & ORDERED) == ORDERED) {
-            return _ORDERED_DECODABET;
+            return ORDERED_DECODABET;
         } else {
-            return _STANDARD_DECODABET;
+            return STANDARD_DECODABET;
         }
     }	// end getAlphabet
 
