@@ -471,8 +471,8 @@ public class Base64
      * @since 1.3
      */
     private static byte[] encode3to4(
-    byte[] source, int srcOffset, int numSigBytes,
-    byte[] destination, int destOffset, int options) {
+    final byte[] source, final int srcOffset, final int numSigBytes,
+    final byte[] destination, final int destOffset, final int options) {
 
     byte[] ALPHABET = getAlphabet(options);
 
@@ -532,7 +532,7 @@ public class Base64
      * @param encoded output buffer
      * @since 2.3
      */
-    public static void encode(java.nio.ByteBuffer raw, java.nio.ByteBuffer encoded) {
+    public static void encode(final java.nio.ByteBuffer raw, final java.nio.ByteBuffer encoded) {
         byte[] raw3 = new byte[3];
         byte[] enc4 = new byte[4];
 
@@ -556,7 +556,7 @@ public class Base64
      * @param encoded output buffer
      * @since 2.3
      */
-    public static void encode(java.nio.ByteBuffer raw, java.nio.CharBuffer encoded) {
+    public static void encode(final java.nio.ByteBuffer raw, final java.nio.CharBuffer encoded) {
         byte[] raw3 = new byte[3];
         byte[] enc4 = new byte[4];
 
@@ -591,7 +591,7 @@ public class Base64
      * @throws NullPointerException if serializedObject is null
      * @since 1.4
      */
-    public static String encodeObject(java.io.Serializable serializableObject)
+    public static String encodeObject(final java.io.Serializable serializableObject)
     throws java.io.IOException {
         return encodeObject(serializableObject, NO_OPTIONS);
     }   // end encodeObject
@@ -627,7 +627,7 @@ public class Base64
      * @throws java.io.IOException if there is an error
      * @since 2.0
      */
-    public static String encodeObject(java.io.Serializable serializableObject, int options)
+    public static String encodeObject(final java.io.Serializable serializableObject, final int options)
     throws java.io.IOException {
 
         if (serializableObject == null) {
@@ -681,7 +681,7 @@ public class Base64
      * @throws NullPointerException if source array is null
      * @since 1.4
      */
-    public static String encodeBytes(byte[] source) {
+    public static String encodeBytes(final byte[] source) {
         // Since we're not going to have the GZIP encoding turned on,
         // we're not going to have an java.io.IOException thrown, so
         // we should not force the user to have to catch it.
@@ -726,7 +726,7 @@ public class Base64
      * @throws NullPointerException if source array is null
      * @since 2.0
      */
-    public static String encodeBytes(byte[] source, int options) throws java.io.IOException {
+    public static String encodeBytes(final byte[] source, final int options) throws java.io.IOException {
         return encodeBytes(source, 0, source.length, options);
     }   // end encodeBytes
 
@@ -749,7 +749,7 @@ public class Base64
      * @throws IllegalArgumentException if source array, offset, or length are invalid
      * @since 1.4
      */
-    public static String encodeBytes(byte[] source, int off, int len) {
+    public static String encodeBytes(final byte[] source, final int off, final int len) {
         // Since we're not going to have the GZIP encoding turned on,
         // we're not going to have an java.io.IOException thrown, so
         // we should not force the user to have to catch it.
@@ -797,7 +797,7 @@ public class Base64
      * @throws IllegalArgumentException if source array, offset, or length are invalid
      * @since 2.0
      */
-    public static String encodeBytes(byte[] source, int off, int len, int options) throws java.io.IOException {
+    public static String encodeBytes(final byte[] source, final int off, final int len, final int options) throws java.io.IOException {
         byte[] encoded = encodeBytesToBytes(source, off, len, options);
 
         // Return value according to relevant encoding.
@@ -824,7 +824,7 @@ public class Base64
      * @throws NullPointerException if source array is null
      * @since 2.3.1
      */
-    public static byte[] encodeBytesToBytes(byte[] source) {
+    public static byte[] encodeBytesToBytes(final byte[] source) {
         byte[] encoded = null;
         try {
             encoded = encodeBytesToBytes(source, 0, source.length, Base64.NO_OPTIONS);
@@ -853,7 +853,7 @@ public class Base64
      * @throws IllegalArgumentException if source array, offset, or length are invalid
      * @since 2.3.1
      */
-    public static byte[] encodeBytesToBytes(byte[] source, int off, int len, int options) throws java.io.IOException {
+    public static byte[] encodeBytesToBytes(final byte[] source, final int off, final int len, final int options) throws java.io.IOException {
 
         if (source == null) {
             throw new NullPointerException("Cannot serialize a null array.");
@@ -994,8 +994,8 @@ public class Base64
      * @since 1.3
      */
     private static int decode4to3(
-    byte[] source, int srcOffset,
-    byte[] destination, int destOffset, int options) {
+    final byte[] source, final int srcOffset,
+    final byte[] destination, final int destOffset, final int options) {
 
         // Lots of error checking and exception throwing
         if (source == null) {
@@ -1081,7 +1081,7 @@ public class Base64
      * @return decoded data
      * @since 2.3.1
      */
-    public static byte[] decode(byte[] source) {
+    public static byte[] decode(final byte[] source) {
         byte[] decoded = null;
         try {
             decoded = decode(source, 0, source.length, Base64.NO_OPTIONS);
@@ -1110,7 +1110,7 @@ public class Base64
      * @throws java.io.IOException If bogus characters exist in source data
      * @since 1.3
      */
-    public static byte[] decode(byte[] source, int off, int len, int options)
+    public static byte[] decode(final byte[] source, final int off, final int len, final int options)
     throws java.io.IOException {
 
         // Lots of error checking and exception throwing
@@ -1187,7 +1187,7 @@ public class Base64
      * @throws java.io.IOException If there is a problem
      * @since 1.4
      */
-    public static byte[] decode(String s) throws java.io.IOException {
+    public static byte[] decode(final String s) throws java.io.IOException {
         return decode(s, NO_OPTIONS);
     }
 
@@ -1204,7 +1204,7 @@ public class Base64
      * @throws NullPointerException if <tt>s</tt> is null
      * @since 1.4
      */
-    public static byte[] decode(String s, int options) throws java.io.IOException {
+    public static byte[] decode(final String s, final int options) throws java.io.IOException {
 
         if (s == null) {
             throw new NullPointerException("Input string was null.");
@@ -1277,7 +1277,7 @@ public class Base64
      *         class that cannot be found by the JVM
      * @since 1.5
      */
-    public static Object decodeToObject(String encodedObject)
+    public static Object decodeToObject(final String encodedObject)
     throws java.io.IOException, java.lang.ClassNotFoundException {
 
         // Decode and gunzip if necessary
@@ -1323,7 +1323,7 @@ public class Base64
      * @throws NullPointerException if dataToEncode is null
      * @since 2.1
      */
-    public static void encodeToFile(byte[] dataToEncode, String filename)
+    public static void encodeToFile(final byte[] dataToEncode, final String filename)
     throws java.io.IOException {
 
         if (dataToEncode == null) {
@@ -1359,7 +1359,7 @@ public class Base64
      * @throws java.io.IOException if there is an error
      * @since 2.1
      */
-    public static void decodeToFile(String dataToDecode, String filename)
+    public static void decodeToFile(final String dataToDecode, final String filename)
     throws java.io.IOException {
 
         Base64.OutputStream bos = null;
@@ -1394,7 +1394,7 @@ public class Base64
      * @throws java.io.IOException if there is an error
      * @since 2.1
      */
-    public static byte[] decodeFromFile(String filename)
+    public static byte[] decodeFromFile(final String filename)
     throws java.io.IOException {
 
         byte[] decodedData = null;
@@ -1455,7 +1455,7 @@ public class Base64
      * @throws java.io.IOException if there is an error
      * @since 2.1
      */
-    public static String encodeFromFile(String filename)
+    public static String encodeFromFile(final String filename)
     throws java.io.IOException {
 
         String encodedData = null;
@@ -1500,7 +1500,7 @@ public class Base64
      * @throws java.io.IOException if there is an error
      * @since 2.2
      */
-    public static void encodeFileToFile(String infile, String outfile)
+    public static void encodeFileToFile(final String infile, final String outfile)
     throws java.io.IOException {
 
         String encoded = Base64.encodeFromFile(infile);
@@ -1528,7 +1528,7 @@ public class Base64
      * @throws java.io.IOException if there is an error
      * @since 2.2
      */
-    public static void decodeFileToFile(String infile, String outfile)
+    public static void decodeFileToFile(final String infile, final String outfile)
     throws java.io.IOException {
 
         byte[] decoded = Base64.decodeFromFile(infile);
@@ -1580,7 +1580,7 @@ public class Base64
          * @param in the <tt>java.io.InputStream</tt> from which to read data.
          * @since 1.3
          */
-        public InputStream(java.io.InputStream in) {
+        public InputStream(final java.io.InputStream in) {
             this(in, DECODE);
         }   // end constructor
 
@@ -1605,7 +1605,7 @@ public class Base64
          * @see Base64#DO_BREAK_LINES
          * @since 2.0
          */
-        public InputStream(java.io.InputStream in, int options) {
+        public InputStream(final java.io.InputStream in, final int options) {
 
             super(in);
             this.options      = options; // Record for later
@@ -1736,7 +1736,7 @@ public class Base64
          * @since 1.3
          */
         @Override
-        public int read(byte[] dest, int off, int len)
+        public int read(final byte[] dest, final int off, final int len)
         throws java.io.IOException {
             int i;
             int b;
@@ -1795,7 +1795,7 @@ public class Base64
          * @param out the <tt>java.io.OutputStream</tt> to which data will be written.
          * @since 1.3
          */
-        public OutputStream(java.io.OutputStream out) {
+        public OutputStream(final java.io.OutputStream out) {
             this(out, ENCODE);
         }   // end constructor
 
@@ -1819,7 +1819,7 @@ public class Base64
          * @see Base64#DO_BREAK_LINES
          * @since 1.3
          */
-        public OutputStream(java.io.OutputStream out, int options) {
+        public OutputStream(final java.io.OutputStream out, final int options) {
             super(out);
             this.breakLines   = (options & DO_BREAK_LINES) > 0;
             this.encode       = (options & ENCODE) > 0;
@@ -1848,7 +1848,7 @@ public class Base64
          * @since 1.3
          */
         @Override
-        public void write(int theByte)
+        public void write(final int theByte)
         throws java.io.IOException {
             // Encoding suspended?
             if (suspendEncoding) {
@@ -1903,7 +1903,7 @@ public class Base64
          * @since 1.3
          */
         @Override
-        public void write(byte[] theBytes, int off, int len)
+        public void write(final byte[] theBytes, final int off, final int len)
         throws java.io.IOException {
             // Encoding suspended?
             if (suspendEncoding) {
