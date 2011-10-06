@@ -395,7 +395,7 @@ public class Base64
         } else {
             return STANDARD_ALPHABET;
         }
-    }	// end getAlphabet
+    }    // end getAlphabet
 
 
     /**
@@ -413,7 +413,7 @@ public class Base64
         } else {
             return STANDARD_DECODABET;
         }
-    }	// end getAlphabet
+    }    // end getAlphabet
 
 
 
