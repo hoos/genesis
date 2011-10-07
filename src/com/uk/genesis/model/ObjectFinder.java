@@ -70,7 +70,7 @@ public final class ObjectFinder {
         return result.toArray(new String[result.size()]);
     }
 
-    private static String normalisePath(final String path) {
+    private static String normalisePath(String path) {
         if (path == null) {
             return null;
         }
