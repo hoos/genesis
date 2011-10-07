@@ -124,8 +124,9 @@ public class FileSystemModelReader implements ConfigurableModelReader {
     }
 
     /**
-     * Retrieves the namespace that model elements should be found in. This method
-     * should be overriden in subclasses that provide alternate namespaces.
+     * Retrieves the namespace that model elements should
+     * be found in. This method should be overriden in
+     * subclasses that provide alternate namespaces.
      * @return the namespace.
      */
     protected String getModelNamespace() {
@@ -133,15 +134,15 @@ public class FileSystemModelReader implements ConfigurableModelReader {
     }
 
     /**
-     * Retrieves a XPath instance that can be used to find elements with the
-     * provided path. This method primary constructs the XPath will valid
-     * namespaces.
+     * Retrieves a XPath instance that can be used to find
+     * elements with the provided path. This method primary
+     * constructs the XPath will valid namespaces.
      * @param path
      * @return
      */
-    protected XPathExpression getXModelXPath(final String path) 
+    protected XPathExpression getXModelXPath(final String path)
             throws XPathExpressionException {
-        
+
         // Find all of the xmodel nodes
         GenesisNamespaceContext nsCtx = new GenesisNamespaceContext();
         nsCtx.addNamespace("genesis", "http://genesis.uk.com/schemas/1.0/genesis-root");
@@ -156,16 +157,17 @@ public class FileSystemModelReader implements ConfigurableModelReader {
     }
 
     /**
-     * Creates an instance of the type for the given element, parent and root. This can be overriden
-     * by subclasses that wish to provide their own type instances.
+     * Creates an instance of the type for the given element,
+     * parent and root. This can be overriden by subclasses
+     * that wish to provide their own type instances.
      * @param el the xml element that is being modeled.
      * @param parent the parent type.
      * @param isRoot whether this is a root type.
      * @return the type instance.
      */
     protected FileSystemGenesisObjectType createTypeInstance(final Element el,
-                final FileSystemGenesisObjectType parent, final boolean isRoot) {
-        
+            final FileSystemGenesisObjectType parent, final boolean isRoot) {
+
         return new FileSystemGenesisObjectType(el, parent, isRoot);
     }
 
@@ -178,11 +180,11 @@ public class FileSystemModelReader implements ConfigurableModelReader {
         private boolean isRoot;
 
         public FileSystemGenesisObjectType(final Element object,
-                final FileSystemGenesisObjectType parent, final boolean isRoot) {
-            
-                    this.object = object;
-                    this.parent = parent;
-                    this.isRoot = isRoot;
+            final FileSystemGenesisObjectType parent, final boolean isRoot) {
+
+                this.object = object;
+                this.parent = parent;
+                this.isRoot = isRoot;
         }
 
         public FileSystemGenesisObjectType[] getChildren()
@@ -297,7 +299,7 @@ public class FileSystemModelReader implements ConfigurableModelReader {
         protected FileSystemGenesisObject getInstance(final String name,
                 final File basePath, final FileSystemGenesisObject parentObject)
                         throws GenesisObjectNotFoundException {
-            
+
             // Build our path if necessary
             String pathExtension = getPath();
             File objPath = basePath;
@@ -315,8 +317,8 @@ public class FileSystemModelReader implements ConfigurableModelReader {
                 objFile = new File(objPath, filename);
             }
 
-            // If we have an associated file, verify it exists. If not, then just
-            // verify the path exists.
+            // If we have an associated file, verify it exists.
+            // If not, then just verify the path exists.
             if (objFile != null && !objFile.exists()) {
                 throw new GenesisObjectNotFoundException("File " + objFile + " doesn't exist");
             } else if (!objPath.exists()) {
@@ -344,7 +346,7 @@ public class FileSystemModelReader implements ConfigurableModelReader {
 
         protected FileSystemGenesisObject createInstance(final String name,
                 final FileSystemGenesisObject parent, final File objPath, final File objFile) {
-            
+
             return new FileSystemGenesisObject(this, parent, name, objPath, objFile);
         }
     }
@@ -359,7 +361,7 @@ public class FileSystemModelReader implements ConfigurableModelReader {
         public FileSystemGenesisObject(final FileSystemGenesisObjectType type,
                 final FileSystemGenesisObject parent, final String name,
                     final File path, final File contentFile) {
-            
+
                     this.type = type;
                     this.parent = parent;
                     this.name = name;

@@ -52,7 +52,7 @@ public class XmlModelReader
     @Override
     protected FileSystemGenesisObjectType createTypeInstance(final Element el,
             final FileSystemGenesisObjectType parent, final boolean isRoot) {
-        
+
                 return new XmlModelGenesisObjectType(el, parent, isRoot);
     }
 
@@ -137,7 +137,7 @@ public class XmlModelReader
     protected class XmlModelGenesisObjectType extends FileSystemGenesisObjectType {
         public XmlModelGenesisObjectType(final Element object,
             final FileSystemGenesisObjectType parent, final boolean isRoot) {
-            
+
             super(object, parent, isRoot);
         }
 
@@ -147,7 +147,7 @@ public class XmlModelReader
         @Override
         protected FileSystemGenesisObject createInstance(final String name,
             final FileSystemGenesisObject parent, final File objPath, final File objFile) {
-            
+
             return new XmlModelGenesisObject(this, parent, name, objPath, objFile);
         }
 
@@ -202,7 +202,7 @@ public class XmlModelReader
 
             File schemaLocation = type.getSchemaLocation();
             if (schemaLocation == null) {
-                return;		// No validation to do
+                return;	    // No validation to do
             }
 
             if (!schemaLocation.exists()) {
