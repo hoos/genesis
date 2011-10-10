@@ -1,23 +1,23 @@
 package com.uk.genesis.model;
 
 /**
- * Exception indicating that a problem has occurred interpreting
- * the model.
- * 
+ * Exception indicating that a problem has occurred
+ * interpreting the model.
+ *
  * @author paul.jones
  * @author hussein.badakhchani
  */
 public class ModelException extends Exception {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 2541035091199413245L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 2541035091199413245L;
 
-	public ModelException(String message) {
-		super(message);
-	}
+    public ModelException(final String message) {
+        super(message);
+    }
 
-	public ModelException(String message, Throwable cause) {
-		super(message, cause);
-	}
+    public ModelException(final String message, final Throwable cause) {
+        super(message, cause);
+    }
 }
