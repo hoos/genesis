@@ -24,6 +24,7 @@ import org.w3c.dom.NodeList;
  * models (eg properties files or xml files).
  *
  * @author paul.jones
+ * @author hussein.badakhchani
  */
 public class FileSystemModelReader implements ConfigurableModelReader {
     private Element model;
@@ -145,7 +146,8 @@ public class FileSystemModelReader implements ConfigurableModelReader {
 
         // Find all of the xmodel nodes
         GenesisNamespaceContext nsCtx = new GenesisNamespaceContext();
-        nsCtx.addNamespace("genesis", "http://genesis.uk.com/schemas/1.0/genesis-root");
+        nsCtx.addNamespace("genesis",
+            "http://genesis.uk.com/schemas/1.0/genesis-root");
         nsCtx.addNamespace("model", getModelNamespace());
 
         XPathFactory factory = XPathFactory.newInstance();
