@@ -202,7 +202,7 @@ public class XmlModelReader
 
             File schemaLocation = type.getSchemaLocation();
             if (schemaLocation == null) {
-                return;	    // No validation to do
+                return;     // No validation to do
             }
 
             if (!schemaLocation.exists()) {
